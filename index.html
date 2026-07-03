@@ -406,6 +406,18 @@
       user-select: none;
       white-space: nowrap;
     }
+    .item-price-badge {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.82rem; font-weight: 700;
+      color: var(--green);
+      background: rgba(40,199,111,0.08);
+      border: 1px solid rgba(40,199,111,0.28);
+      border-radius: 8px;
+      padding: 3px 10px;
+      flex-shrink: 0;
+      user-select: none;
+      white-space: nowrap;
+    }
     .item-edit-btn {
       background: none; border: none;
       color: var(--subtle);
@@ -784,7 +796,7 @@
       <h3 id="modal-title"></h3>
       <p id="modal-body"></p>
       <div class="modal-actions">
-        <button class="btn-s" onclick="closeModal()">ביטול</button>
+        <button class="btn-s" id="modal-cancel" onclick="closeModal()">ביטול</button>
         <button class="btn-sm danger" id="modal-ok" style="font-size:14px;padding:10px 20px;">אישור</button>
       </div>
     </div>
@@ -1306,6 +1318,10 @@
       }
     }
 
+    // Absolute so the cart-automation calls still work when index.html is opened
+    // directly as a file (file://) instead of through the local server.
+    const API_BASE = 'http://localhost:3457';
+
     // ── State ────────────────────────────────────────────────────────────────
     const STORAGE_KEY = 'shopping_list_v2';
     let list            = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
@@ -1598,6 +1614,7 @@
       const existing = list.find(p => !p.checked && p.name.toLowerCase() === norm);
       if (existing) {
         existing.quantity = roundQty((existing.quantity || 0) + qty);
+        existing.price = null;
         showToast(`${existing.name} ${formatQty(existing.quantity, existing.unit || null)}`, 'success');
       } else {
         list.unshift({ id: Date.now() + Math.random(), name: trimmedName, quantity: qty, unit: unit || null, step: step || 1, category, checked: false });
@@ -1617,6 +1634,7 @@
       if (!item) return;
       const step = item.step || 1;
       item.quantity = roundQty(item.quantity + step);
+      item.price = null;
       saveList(); renderList();
     }
 
@@ -1627,6 +1645,7 @@
       const min  = step;
       if (item.quantity > min) {
         item.quantity = roundQty(item.quantity - step);
+        item.price = null;
         saveList(); renderList();
       } else {
         removeItem(id);
@@ -1691,6 +1710,7 @@
             ${isEditMode && checked > 0 ? `<button class="btn-sm" onclick="confirmAction('checked')">מחק מסומנים (${checked})</button>` : ''}
             <button class="btn-edit${isEditMode ? ' active' : ''}" onclick="toggleEditMode()">${isEditMode ? '✓ סיום' : '✏️ עריכה'}</button>
             <button class="btn-edit" onclick="sendToOnlineCart()">🛒 שלח לסל אונליין</button>
+            <button class="btn-edit" onclick="checkPrices()">💰 בדוק מחירים</button>
           </div>
         </div>
         <div class="progress-bar">
@@ -1714,6 +1734,7 @@
               <div class="item ${item.checked ? 'checked' : ''}" data-id="${item.id}">
                 <button class="item-check" onclick="toggleItem(${item.id})" aria-label="סמן כנרכש"></button>
                 <span class="item-name">${esc(item.name)}</span>
+                ${item.price != null ? `<span class="item-price-badge">${item.price}₪</span>` : ''}
                 <div class="qty-controls">
                   <button class="qty-btn minus" onclick="decQty(${item.id})" aria-label="הפחת">−</button>
                   <span class="qty-num">${qtyLabel}</span>
@@ -1726,6 +1747,7 @@
               <div class="item ${item.checked ? 'checked' : ''}" data-id="${item.id}">
                 <span class="item-qty-badge">${qtyLabel}</span>
                 <span class="item-name">${esc(item.name)}</span>
+                ${item.price != null ? `<span class="item-price-badge">${item.price}₪</span>` : ''}
               </div>`;
           }
         }
@@ -1763,7 +1785,11 @@
     // ── Modal ─────────────────────────────────────────────────────────────────
     function openModal(title, body, cb) {
       document.getElementById('modal-title').textContent = title;
-      document.getElementById('modal-body').textContent  = body;
+      const bodyEl = document.getElementById('modal-body');
+      bodyEl.textContent   = body;
+      bodyEl.style.whiteSpace = '';
+      document.getElementById('modal-cancel').classList.remove('hidden');
+      document.getElementById('modal-ok').textContent = 'אישור';
       modalCb = cb;
       document.getElementById('modal').classList.add('show');
     }
@@ -1771,6 +1797,18 @@
     function closeModal() {
       document.getElementById('modal').classList.remove('show');
       modalCb = null;
+    }
+
+    // Read-only info dialog (e.g. cart-automation results) — no cancel, "OK" just closes.
+    function openInfoModal(title, body) {
+      document.getElementById('modal-title').textContent = title;
+      const bodyEl = document.getElementById('modal-body');
+      bodyEl.textContent = body;
+      bodyEl.style.whiteSpace = 'pre-line';
+      document.getElementById('modal-cancel').classList.add('hidden');
+      document.getElementById('modal-ok').textContent = 'סגור';
+      modalCb = () => {};
+      document.getElementById('modal').classList.add('show');
     }
 
     document.getElementById('modal-ok').addEventListener('click', () => {
@@ -1784,23 +1822,68 @@
     async function sendToOnlineCart() {
       const items = list
         .filter(p => !p.checked)
-        .map(p => ({ name: p.name, quantity: p.quantity || 1 }));
+        .map(p => ({ name: p.name, quantity: p.quantity || 1, unit: p.unit || null }));
 
       if (!items.length) {
         showToast('אין פריטים לשלוח', 'error');
         return;
       }
 
+      showToast('שולח לחצי חינם...', '');
+
       try {
-        const res = await fetch('/api/send-to-cart', {
+        const res = await fetch(`${API_BASE}/api/send-to-cart`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ items }),
         });
-        if (!res.ok) throw new Error();
-        showToast('נשלח! נפתח דפדפן לחצי חינם...', 'success');
+        const results = await res.json();
+        if (!res.ok) throw new Error(results.error || 'שליחה נכשלה');
+
+        const { added = [], failed = [] } = results;
+        const title = `נוספו ${added.length} מתוך ${items.length}${failed.length ? ` — ${failed.length} נכשלו` : ''}`;
+        let body = added.map(a => `✓ ${a.name} → ${a.matched} ${a.quantity}${a.unit || ''} (${a.price}₪)`).join('\n');
+        if (failed.length) {
+          body += (body ? '\n\n' : '') + failed.map(f => `✗ ${f.name}: ${f.reason}`).join('\n');
+        }
+        openInfoModal(title, body || 'לא נוסף אף מוצר');
       } catch (e) {
         showToast('שליחה נכשלה — ודא שהשרת רץ', 'error');
+      }
+    }
+
+    // ── Check prices (Hazi Hinam automation, read-only) ─────────────────────────
+    async function checkPrices() {
+      const items = list
+        .filter(p => !p.checked)
+        .map(p => ({ name: p.name }));
+
+      if (!items.length) {
+        showToast('אין פריטים לבדיקה', 'error');
+        return;
+      }
+
+      showToast('בודק מחירים בחצי חינם...', '');
+
+      try {
+        const res = await fetch(`${API_BASE}/api/check-prices`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ items }),
+        });
+        const data = await res.json();
+        if (!res.ok) throw new Error(data.error || 'בדיקת מחירים נכשלה');
+
+        const byName = new Map((data.results || []).map(r => [r.name, r]));
+        let updated = 0;
+        for (const p of list) {
+          const r = byName.get(p.name);
+          if (r && r.ok) { p.price = r.price; updated++; }
+        }
+        saveList(); renderList();
+        showToast(updated ? `עודכנו מחירים ל-${updated} מוצרים` : 'לא נמצאו מחירים', updated ? 'success' : 'error');
+      } catch (e) {
+        showToast('בדיקת מחירים נכשלה — ודא שהשרת רץ', 'error');
       }
     }
 

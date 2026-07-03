@@ -23,13 +23,37 @@ function parseArgs(argv) {
   if (fileFlagIdx !== -1) {
     const filePath = argv[fileFlagIdx + 1];
     const raw = JSON.parse(fs.readFileSync(filePath, 'utf8'));
-    return raw.map((it) => (typeof it === 'string' ? { name: it, quantity: 1 } : { name: it.name, quantity: it.quantity || 1 }));
+    return raw.map((it) => (typeof it === 'string' ? { name: it, quantity: 1, unit: null } : { name: it.name, quantity: it.quantity || 1, unit: it.unit || null }));
   }
-  return argv.map((name) => ({ name, quantity: 1 }));
+  return argv.map((name) => ({ name, quantity: 1, unit: null }));
 }
 
-function pickBestMatch(items) {
-  return items.find((it) => it.IsInStock) || items[0];
+// The store's search endpoint doesn't do strict AND-matching on multi-word
+// phrases — e.g. "חלב שוקולד" ranks plain milk above chocolate milk, since
+// chocolate milk is actually named "שוקו" in the catalog. Blindly taking the
+// first in-stock result silently adds the wrong product.
+//
+// For a single word we trust the store's own ranking (Hebrew has too much
+// legitimate spelling variance — עגבנייה/עגבניה etc. — to require an exact
+// substring match there). For multi-word phrases we require the qualifier
+// word(s) — everything after the first, generic word — to actually appear
+// in the candidate; if not one single in-stock result has them, the search
+// likely missed the specific variant entirely, so flag it as unconfident
+// instead of silently substituting something generic.
+function pickBestMatch(items, phrase) {
+  const words = phrase.trim().split(/\s+/).filter(Boolean);
+  const inStock = items.filter((it) => it.IsInStock);
+  if (!inStock.length) return { item: null, confident: false };
+
+  if (words.length === 1) {
+    return { item: inStock[0], confident: true };
+  }
+
+  const qualifiers = words.slice(1);
+  const withQualifiers = inStock.filter((it) => qualifiers.every((w) => it.Name.includes(w)));
+  if (withQualifiers.length) return { item: withQualifiers[0], confident: true };
+
+  return { item: inStock[0], confident: false };
 }
 
 async function ensureSession() {
@@ -38,14 +62,40 @@ async function ensureSession() {
   await login();
 }
 
-async function addOneItem({ name, quantity }) {
+// The app tracks weight-based items in its own units (ק"ג or גרם), which
+// don't necessarily match hazi hinam's Type 2 (always ק"ג) — and the matched
+// product may not even support the Type our app assumed (e.g. a jar of spice
+// sold only by unit, Type 1, even though our app treats spices as "גרם").
+// Sending an unsupported Type silently corrupts the real cart (it starts
+// erroring on every read), so always check ItemQuantityTypes.Types first.
+function resolveTypeAndQuantity({ unit, quantity }, best) {
+  const types = best.ItemQuantityTypes?.Types || [];
+  const supports = (t) => types.some((x) => x.Type === t);
+  const wantsWeight = unit === 'ק"ג' || unit === 'גרם';
+
+  if (wantsWeight && supports(2)) {
+    return { type: 2, quantity: unit === 'גרם' ? quantity / 1000 : quantity };
+  }
+  if (!wantsWeight && supports(1)) {
+    return { type: 1, quantity };
+  }
+  // Our app's assumed ordering mode isn't offered for this specific matched
+  // product — fall back to whatever Type it does support. A unit<->weight
+  // conversion can't be inferred, so default to a safe quantity of 1.
+  if (supports(1)) return { type: 1, quantity: wantsWeight ? 1 : quantity };
+  if (supports(2)) return { type: 2, quantity: wantsWeight ? (unit === 'גרם' ? quantity / 1000 : quantity) : 1 };
+  return { type: best.IsShakil ? 2 : 1, quantity: 1 };
+}
+
+async function addOneItem({ name, quantity, unit }) {
   const res = await searchItem(name);
   const items = res.Results?.Items || [];
-  const best = pickBestMatch(items);
+  const { item: best, confident } = pickBestMatch(items, name);
   if (!best) return { name, ok: false, reason: 'no search results' };
-  const type = best.IsShakil ? 2 : 1; // weight-sold items (fruit/veg, meat/fish, spices) use Type 2 (ק"ג) instead of Type 1 (יח')
-  await addItemToCart(best.Id, quantity, type);
-  return { name, ok: true, matched: best.Name, id: best.Id, price: best.Price_NET, quantity };
+  if (!confident) return { name, ok: false, reason: `לא נמצאה התאמה בטוחה (הכי קרוב: "${best.Name}") — נסה לשנות את שם הפריט ברשימה` };
+  const resolved = resolveTypeAndQuantity({ unit, quantity }, best);
+  await addItemToCart(best.Id, resolved.quantity, resolved.type);
+  return { name, ok: true, matched: best.Name, id: best.Id, price: best.Price_NET, quantity: resolved.quantity, unit: resolved.type === 2 ? 'ק"ג' : 'יח\'' };
 }
 
 async function addListToCart(entries) {
@@ -56,7 +106,7 @@ async function addListToCart(entries) {
       const result = await addOneItem(entry);
       if (result.ok) {
         added.push(result);
-        console.log(`[✓] "${result.name}" -> "${result.matched}" x${result.quantity} (${result.price}₪)`);
+        console.log(`[✓] "${result.name}" -> "${result.matched}" ${result.quantity}${result.unit} (${result.price}₪)`);
       } else {
         failed.push(result);
         console.log(`[x] "${entry.name}": ${result.reason}`);
@@ -69,7 +119,7 @@ async function addListToCart(entries) {
           const retry = await addOneItem(entry);
           if (retry.ok) {
             added.push(retry);
-            console.log(`[✓] "${retry.name}" -> "${retry.matched}" x${retry.quantity} (${retry.price}₪) (after re-login)`);
+            console.log(`[✓] "${retry.name}" -> "${retry.matched}" ${retry.quantity}${retry.unit} (${retry.price}₪) (after re-login)`);
             continue;
           }
         } catch (e2) {
@@ -117,6 +167,10 @@ async function main() {
   if (failed.length) {
     console.log('Failed items:', failed.map((f) => f.name).join(', '));
   }
+
+  // Marker line the server can grab to report results back to the UI,
+  // before the (potentially long-lived, until the user closes it) browser step.
+  console.log('RESULTS_JSON:' + JSON.stringify({ added, failed }));
 
   await openCartInBrowser();
 }

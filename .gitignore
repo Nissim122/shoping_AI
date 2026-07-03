@@ -4,3 +4,5 @@ test-results/
 .env.local
 automation/hazi-hinam/storageState.json
 automation/hazi-hinam/captured-requests.jsonl
+server.log
+server.log.err
