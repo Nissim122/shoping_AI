@@ -14,6 +14,7 @@ async function pickProduct(page, name) {
   await page.click('#tab-add');
   await page.fill('#add-input', name);
   await page.locator('.sugg-item').filter({ hasText: name }).first().click();
+  await page.click('.btn-confirm.primary');
 }
 
 // ── Empty state ───────────────────────────────────────────────────────────────
@@ -57,6 +58,7 @@ test('clicking suggestion adds product to list', async ({ page }) => {
   await page.click('#tab-add');
   await page.fill('#add-input', 'ביצים');
   await page.locator('.sugg-item').first().click();
+  await page.click('.btn-confirm.primary');
   await expect(page.locator('.item-name')).toHaveText('ביצים');
 });
 
@@ -77,6 +79,7 @@ test('pressing Enter selects first suggestion', async ({ page }) => {
   await page.fill('#add-input', 'ביצים');
   await expect(page.locator('.sugg-item').first()).toBeVisible();
   await page.keyboard.press('Enter');
+  await page.click('.btn-confirm.primary');
   await expect(page.locator('.item-name')).toContainText('ביצים');
 });
 
@@ -84,7 +87,7 @@ test('adding same product twice increments quantity', async ({ page }) => {
   await pickProduct(page, 'ביצים');
   await pickProduct(page, 'ביצים');
   await expect(page.locator('.item')).toHaveCount(1);
-  await expect(page.locator('.qty-num')).toHaveText('2');
+  await expect(page.locator('.item-qty-badge')).toHaveText('×2');
 });
 
 test('can add multiple different products', async ({ page }) => {
@@ -98,6 +101,7 @@ test('custom product added via "הוסף" option', async ({ page }) => {
   await page.click('#tab-add');
   await page.fill('#add-input', 'מוצר מיוחד');
   await page.locator('.sugg-custom').click();
+  await page.click('.btn-confirm.primary');
   await expect(page.locator('.item-name')).toHaveText('מוצר מיוחד');
 });
 
@@ -122,12 +126,14 @@ test('Escape closes suggestions', async ({ page }) => {
 
 test('+ button increments quantity', async ({ page }) => {
   await pickProduct(page, 'ביצים');
+  await page.click('.item-edit-btn');
   await page.click('.qty-btn.plus');
   await expect(page.locator('.qty-num')).toHaveText('2');
 });
 
 test('- button decrements quantity', async ({ page }) => {
   await pickProduct(page, 'ביצים');
+  await page.click('.item-edit-btn');
   await page.click('.qty-btn.plus'); // → 2
   await page.click('.qty-btn.minus'); // → 1
   await expect(page.locator('.qty-num')).toHaveText('1');
@@ -135,6 +141,7 @@ test('- button decrements quantity', async ({ page }) => {
 
 test('- button at qty=1 removes the item', async ({ page }) => {
   await pickProduct(page, 'ביצים');
+  await page.click('.item-edit-btn');
   await page.click('.qty-btn.minus');
   await expect(page.locator('.item')).toHaveCount(0);
   await expect(page.locator('.empty-state')).toBeVisible();
@@ -159,6 +166,7 @@ test('clicking checked item un-checks it', async ({ page }) => {
 
 test('delete button removes item', async ({ page }) => {
   await pickProduct(page, 'ביצים');
+  await page.click('.item-edit-btn');
   await page.click('.item-del');
   await expect(page.locator('.item')).toHaveCount(0);
   await expect(page.locator('.empty-state')).toBeVisible();
@@ -220,10 +228,12 @@ test('products from DB appear grouped under correct category', async ({ page }) 
 
 test('items persist across page reload', async ({ page }) => {
   await pickProduct(page, 'ביצים');
+  await page.click('.item-edit-btn');
   await page.click('.qty-btn.plus'); // qty → 2
+  await page.click('.item-done-btn');
   await page.reload();
   await expect(page.locator('.item-name')).toHaveText('ביצים');
-  await expect(page.locator('.qty-num')).toHaveText('2');
+  await expect(page.locator('.item-qty-badge')).toHaveText('×2');
 });
 
 test('checked state persists across page reload', async ({ page }) => {

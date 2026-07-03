@@ -25,6 +25,7 @@
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+    .hidden { display: none; }
     button { touch-action: manipulation; }
 
     body {
@@ -166,6 +167,108 @@
     }
     .sugg-custom:hover, .sugg-custom.highlighted { background: var(--pink-bg); color: var(--text); }
 
+    /* ── Category select ── */
+    .cat-select {
+      width: 100%;
+      background: var(--bg-f);
+      border: 1.5px solid var(--border);
+      border-radius: 12px;
+      padding: 12px 14px;
+      font-family: 'Heebo', sans-serif;
+      font-size: 0.95rem;
+      color: var(--text);
+      cursor: pointer;
+      outline: none;
+      appearance: none;
+      -webkit-appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='rgba(255,255,255,0.4)' stroke-width='1.8' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: left 14px center;
+      padding-left: 36px;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .cat-select:focus { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(33,150,176,0.18); }
+    .cat-select option { background: #1a2540; color: #fff; }
+
+    .custom-field-label {
+      font-size: 0.75rem;
+      color: var(--muted);
+      margin-bottom: 0.35rem;
+      padding: 0 2px;
+    }
+
+    /* ── Confirm card ── */
+    .confirm-card {
+      background: var(--bg-e);
+      border: 1.5px solid var(--border-blue);
+      border-radius: 16px;
+      padding: 1.5rem;
+      animation: fadeUp 0.2s ease-out;
+    }
+    .confirm-product {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding-bottom: 1.2rem;
+      margin-bottom: 1.2rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .confirm-product-icon { font-size: 2rem; flex-shrink: 0; }
+    .confirm-product-name { font-size: 1.1rem; font-weight: 700; }
+    .confirm-product-cat  { font-size: 0.78rem; color: var(--muted); margin-top: 3px; }
+    .confirm-qty-row {
+      display: flex;
+      align-items: center;
+      background: var(--bg-f);
+      border: 1.5px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+      margin-bottom: 1.2rem;
+    }
+    .confirm-qty-btn {
+      background: none; border: none;
+      color: var(--blue-l);
+      font-size: 1.5rem; font-weight: 700;
+      width: 64px; height: 56px;
+      cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      transition: background 0.15s;
+      font-family: 'Inter', sans-serif;
+      flex-shrink: 0;
+    }
+    .confirm-qty-btn:hover { background: var(--blue-bg); }
+    .confirm-qty-btn.minus:hover { background: var(--pink-bg); color: var(--pink); }
+    .confirm-qty-num {
+      flex: 1;
+      text-align: center;
+      font-family: 'Inter', sans-serif;
+      font-size: 1.6rem; font-weight: 800;
+      color: var(--text);
+      user-select: none;
+    }
+    .confirm-actions { display: flex; gap: 0.5rem; }
+    .btn-confirm {
+      flex: 1;
+      font-family: 'Heebo', sans-serif;
+      font-size: 0.95rem; font-weight: 700;
+      padding: 13px;
+      border-radius: 12px;
+      border: none;
+      cursor: pointer;
+      transition: opacity 0.15s, transform 0.1s;
+    }
+    .btn-confirm:active { transform: scale(0.97); }
+    .btn-confirm.primary {
+      background: linear-gradient(135deg, var(--blue), var(--blue-l));
+      color: #fff;
+      box-shadow: 0 4px 14px rgba(33,150,176,0.28);
+    }
+    .btn-confirm.secondary {
+      background: var(--bg-f);
+      color: var(--muted);
+      border: 1.5px solid var(--border);
+    }
+
     /* ── List topbar ── */
     .list-topbar {
       display: flex;
@@ -288,6 +391,42 @@
     }
     .item-del:hover { color: var(--error); background: rgba(239,68,68,0.1); }
 
+    .item-qty-badge {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.82rem; font-weight: 700;
+      color: var(--blue-l);
+      background: var(--blue-bg);
+      border: 1px solid var(--border-blue);
+      border-radius: 8px;
+      padding: 3px 10px;
+      flex-shrink: 0;
+      user-select: none;
+    }
+    .item-edit-btn {
+      background: none; border: none;
+      color: var(--subtle);
+      cursor: pointer;
+      font-size: 0.85rem;
+      width: 34px; height: 34px;
+      border-radius: 8px;
+      flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      transition: color 0.15s, background 0.15s;
+    }
+    .item-edit-btn:hover { color: var(--blue-l); background: var(--blue-bg); }
+    .item-done-btn {
+      background: none;
+      border: 1.5px solid var(--green);
+      color: var(--green);
+      cursor: pointer;
+      font-size: 0.82rem; font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 8px;
+      flex-shrink: 0;
+      transition: background 0.15s;
+    }
+    .item-done-btn:hover { background: rgba(40,199,111,0.1); }
+
     /* ── Tabs ── */
     .tab-bar {
       display: flex;
@@ -353,6 +492,33 @@
     .btn-sm:hover { color: #fff; border-color: var(--border-strong); }
     .btn-sm.danger { color: var(--error); border-color: rgba(239,68,68,0.22); }
     .btn-sm.danger:hover { border-color: var(--error); background: rgba(239,68,68,0.07); }
+    .btn-sm.active-edit { color: var(--green); border-color: rgba(40,199,111,0.35); }
+
+    /* ── Clear-all bottom bar ── */
+    #list-bottom-bar {
+      position: fixed;
+      bottom: max(1.5rem, calc(0.75rem + env(safe-area-inset-bottom)));
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 150;
+      transition: opacity 0.2s, transform 0.2s;
+    }
+    #list-bottom-bar.hidden { opacity: 0; pointer-events: none; transform: translateX(-50%) translateY(8px); }
+    .btn-clear-all {
+      background: rgba(14,22,40,0.82);
+      border: 1.5px solid rgba(239,68,68,0.45);
+      color: var(--error);
+      font-family: 'Heebo', sans-serif;
+      font-size: 0.9rem; font-weight: 700;
+      padding: 11px 28px;
+      border-radius: 999px;
+      cursor: pointer;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+      white-space: nowrap;
+      transition: background 0.15s, border-color 0.15s;
+    }
+    .btn-clear-all:hover { background: rgba(239,68,68,0.15); border-color: var(--error); }
     .btn-s {
       background: transparent; color: var(--muted);
       font-family: 'Heebo', sans-serif; font-weight: 500; font-size: 14px;
@@ -448,19 +614,24 @@
 
     <!-- Add panel -->
     <div class="tab-panel hidden" id="panel-add">
-      <div class="search-wrap" id="search-wrap">
-        <div class="search-row">
-          <input
-            class="add-input"
-            id="add-input"
-            type="text"
-            placeholder="חפש מוצר..."
-            autocomplete="off"
-            inputmode="search"
-          >
+      <!-- Search section -->
+      <div id="search-section">
+        <div class="search-wrap" id="search-wrap">
+          <div class="search-row">
+            <input
+              class="add-input"
+              id="add-input"
+              type="text"
+              placeholder="חפש מוצר..."
+              autocomplete="off"
+              inputmode="search"
+            >
+          </div>
+          <div class="suggestions hidden" id="suggestions"></div>
         </div>
-        <div class="suggestions hidden" id="suggestions"></div>
       </div>
+      <!-- Confirm section -->
+      <div id="confirm-section" class="hidden"></div>
     </div>
 
     <!-- List panel -->
@@ -468,6 +639,11 @@
       <div id="list-container"></div>
     </div>
 
+  </div>
+
+  <!-- Clear-all floating button -->
+  <div id="list-bottom-bar" class="hidden">
+    <button class="btn-clear-all" onclick="confirmAction('all')">🗑 נקה הכל</button>
   </div>
 
   <!-- Modal -->
@@ -512,14 +688,14 @@
       { name: 'כוסברה',             category: 'ירקות ופירות' },
       { name: 'נענע',               category: 'ירקות ופירות' },
       { name: 'לימון',              category: 'ירקות ופירות' },
-      { name: 'אבוקדו',             category: 'ירקות ופירות' },
+      { name: 'אבוקדו',             category: 'ירקות ופירות', unit: null, step: 1, defaultQty: 1 },
       { name: 'תפוח',               category: 'ירקות ופירות' },
       { name: 'אגס',                category: 'ירקות ופירות' },
       { name: 'בננה',               category: 'ירקות ופירות' },
       { name: 'ענבים',              category: 'ירקות ופירות' },
       { name: 'מנגו',               category: 'ירקות ופירות' },
-      { name: 'אבטיח',              category: 'ירקות ופירות' },
-      { name: 'מלון',               category: 'ירקות ופירות' },
+      { name: 'אבטיח',              category: 'ירקות ופירות', unit: null, step: 1, defaultQty: 1 },
+      { name: 'מלון',               category: 'ירקות ופירות', unit: null, step: 1, defaultQty: 1 },
       { name: 'אפרסק',              category: 'ירקות ופירות' },
       { name: 'שזיף',               category: 'ירקות ופירות' },
       { name: 'קלמנטינה',           category: 'ירקות ופירות' },
@@ -529,6 +705,20 @@
       { name: 'רימון',              category: 'ירקות ופירות' },
       { name: 'תות שדה',            category: 'ירקות ופירות' },
       { name: 'דובדבן',             category: 'ירקות ופירות' },
+      { name: 'בצל סגול',           category: 'ירקות ופירות' },
+      { name: 'דלעת',               category: 'ירקות ופירות' },
+      { name: 'דלורית',             category: 'ירקות ופירות' },
+      { name: 'צנון',               category: 'ירקות ופירות' },
+      { name: 'צנונית',             category: 'ירקות ופירות' },
+      { name: 'פלפל חריף',          category: 'ירקות ופירות' },
+      { name: 'כרישה',              category: 'ירקות ופירות' },
+      { name: 'קולרבי',             category: 'ירקות ופירות' },
+      { name: 'שומר',               category: 'ירקות ופירות' },
+      { name: 'אננס',               category: 'ירקות ופירות', unit: null, step: 1, defaultQty: 1 },
+      { name: 'אוכמניות',           category: 'ירקות ופירות' },
+      { name: 'פטל',                category: 'ירקות ופירות' },
+      { name: 'תמרים',              category: 'ירקות ופירות' },
+      { name: 'אפרסמון',            category: 'ירקות ופירות' },
       // מוצרי חלב וביצים
       { name: 'חלב 3%',             category: 'מוצרי חלב וביצים' },
       { name: 'חלב 1%',             category: 'מוצרי חלב וביצים' },
@@ -547,6 +737,16 @@
       { name: 'חמאה',               category: 'מוצרי חלב וביצים' },
       { name: 'מרגרינה',            category: 'מוצרי חלב וביצים' },
       { name: 'ביצים',              category: 'מוצרי חלב וביצים' },
+      { name: 'גבינה צהובה מגוררת', category: 'מוצרי חלב וביצים' },
+      { name: 'גבינת מוצרלה',       category: 'מוצרי חלב וביצים' },
+      { name: 'פרמזן',              category: 'מוצרי חלב וביצים' },
+      { name: 'גבינת פטה',          category: 'מוצרי חלב וביצים' },
+      { name: 'שמנת מתוקה 38%',     category: 'מוצרי חלב וביצים' },
+      { name: 'חלב שיבולת שועל',    category: 'מוצרי חלב וביצים' },
+      { name: 'חלב סויה',           category: 'מוצרי חלב וביצים' },
+      { name: 'חלב שקדים',          category: 'מוצרי חלב וביצים' },
+      { name: 'יוגורט פרי',         category: 'מוצרי חלב וביצים' },
+      { name: 'יוגורט חלבון',       category: 'מוצרי חלב וביצים' },
       // לחם ומאפים
       { name: 'לחם פרוס',           category: 'לחם ומאפים' },
       { name: 'לחם שאור',           category: 'לחם ומאפים' },
@@ -560,6 +760,14 @@
       { name: 'קרואסון',            category: 'לחם ומאפים' },
       { name: 'בורקס גבינה',        category: 'לחם ומאפים' },
       { name: 'בורקס תפוח אדמה',    category: 'לחם ומאפים' },
+      { name: 'פיתות כוסמין',       category: 'לחם ומאפים' },
+      { name: 'פיתות מקמח מלא',     category: 'לחם ומאפים' },
+      { name: 'טורטיות',            category: 'לחם ומאפים' },
+      { name: "ג'בטה",              category: 'לחם ומאפים' },
+      { name: 'בסיס לפיצה',         category: 'לחם ומאפים' },
+      { name: 'רוגלך',              category: 'לחם ומאפים' },
+      { name: 'בבקה',               category: 'לחם ומאפים' },
+      { name: 'מאפינס',             category: 'לחם ומאפים' },
       // בשר עוף ודגים
       { name: 'חזה עוף',            category: 'בשר עוף ודגים' },
       { name: 'שוקי עוף',           category: 'בשר עוף ודגים' },
@@ -571,12 +779,75 @@
       { name: 'בשר טחון',           category: 'בשר עוף ודגים' },
       { name: 'קבב',                category: 'בשר עוף ודגים' },
       { name: 'אנטריקוט',           category: 'בשר עוף ודגים' },
+      { name: 'סטייק',              category: 'בשר עוף ודגים' },
+      { name: 'צלעות טלה',          category: 'בשר עוף ודגים' },
       { name: 'נקניקיות',           category: 'בשר עוף ודגים' },
       { name: 'סלמי',               category: 'בשר עוף ודגים' },
       { name: 'פילה סלמון',         category: 'בשר עוף ודגים' },
       { name: 'פילה בקלה',          category: 'בשר עוף ודגים' },
       { name: 'טונה קפואה',         category: 'בשר עוף ודגים' },
       { name: 'שרימפס',             category: 'בשר עוף ודגים' },
+      { name: 'דניס',               category: 'בשר עוף ודגים' },
+      { name: 'לברק',               category: 'בשר עוף ודגים' },
+      { name: 'בורי',               category: 'בשר עוף ודגים' },
+      { name: 'צלי כתף',            category: 'בשר עוף ודגים' },
+      { name: 'סינטה',              category: 'בשר עוף ודגים' },
+      { name: 'בשר טחון עוף',       category: 'בשר עוף ודגים' },
+      { name: 'בשר טחון הודו',      category: 'בשר עוף ודגים' },
+      { name: 'אסאדו',              category: 'בשר עוף ודגים' },
+      { name: 'נקניקיות מרגז',      category: 'בשר עוף ודגים' },
+      { name: 'המבורגר',            category: 'בשר עוף ודגים' },
+      { name: 'פסטרמה',             category: 'בשר עוף ודגים' },
+      { name: 'פילה אמנון',         category: 'בשר עוף ודגים' },
+      { name: 'פילה מושט',          category: 'בשר עוף ודגים' },
+      // בשר בקר נוסף
+      { name: 'פילה בקר',           category: 'בשר עוף ודגים' },
+      { name: 'שפונדרה',            category: 'בשר עוף ודגים' },
+      { name: 'שריר בקר',           category: 'בשר עוף ודגים' },
+      { name: 'לשון',               category: 'בשר עוף ודגים' },
+      { name: 'כבד בקר',            category: 'בשר עוף ודגים' },
+      { name: 'עצמות מרק',          category: 'בשר עוף ודגים' },
+      { name: 'קציצות בקר',         category: 'בשר עוף ודגים' },
+      // עוף נוסף
+      { name: 'פרגיות',             category: 'בשר עוף ודגים' },
+      { name: 'כבד עוף',            category: 'בשר עוף ודגים' },
+      { name: 'לב עוף',             category: 'בשר עוף ודגים' },
+      // הודו
+      { name: 'חזה הודו',           category: 'בשר עוף ודגים' },
+      { name: 'שוק הודו',           category: 'בשר עוף ודגים' },
+      { name: 'הודו שלם',           category: 'בשר עוף ודגים' },
+      // כבש
+      { name: 'כבש טחון',           category: 'בשר עוף ודגים' },
+      { name: 'צלעות כבש',          category: 'בשר עוף ודגים' },
+      { name: 'צלי כבש',            category: 'בשר עוף ודגים' },
+      // תבלינים
+      { name: 'מלח',                category: 'תבלינים' },
+      { name: 'מלח גס',             category: 'תבלינים' },
+      { name: 'פלפל שחור',          category: 'תבלינים' },
+      { name: 'פלפל לבן',           category: 'תבלינים' },
+      { name: 'כורכום',             category: 'תבלינים' },
+      { name: 'פפריקה מתוקה',       category: 'תבלינים' },
+      { name: 'פפריקה חריפה',       category: 'תבלינים' },
+      { name: 'כמון',               category: 'תבלינים' },
+      { name: 'כמון טחון',          category: 'תבלינים' },
+      { name: 'קינמון',             category: 'תבלינים' },
+      { name: 'אגוז מוסקט',         category: 'תבלינים' },
+      { name: 'זעתר',               category: 'תבלינים' },
+      { name: 'זנגביל',             category: 'תבלינים' },
+      { name: 'הל',                 category: 'תבלינים' },
+      { name: 'ציפורן',             category: 'תבלינים' },
+      { name: 'אורגנו',             category: 'תבלינים' },
+      { name: 'בזיליקום',           category: 'תבלינים' },
+      { name: 'רוזמרין',            category: 'תבלינים' },
+      { name: 'תימין',              category: 'תבלינים' },
+      { name: 'עלי דפנה',           category: 'תבלינים' },
+      { name: 'שמיר',               category: 'תבלינים' },
+      { name: 'כוסברה טחונה',       category: 'תבלינים' },
+      { name: 'שומשום',             category: 'תבלינים' },
+      { name: 'בהרט',               category: 'תבלינים' },
+      { name: 'ראס אל חנות',        category: 'תבלינים' },
+      { name: 'אניס',               category: 'תבלינים' },
+      { name: 'כוכב אניס',          category: 'תבלינים' },
       // שימורים ויבשים
       { name: 'אורז לבן',           category: 'שימורים ויבשים' },
       { name: 'אורז מלא',           category: 'שימורים ויבשים' },
@@ -621,6 +892,17 @@
       { name: 'שוקולד חלב',         category: 'שימורים ויבשים' },
       { name: 'וופל',               category: 'שימורים ויבשים' },
       { name: 'ביסקוויט',           category: 'שימורים ויבשים' },
+      { name: 'שיבולת שועל',        category: 'שימורים ויבשים' },
+      { name: 'פתיתים',             category: 'שימורים ויבשים' },
+      { name: 'גריסים',             category: 'שימורים ויבשים' },
+      { name: 'קינואה',             category: 'שימורים ויבשים' },
+      { name: 'סילאן',              category: 'שימורים ויבשים' },
+      { name: 'ממרח שוקולד',        category: 'שימורים ויבשים' },
+      { name: 'חלב מרוכז',          category: 'שימורים ויבשים' },
+      { name: "רוטב צ'ילי מתוק",   category: 'שימורים ויבשים' },
+      { name: 'אבקת מרק',           category: 'שימורים ויבשים' },
+      { name: 'תמצית וניל',         category: 'שימורים ויבשים' },
+      { name: 'סודה לשתייה',        category: 'שימורים ויבשים' },
       // קפואים
       { name: 'ירקות מעורבים קפואים', category: 'קפואים' },
       { name: 'תירס קפוא',          category: 'קפואים' },
@@ -634,6 +916,14 @@
       { name: 'גלידה וניל',         category: 'קפואים' },
       { name: 'גלידה שוקולד',       category: 'קפואים' },
       { name: 'ארטיק',              category: 'קפואים' },
+      { name: "צ'יפס קפוא",        category: 'קפואים' },
+      { name: 'מלאווח',             category: 'קפואים' },
+      { name: "ג'חנון",             category: 'קפואים' },
+      { name: 'בורקסים קפואים',    category: 'קפואים' },
+      { name: 'אצבעות דג',         category: 'קפואים' },
+      { name: 'תות קפוא',          category: 'קפואים' },
+      { name: 'בננה קפואה',        category: 'קפואים' },
+      { name: 'מנגו קפוא',         category: 'קפואים' },
       // משקאות
       { name: 'מים מינרלים',        category: 'משקאות' },
       { name: 'מים מוגזים',         category: 'משקאות' },
@@ -650,6 +940,14 @@
       { name: 'תה ירוק',            category: 'משקאות' },
       { name: 'תה צמחים',           category: 'משקאות' },
       { name: 'שוקו',               category: 'משקאות' },
+      { name: 'בירה',               category: 'משקאות' },
+      { name: 'יין אדום',           category: 'משקאות' },
+      { name: 'יין לבן',            category: 'משקאות' },
+      { name: 'ערק',                category: 'משקאות' },
+      { name: 'וודקה',              category: 'משקאות' },
+      { name: 'מיץ אשכוליות',       category: 'משקאות' },
+      { name: 'סודה בטעמים',        category: 'משקאות' },
+      { name: 'לימונדה',            category: 'משקאות' },
       // ניקיון ותכשירים
       { name: 'אבקת כביסה',         category: 'ניקיון ותכשירים' },
       { name: 'נוזל כביסה',         category: 'ניקיון ותכשירים' },
@@ -661,6 +959,13 @@
       { name: 'נייר טואלט',         category: 'ניקיון ותכשירים' },
       { name: 'שקיות זבל',          category: 'ניקיון ותכשירים' },
       { name: 'שקיות ניילון',       category: 'ניקיון ותכשירים' },
+      { name: 'נוזל לניקוי רצפות',  category: 'ניקיון ותכשירים' },
+      { name: 'נוזל לניקוי חלונות', category: 'ניקיון ותכשירים' },
+      { name: 'מנקה אסלות',         category: 'ניקיון ותכשירים' },
+      { name: 'טבליות למדיח',       category: 'ניקיון ותכשירים' },
+      { name: 'מטליות לחות',        category: 'ניקיון ותכשירים' },
+      { name: 'כפפות חד פעמיות',    category: 'ניקיון ותכשירים' },
+      { name: 'ספוג הפלא',          category: 'ניקיון ותכשירים' },
       // טיפוח ובריאות
       { name: 'שמפו',               category: 'טיפוח ובריאות' },
       { name: 'מרכך שיער',          category: 'טיפוח ובריאות' },
@@ -674,6 +979,18 @@
       { name: 'אקמול',              category: 'טיפוח ובריאות' },
       { name: 'אספירין',            category: 'טיפוח ובריאות' },
       { name: 'ויטמין C',           category: 'טיפוח ובריאות' },
+      { name: 'תחבושות היגייניות',  category: 'טיפוח ובריאות' },
+      { name: 'טמפונים',            category: 'טיפוח ובריאות' },
+      { name: 'מגבונים לחים',       category: 'טיפוח ובריאות' },
+      { name: 'צמרונים',            category: 'טיפוח ובריאות' },
+      { name: 'קצף גילוח',          category: 'טיפוח ובריאות' },
+      { name: "ג'ל גילוח",          category: 'טיפוח ובריאות' },
+      { name: 'סכיני גילוח',        category: 'טיפוח ובריאות' },
+      { name: 'פלסטרים',            category: 'טיפוח ובריאות' },
+      { name: "אלכוג'ל",            category: 'טיפוח ובריאות' },
+      { name: 'פולידין',            category: 'טיפוח ובריאות' },
+      { name: 'נורופן',             category: 'טיפוח ובריאות' },
+      { name: 'אקמולי',             category: 'טיפוח ובריאות' },
       // חטיפים
       { name: 'ביסלי גריל',         category: 'אחר' },
       { name: 'במבה',               category: 'אחר' },
@@ -681,6 +998,14 @@
       { name: 'פרינגלס',            category: 'אחר' },
       { name: 'עוגיות',             category: 'אחר' },
       { name: 'גומי',               category: 'אחר' },
+      { name: 'פופקורן',            category: 'אחר' },
+      { name: 'בייגלה',             category: 'אחר' },
+      { name: 'פיסטוקים',           category: 'אחר' },
+      { name: 'גרעינים שחורים',     category: 'אחר' },
+      { name: 'אגוזים',             category: 'אחר' },
+      { name: 'מסטיקים',            category: 'אחר' },
+      { name: 'סוכריות',            category: 'אחר' },
+      { name: 'חטיפי גרנולה',       category: 'אחר' },
     ];
 
     const CAT_ICONS = {
@@ -688,6 +1013,7 @@
       'מוצרי חלב וביצים': '🥛',
       'לחם ומאפים':       '🍞',
       'בשר עוף ודגים':    '🥩',
+      'תבלינים':          '🧂',
       'שימורים ויבשים':   '🥫',
       'קפואים':           '🧊',
       'משקאות':           '🥤',
@@ -696,18 +1022,166 @@
       'אחר':              '📦',
     };
 
+    const PRODUCT_ICONS = {
+      // ירקות
+      'עגבנייה': '🍅', 'מלפפון': '🥒', 'בצל': '🧅', 'שום': '🧄', 'גזר': '🥕',
+      'תפוח אדמה': '🥔', 'בטטה': '🍠', 'קישוא': '🥒', 'חציל': '🍆',
+      'פלפל אדום': '🫑', 'פלפל ירוק': '🫑', 'פלפל צהוב': '🫑', 'פלפל חריף': '🌶️',
+      'ברוקולי': '🥦', 'כרובית': '🥦', 'כרוב לבן': '🥬', 'כרוב סגול': '🥬',
+      'חסה': '🥬', 'עלי תרד': '🥬', 'פטריות': '🍄', 'תירס': '🌽',
+      'סלרי': '🥬', 'בצל ירוק': '🧅', 'בצל סגול': '🧅',
+      'פטרוזיליה': '🌿', 'כוסברה': '🌿', 'נענע': '🌿',
+      'לימון': '🍋', 'אבוקדו': '🥑',
+      'כרישה': '🥬', 'שומר': '🌿', 'קולרבי': '🥬',
+      'דלעת': '🎃', 'דלורית': '🎃', 'צנון': '🥬', 'צנונית': '🥬',
+      // פירות
+      'תפוח': '🍎', 'אגס': '🍐', 'בננה': '🍌', 'ענבים': '🍇', 'מנגו': '🥭',
+      'אבטיח': '🍉', 'מלון': '🍈', 'אפרסק': '🍑', 'שזיף': '🍑',
+      'קלמנטינה': '🍊', 'תפוז': '🍊', 'אשכולית': '🍊',
+      'קיווי': '🥝', 'רימון': '🍎', 'תות שדה': '🍓', 'דובדבן': '🍒',
+      'אננס': '🍍', 'אוכמניות': '🫐', 'פטל': '🍓',
+      'תמרים': '🌴', 'אפרסמון': '🍊',
+      // מוצרי חלב
+      'חלב 3%': '🥛', 'חלב 1%': '🥛', 'חלב שוקולד': '🥛',
+      'חלב שיבולת שועל': '🥛', 'חלב סויה': '🥛', 'חלב שקדים': '🥛',
+      'יוגורט טבעי': '🥛', 'יוגורט יווני': '🥛', 'יוגורט פרי': '🥛', 'יוגורט חלבון': '🥛',
+      'שמנת חמוצה': '🥛', 'שמנת לבישול': '🥛', 'שמנת מתוקה 38%': '🥛',
+      'גבינה לבנה 5%': '🧀', 'גבינה לבנה 9%': '🧀', 'גבינה צהובה': '🧀',
+      'גבינה בולגרית': '🧀', "גבינת קוטג'": '🧀', 'גבינת שמנת': '🧀',
+      'גבינת ריקוטה': '🧀', 'גבינה צהובה מגוררת': '🧀', 'גבינת מוצרלה': '🧀',
+      'פרמזן': '🧀', 'גבינת פטה': '🧀',
+      'חמאה': '🧈', 'מרגרינה': '🧈',
+      'ביצים': '🥚',
+      // לחם ומאפים
+      'לחם פרוס': '🍞', 'לחם שאור': '🍞', 'לחם מלא': '🍞', 'לחם שיפון': '🍞',
+      'חלה': '🍞', 'פיתה': '🫓', 'לחמניות': '🍞', 'בגט': '🥖',
+      'טוסט': '🍞', 'קרואסון': '🥐', 'בורקס גבינה': '🥐', 'בורקס תפוח אדמה': '🥐',
+      'פיתות כוסמין': '🫓', 'פיתות מקמח מלא': '🫓', 'טורטיות': '🫓',
+      "ג'בטה": '🥖', 'בסיס לפיצה': '🍕', 'רוגלך': '🥐', 'בבקה': '🍞', 'מאפינס': '🧁',
+      // עוף
+      'חזה עוף': '🍗', 'שוקי עוף': '🍗', 'כרעי עוף': '🍗', 'כנפי עוף': '🍗',
+      'עוף שלם': '🍗', 'קציצות עוף': '🍗', 'שניצל עוף': '🍗',
+      'פרגיות': '🍗', 'כבד עוף': '🍗', 'לב עוף': '🍗',
+      'בשר טחון עוף': '🍗',
+      // הודו
+      'חזה הודו': '🦃', 'שוק הודו': '🦃', 'הודו שלם': '🦃', 'בשר טחון הודו': '🦃',
+      // בשר בקר וכבש
+      'בשר טחון': '🥩', 'קבב': '🥩', 'אנטריקוט': '🥩', 'סטייק': '🥩',
+      'צלי כתף': '🥩', 'סינטה': '🥩', 'אסאדו': '🥩', 'פילה בקר': '🥩',
+      'שפונדרה': '🥩', 'שריר בקר': '🥩', 'לשון': '🥩', 'כבד בקר': '🥩',
+      'עצמות מרק': '🦴', 'קציצות בקר': '🥩',
+      'צלעות טלה': '🥩', 'כבש טחון': '🥩', 'צלעות כבש': '🥩', 'צלי כבש': '🥩',
+      // עיבוד בשר
+      'נקניקיות': '🌭', 'נקניקיות מרגז': '🌭', 'המבורגר': '🍔',
+      'סלמי': '🥩', 'פסטרמה': '🥩',
+      // דגים
+      'פילה סלמון': '🐟', 'פילה בקלה': '🐟', 'טונה קפואה': '🐟',
+      'שרימפס': '🦐', 'דניס': '🐟', 'לברק': '🐟', 'בורי': '🐟',
+      'פילה אמנון': '🐟', 'פילה מושט': '🐟', 'אצבעות דג': '🐟',
+      // תבלינים
+      'מלח': '🧂', 'מלח גס': '🧂',
+      'פלפל שחור': '🌶️', 'פלפל לבן': '🌶️', 'פפריקה מתוקה': '🌶️', 'פפריקה חריפה': '🌶️',
+      'כורכום': '🌿', 'כמון': '🌿', 'כמון טחון': '🌿', 'קינמון': '🌿',
+      'אגוז מוסקט': '🌿', 'זעתר': '🌿', 'זנגביל': '🌿', 'הל': '🌿',
+      'ציפורן': '🌿', 'אורגנו': '🌿', 'בזיליקום': '🌿', 'רוזמרין': '🌿',
+      'תימין': '🌿', 'עלי דפנה': '🌿', 'שמיר': '🌿', 'כוסברה טחונה': '🌿',
+      'שומשום': '🌿', 'בהרט': '🌿', 'ראס אל חנות': '🌿', 'אניס': '🌿', 'כוכב אניס': '🌿',
+      // שימורים ויבשים
+      'אורז לבן': '🍚', 'אורז מלא': '🍚', 'אורז בסמטי': '🍚',
+      'פסטה ספגטי': '🍝', 'פסטה פנה': '🍝', 'פסטה פוסילי': '🍝', 'פסטה פרפריות': '🍝',
+      'קוסקוס': '🫙', 'בורגול': '🫙', 'קינואה': '🫙', 'גריסים': '🫙',
+      'עדשים כתומות': '🫘', 'עדשים ירוקות': '🫘',
+      'גרגירי חומוס': '🫘', 'שעועית לבנה': '🫘', 'שעועית אדומה': '🫘',
+      'טונה בשמן': '🐟', 'טונה במים': '🐟',
+      'עגבניות קלופות': '🍅', 'רסק עגבניות': '🍅', 'מחית עגבניות': '🍅',
+      'תירס משומר': '🌽', 'אפונה משומרת': '🫘',
+      'זיתים': '🫒', 'שמן זית': '🫒',
+      'חמוצים': '🥒', 'שמן קנולה': '🫙', 'חומץ': '🫙', 'רוטב סויה': '🫙',
+      'מיונז': '🫙', 'חרדל': '🫙', 'קטשופ': '🍅',
+      'טחינה גולמית': '🫙', 'חמאת בוטנים': '🥜',
+      'ריבה תות': '🍓', 'דבש': '🍯', 'סילאן': '🍯',
+      'סוכר': '🫙', 'קמח לבן': '🌾', 'קמח מלא': '🌾',
+      'אבקת אפייה': '🫙', 'קקאו': '🍫', 'שוקולד מריר': '🍫', 'שוקולד חלב': '🍫',
+      'ממרח שוקולד': '🍫', 'וופל': '🧇', 'ביסקוויט': '🍪',
+      'שיבולת שועל': '🌾', 'פתיתים': '🍚',
+      'חלב מרוכז': '🥛', "רוטב צ'ילי מתוק": '🌶️', 'אבקת מרק': '🫙',
+      'תמצית וניל': '🫙', 'סודה לשתייה': '🫙',
+      // קפואים
+      'ירקות מעורבים קפואים': '🥦', 'תירס קפוא': '🌽', 'אפונה קפואה': '🫘',
+      'שעועית ירוקה קפואה': '🥦', 'ברוקולי קפוא': '🥦', 'תרד קפוא': '🥬',
+      'שניצל קפוא': '🍗', 'פיצה קפואה': '🍕', 'לזניה קפואה': '🍝',
+      'גלידה וניל': '🍦', 'גלידה שוקולד': '🍫', 'ארטיק': '🍧',
+      "צ'יפס קפוא": '🍟', 'מלאווח': '🫓', "ג'חנון": '🫓', 'בורקסים קפואים': '🥐',
+      'תות קפוא': '🍓', 'בננה קפואה': '🍌', 'מנגו קפוא': '🥭',
+      // משקאות
+      'מים מינרלים': '💧', 'מים מוגזים': '💧',
+      'קולה': '🥤', 'קולה זירו': '🥤', 'ספרייט': '🥤', 'פנטה': '🥤',
+      'מיץ תפוזים': '🧃', 'מיץ תפוח': '🧃', 'מיץ ענבים': '🧃', 'מיץ אשכוליות': '🧃',
+      'לימונדה': '🍋', 'סודה בטעמים': '🥤',
+      'קפה נמס': '☕', 'קפה טחון': '☕',
+      'תה שחור': '🍵', 'תה ירוק': '🍵', 'תה צמחים': '🍵',
+      'שוקו': '🥛',
+      'בירה': '🍺', 'יין אדום': '🍷', 'יין לבן': '🍷', 'ערק': '🥃', 'וודקה': '🥃',
+      // ניקיון
+      'אבקת כביסה': '🧺', 'נוזל כביסה': '🧺', 'מרכך כביסה': '🧺',
+      'אקונומיקה': '🧴', 'נוזל לכלים': '🧴',
+      'ספוגים': '🧽', 'ספוג הפלא': '🧽',
+      'מגבות נייר': '🧻', 'נייר טואלט': '🧻',
+      'שקיות זבל': '🗑️', 'שקיות ניילון': '🛍️',
+      'נוזל לניקוי רצפות': '🧴', 'נוזל לניקוי חלונות': '🧴',
+      'מנקה אסלות': '🚽', 'טבליות למדיח': '🫧', 'מטליות לחות': '🧻',
+      'כפפות חד פעמיות': '🧤',
+      // טיפוח
+      'שמפו': '🧴', 'מרכך שיער': '🧴', 'סבון גוף': '🧼', 'סבון ידיים': '🧼',
+      'קרם לחות': '🧴', 'קרם הגנה': '🧴', 'דאודורנט': '🧴',
+      'משחת שיניים': '🪥', 'מברשת שיניים': '🪥',
+      'אקמול': '💊', 'אספירין': '💊', 'ויטמין C': '💊',
+      'נורופן': '💊', 'אקמולי': '💊', 'פולידין': '💊',
+      'תחבושות היגייניות': '🩹', 'טמפונים': '🩹', 'פלסטרים': '🩹',
+      'מגבונים לחים': '🧻', 'צמרונים': '🪮',
+      'קצף גילוח': '🪒', "ג'ל גילוח": '🪒', 'סכיני גילוח': '🪒',
+      "אלכוג'ל": '🧴',
+      // חטיפים
+      'ביסלי גריל': '🍿', 'במבה': '🍿', "תפוצ'יפס": '🥔', 'פרינגלס': '🥔',
+      'עוגיות': '🍪', 'גומי': '🍬', 'פופקורן': '🍿', 'בייגלה': '🥨',
+      'פיסטוקים': '🥜', 'גרעינים שחורים': '🌻', 'אגוזים': '🌰',
+      'מסטיקים': '🪥', 'סוכריות': '🍬', 'חטיפי גרנולה': '🍫',
+    };
+
+    function getProductIcon(name, category) {
+      return PRODUCT_ICONS[name] || CAT_ICONS[category] || '📦';
+    }
+
     const CATS_ORDER = [
       'ירקות ופירות', 'מוצרי חלב וביצים', 'לחם ומאפים',
-      'בשר עוף ודגים', 'שימורים ויבשים', 'קפואים',
+      'בשר עוף ודגים', 'תבלינים', 'שימורים ויבשים', 'קפואים',
       'משקאות', 'ניקיון ותכשירים', 'טיפוח ובריאות', 'אחר'
     ];
 
+    // ── Custom products DB (localStorage) ────────────────────────────────────
+    const CUSTOM_KEY = 'custom_products_v1';
+    let customProducts = JSON.parse(localStorage.getItem(CUSTOM_KEY) || '[]');
+
+    function getAllProducts() {
+      return [...PRODUCTS, ...customProducts];
+    }
+
+    function saveCustomProduct(name, category) {
+      const norm = name.trim().toLowerCase();
+      if (!getAllProducts().some(p => p.name.toLowerCase() === norm)) {
+        customProducts.push({ name: name.trim(), category });
+        localStorage.setItem(CUSTOM_KEY, JSON.stringify(customProducts));
+      }
+    }
+
     // ── State ────────────────────────────────────────────────────────────────
     const STORAGE_KEY = 'shopping_list_v2';
-    let list          = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
-    let modalCb       = null;
-    let highlightIdx  = -1;
-    let activeTab     = 'list';
+    let list            = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+    let modalCb         = null;
+    let highlightIdx    = -1;
+    let activeTab       = 'list';
+    let selectedProduct = null;
+    let isEditMode      = false;
 
     renderList();
 
@@ -720,6 +1194,7 @@
       document.getElementById('tab-list').classList.toggle('active', tab === 'list');
       if (tab === 'add') {
         setTimeout(() => document.getElementById('add-input').focus(), 50);
+        document.getElementById('list-bottom-bar').classList.add('hidden');
       }
     }
 
@@ -747,7 +1222,7 @@
       let html = '';
 
       for (const p of matches) {
-        const icon = CAT_ICONS[p.category] || '📦';
+        const icon = getProductIcon(p.name, p.category);
         html += `
           <div class="sugg-item" data-name="${esc(p.name)}" data-cat="${esc(p.category)}" onclick="selectProduct('${esc(p.name)}','${esc(p.category)}')">
             <span class="sugg-icon">${icon}</span>
@@ -759,12 +1234,12 @@
       }
 
       // Option to add custom product if not in DB
-      const exactMatch = PRODUCTS.some(p => p.name === q);
+      const exactMatch = getAllProducts().some(p => p.name === q);
       if (!exactMatch) {
         html += `
-          <div class="sugg-custom" onclick="selectProduct('${esc(q)}','אחר')">
+          <div class="sugg-custom" onclick="selectCustomProduct('${esc(q)}')">
             <span>＋</span>
-            <span>הוסף "<strong>${esc(q)}</strong>"</span>
+            <span>הוסף "<strong>${esc(q)}</strong>" לרשימה ול-DB</span>
           </div>`;
       }
 
@@ -778,9 +1253,9 @@
     }
 
     function searchProducts(q) {
-      const lower = q;
-      const starts   = PRODUCTS.filter(p => p.name.startsWith(lower));
-      const contains = PRODUCTS.filter(p => !p.name.startsWith(lower) && p.name.includes(lower));
+      const all      = getAllProducts();
+      const starts   = all.filter(p => p.name.startsWith(q));
+      const contains = all.filter(p => !p.name.startsWith(q) && p.name.includes(q));
       return [...starts, ...contains].slice(0, 8);
     }
 
@@ -814,7 +1289,7 @@
           items[0].click();
         } else {
           const q = input.value.trim();
-          if (q) selectProduct(q, 'אחר');
+          if (q) selectCustomProduct(q);
         }
       } else if (e.key === 'Escape') {
         hideSuggestions();
@@ -827,31 +1302,180 @@
       if (highlightIdx >= 0) items[highlightIdx].scrollIntoView({ block: 'nearest' });
     }
 
-    // ── Add to list ──────────────────────────────────────────────────────────
-    function selectProduct(name, category) {
-      const norm     = name.trim().toLowerCase();
-      const existing = list.find(p => !p.checked && p.name.toLowerCase() === norm);
+    // ── Weight mode helpers ──────────────────────────────────────────────────
+    function getWeightMode(category) {
+      if (category === 'בשר עוף ודגים') return { unit: 'ק"ג', step: 0.5, initial: 0.5 };
+      if (category === 'ירקות ופירות')  return { unit: 'ק"ג', step: 0.5, initial: 1 };
+      if (category === 'תבלינים')       return { unit: 'גרם',  step: 50,   initial: 100 };
+      return null;
+    }
 
-      if (existing) {
-        existing.quantity += 1;
-        saveList();
-        renderList();
-        showToast(`${existing.name} ×${existing.quantity}`, 'success');
-      } else {
-        list.unshift({
-          id:       Date.now() + Math.random(),
-          name:     name.trim(),
-          quantity: 1,
-          category: category || 'אחר',
-          checked:  false,
-        });
-        saveList();
-        renderList();
-        showToast(`${name} נוסף`, 'success');
-      }
+    function formatQty(quantity, unit) {
+      if (!unit) return '×' + quantity;
+      return quantity + ' ' + unit;
+    }
 
-      input.value = '';
+    function roundQty(val) {
+      return Math.round(val * 1000) / 1000;
+    }
+
+    // ── Select custom (new) product → show editable confirm card ─────────────
+    function selectCustomProduct(name) {
       hideSuggestions();
+      input.value = '';
+      selectedProduct = { name: name.trim(), category: 'אחר', qty: 1, unit: null, step: 1, isCustom: true };
+      renderConfirm();
+    }
+
+    function updateCustomName(val) {
+      selectedProduct.name = val;
+    }
+
+    function updateCustomCategory(val) {
+      selectedProduct.category = val;
+      const wm = getWeightMode(val);
+      selectedProduct.unit  = wm ? wm.unit    : null;
+      selectedProduct.step  = wm ? wm.step    : 1;
+      selectedProduct.qty   = wm ? wm.initial : 1;
+      renderConfirmQtyDisplay();
+      // Update the label text
+      const labelEl = document.getElementById('confirm-qty-label');
+      if (labelEl) labelEl.textContent = selectedProduct.unit ? 'משקל' : 'כמות';
+    }
+
+    // ── Select product → show confirm card ───────────────────────────────────
+    function selectProduct(name, category) {
+      hideSuggestions();
+      const prod = getAllProducts().find(p => p.name === name);
+      let unit, step, initial;
+      if (prod && prod.unit !== undefined) {
+        // Per-product override (unit: null = count, unit: 'ק"ג' etc. = weight)
+        unit    = prod.unit;
+        step    = prod.step       || 1;
+        initial = prod.defaultQty || 1;
+      } else {
+        const wm = getWeightMode(category || 'אחר');
+        unit    = wm ? wm.unit    : null;
+        step    = wm ? wm.step    : 1;
+        initial = wm ? wm.initial : 1;
+      }
+      selectedProduct = { name: name.trim(), category: category || 'אחר', qty: initial, unit, step };
+      renderConfirm();
+    }
+
+    function renderConfirmQtyDisplay() {
+      const el = document.getElementById('confirm-qty-num');
+      if (!el) return;
+      if (selectedProduct.unit) {
+        el.innerHTML = `${selectedProduct.qty}<span style="font-size:1rem;font-weight:600;opacity:0.65;margin-right:5px"> ${esc(selectedProduct.unit)}</span>`;
+      } else {
+        el.textContent = selectedProduct.qty;
+      }
+    }
+
+    function renderConfirm() {
+      const icon  = getProductIcon(selectedProduct.name, selectedProduct.category);
+      const label = selectedProduct.unit ? 'משקל' : 'כמות';
+      document.getElementById('search-section').classList.add('hidden');
+      document.getElementById('confirm-section').classList.remove('hidden');
+
+      const catOptions = CATS_ORDER.map(c =>
+        `<option value="${esc(c)}" ${c === selectedProduct.category ? 'selected' : ''}>${CAT_ICONS[c] || '📦'} ${esc(c)}</option>`
+      ).join('');
+
+      const topSection = selectedProduct.isCustom ? `
+        <div style="margin-bottom:1rem">
+          <div class="custom-field-label">שם המוצר</div>
+          <input
+            class="add-input"
+            id="custom-name-input"
+            type="text"
+            value="${esc(selectedProduct.name)}"
+            oninput="updateCustomName(this.value)"
+            style="width:100%"
+          >
+        </div>
+        <div style="margin-bottom:1rem">
+          <div class="custom-field-label">קטגוריה</div>
+          <select class="cat-select" id="custom-cat-select" onchange="updateCustomCategory(this.value)">
+            ${catOptions}
+          </select>
+        </div>` : `
+        <div class="confirm-product">
+          <span class="confirm-product-icon">${icon}</span>
+          <div>
+            <div class="confirm-product-name">${esc(selectedProduct.name)}</div>
+            <div class="confirm-product-cat">${esc(selectedProduct.category)}</div>
+          </div>
+        </div>`;
+
+      document.getElementById('confirm-section').innerHTML = `
+        <div class="confirm-card">
+          ${topSection}
+          <div class="custom-field-label" id="confirm-qty-label">${label}</div>
+          <div class="confirm-qty-row">
+            <button class="confirm-qty-btn minus" onclick="confirmQtyDec()">−</button>
+            <span class="confirm-qty-num" id="confirm-qty-num"></span>
+            <button class="confirm-qty-btn" onclick="confirmQtyInc()">+</button>
+          </div>
+          <div class="confirm-actions">
+            <button class="btn-confirm secondary" onclick="cancelConfirm()">ביטול</button>
+            <button class="btn-confirm primary" onclick="addConfirmed()">
+              ${selectedProduct.isCustom ? 'שמור והוסף ✓' : 'הוסף לסל ✓'}
+            </button>
+          </div>
+        </div>`;
+      renderConfirmQtyDisplay();
+      if (selectedProduct.isCustom) {
+        const nameInput = document.getElementById('custom-name-input');
+        if (nameInput) setTimeout(() => nameInput.focus(), 50);
+      }
+    }
+
+    function confirmQtyInc() {
+      selectedProduct.qty = roundQty(selectedProduct.qty + selectedProduct.step);
+      renderConfirmQtyDisplay();
+    }
+
+    function confirmQtyDec() {
+      const min = selectedProduct.step;
+      if (selectedProduct.qty > min) {
+        selectedProduct.qty = roundQty(selectedProduct.qty - selectedProduct.step);
+        renderConfirmQtyDisplay();
+      }
+    }
+
+    function cancelConfirm() {
+      selectedProduct = null;
+      document.getElementById('confirm-section').classList.add('hidden');
+      document.getElementById('search-section').classList.remove('hidden');
+      setTimeout(() => {
+        input.focus();
+        if (input.value.trim()) onSearch();
+      }, 50);
+    }
+
+    function addConfirmed() {
+      const { name, category, qty, unit, step, isCustom } = selectedProduct;
+      const trimmedName = name.trim();
+      if (!trimmedName) return;
+
+      if (isCustom) saveCustomProduct(trimmedName, category);
+
+      const norm     = trimmedName.toLowerCase();
+      const existing = list.find(p => !p.checked && p.name.toLowerCase() === norm);
+      if (existing) {
+        existing.quantity = roundQty((existing.quantity || 0) + qty);
+        showToast(`${existing.name} ${formatQty(existing.quantity, existing.unit || null)}`, 'success');
+      } else {
+        list.unshift({ id: Date.now() + Math.random(), name: trimmedName, quantity: qty, unit: unit || null, step: step || 1, category, checked: false });
+        showToast(isCustom ? `"${trimmedName}" נשמר ונוסף לרשימה` : `${trimmedName} נוסף`, 'success');
+      }
+      saveList(); renderList();
+      selectedProduct = null;
+      input.value = '';
+      document.getElementById('confirm-section').classList.add('hidden');
+      document.getElementById('search-section').classList.remove('hidden');
       switchTab('list');
     }
 
@@ -859,15 +1483,22 @@
     function incQty(id) {
       const item = list.find(p => p.id === id);
       if (!item) return;
-      item.quantity++;
+      const step = item.step || 1;
+      item.quantity = roundQty(item.quantity + step);
       saveList(); renderList();
     }
 
     function decQty(id) {
       const item = list.find(p => p.id === id);
       if (!item) return;
-      if (item.quantity > 1) { item.quantity--; saveList(); renderList(); }
-      else removeItem(id);
+      const step = item.step || 1;
+      const min  = step;
+      if (item.quantity > min) {
+        item.quantity = roundQty(item.quantity - step);
+        saveList(); renderList();
+      } else {
+        removeItem(id);
+      }
     }
 
     // ── List item actions ─────────────────────────────────────────────────────
@@ -882,6 +1513,8 @@
       list = list.filter(p => p.id !== id);
       saveList(); renderList();
     }
+
+    function toggleEditMode() { isEditMode = !isEditMode; renderList(); }
 
     function saveList() {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(list));
@@ -922,10 +1555,9 @@
 
       let html = `
         <div class="list-topbar">
-          <div class="list-summary">${total} פריטים · ${checked} נרכשו (${pct}%)</div>
           <div class="list-actions">
-            ${checked > 0 ? `<button class="btn-sm" onclick="confirmAction('checked')">מחק מסומנים (${checked})</button>` : ''}
-            <button class="btn-sm danger" onclick="confirmAction('all')">נקה הכל</button>
+            ${isEditMode && checked > 0 ? `<button class="btn-sm" onclick="confirmAction('checked')">מחק מסומנים (${checked})</button>` : ''}
+            <button class="btn-sm${isEditMode ? ' active-edit' : ''}" onclick="toggleEditMode()">${isEditMode ? 'סיום ✓' : 'עריכה ✏'}</button>
           </div>
         </div>
         <div class="progress-bar">
@@ -943,22 +1575,32 @@
 
         const sorted = [...items].sort((a, b) => Number(a.checked) - Number(b.checked));
         for (const item of sorted) {
-          html += `
-            <div class="item ${item.checked ? 'checked' : ''}" data-id="${item.id}">
-              <button class="item-check" onclick="toggleItem(${item.id})" aria-label="סמן כנרכש"></button>
-              <span class="item-name">${esc(item.name)}</span>
-              <div class="qty-controls">
-                <button class="qty-btn minus" onclick="decQty(${item.id})" aria-label="הפחת">−</button>
-                <span class="qty-num">${item.quantity}</span>
-                <button class="qty-btn plus" onclick="incQty(${item.id})" aria-label="הוסף">+</button>
-              </div>
-              <button class="item-del" onclick="removeItem(${item.id})" aria-label="מחק">✕</button>
-            </div>`;
+          const qtyLabel = formatQty(item.quantity, item.unit || null);
+          if (isEditMode) {
+            html += `
+              <div class="item ${item.checked ? 'checked' : ''}" data-id="${item.id}">
+                <button class="item-check" onclick="toggleItem(${item.id})" aria-label="סמן כנרכש"></button>
+                <span class="item-name">${esc(item.name)}</span>
+                <div class="qty-controls">
+                  <button class="qty-btn minus" onclick="decQty(${item.id})" aria-label="הפחת">−</button>
+                  <span class="qty-num">${qtyLabel}</span>
+                  <button class="qty-btn plus" onclick="incQty(${item.id})" aria-label="הוסף">+</button>
+                </div>
+                <button class="item-del" onclick="removeItem(${item.id})" aria-label="מחק">✕</button>
+              </div>`;
+          } else {
+            html += `
+              <div class="item ${item.checked ? 'checked' : ''}" data-id="${item.id}">
+                <span class="item-name">${esc(item.name)}</span>
+                <span class="item-qty-badge">${qtyLabel}</span>
+              </div>`;
+          }
         }
         html += `</div>`;
       }
 
       el.innerHTML = html;
+      document.getElementById('list-bottom-bar').classList.toggle('hidden', !isEditMode || activeTab !== 'list');
     }
 
     function esc(s) {
