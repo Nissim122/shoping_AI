@@ -8,7 +8,7 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-title" content="רשימת קניות">
-  <title>רשימת קניות חכמה</title>
+  <title>רשימת קניות</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -61,84 +61,29 @@
     /* ── Header ── */
     .app-header {
       text-align: center;
-      margin-bottom: 2rem;
+      margin-bottom: 1.75rem;
     }
     .app-header h1 {
       font-size: clamp(1.6rem, 5vw, 2rem);
       font-weight: 800;
       letter-spacing: -0.03em;
-      margin-bottom: 0.3rem;
+      margin-bottom: 0.25rem;
     }
-    .app-header p {
-      color: var(--muted);
-      font-size: 0.9rem;
-    }
+    .app-header p { color: var(--muted); font-size: 0.88rem; }
 
-    /* ── Tabs ── */
-    .tabs {
-      display: flex;
-      gap: 0.4rem;
-      background: var(--bg-e);
-      border: 1.5px solid var(--border);
-      border-radius: 14px;
-      padding: 0.3rem;
+    /* ── Search wrap ── */
+    .search-wrap {
+      position: relative;
       margin-bottom: 1.5rem;
     }
-    .tab-btn {
-      flex: 1;
-      background: transparent;
-      border: none;
-      border-radius: 10px;
-      padding: 10px 8px;
-      font-family: 'Heebo', sans-serif;
-      font-size: 0.95rem;
-      font-weight: 600;
-      color: var(--muted);
-      cursor: pointer;
-      transition: background 0.2s, color 0.2s;
+
+    .search-row {
       display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-    }
-    .tab-btn.active { background: var(--bg-f); color: var(--text); }
-    .tab-badge {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      background: var(--pink);
-      color: #fff;
-      font-size: 11px;
-      font-weight: 700;
-      min-width: 18px;
-      height: 18px;
-      border-radius: 999px;
-      padding: 0 4px;
+      gap: 0.5rem;
     }
 
-    /* ── Screens ── */
-    .screen { display: none; }
-    .screen.active { display: block; animation: fadeUp 0.25s ease-out; }
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(6px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-
-    /* ── Add Screen ── */
-    .field-label {
-      display: block;
-      font-size: 0.82rem;
-      font-weight: 700;
-      color: var(--muted);
-      margin-bottom: 0.4rem;
-    }
-    .field-hint {
-      font-size: 0.78rem;
-      color: var(--subtle);
-      margin-bottom: 0.65rem;
-    }
     .add-input {
-      width: 100%;
+      flex: 1;
       background: var(--bg-e);
       border: 1.5px solid var(--border);
       border-radius: 14px;
@@ -147,11 +92,8 @@
       font-size: 16px;
       color: var(--text);
       outline: none;
-      resize: vertical;
-      min-height: 130px;
-      transition: border-color 0.2s, box-shadow 0.2s;
       direction: rtl;
-      line-height: 1.6;
+      transition: border-color 0.2s, box-shadow 0.2s;
     }
     .add-input:focus {
       border-color: var(--blue);
@@ -159,106 +101,72 @@
     }
     .add-input::placeholder { color: var(--subtle); }
 
-    .add-footer {
+    /* ── Suggestions dropdown ── */
+    .suggestions {
+      position: absolute;
+      top: calc(100% + 6px);
+      right: 0; left: 0;
+      background: var(--bg-f);
+      border: 1.5px solid var(--border-strong);
+      border-radius: 14px;
+      overflow: hidden;
+      z-index: 200;
+      max-height: 300px;
+      overflow-y: auto;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.45);
+      animation: suggFadeIn 0.15s ease-out;
+    }
+    .suggestions.hidden { display: none; }
+
+    @keyframes suggFadeIn {
+      from { opacity: 0; transform: translateY(-4px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .sugg-item {
       display: flex;
       align-items: center;
-      gap: 0.75rem;
-      margin-top: 0.75rem;
-      flex-wrap: wrap;
-    }
-    .keyboard-hint {
-      font-size: 0.75rem;
-      color: var(--subtle);
-    }
-    .keyboard-hint kbd {
-      font-family: 'Inter', monospace;
-      font-size: 11px;
-      background: var(--bg-f);
-      border: 1px solid var(--border-strong);
-      border-radius: 4px;
-      padding: 1px 5px;
-    }
-
-    .error-msg {
-      background: rgba(239,68,68,0.07);
-      border: 1.5px solid rgba(239,68,68,0.28);
-      border-radius: 10px;
-      padding: 10px 14px;
-      font-size: 0.85rem;
-      color: var(--error);
-      margin-top: 0.75rem;
-      display: none;
-    }
-    .error-msg.show { display: block; }
-
-    /* ── Buttons ── */
-    .btn-p {
-      background: var(--pink);
-      color: #fff;
-      font-family: 'Heebo', sans-serif;
-      font-weight: 700;
-      font-size: 15px;
-      padding: 12px 28px;
-      border-radius: 12px;
-      border: none;
+      gap: 10px;
+      padding: 11px 14px;
       cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-      box-shadow: 0 4px 22px rgba(224,23,107,0.28);
-      transition: transform 0.22s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.22s ease;
+      border-bottom: 1px solid var(--border);
+      transition: background 0.12s;
     }
-    .btn-p:hover  { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(224,23,107,0.38); }
-    .btn-p:active { transform: translateY(0); }
-    .btn-p:disabled { opacity: 0.45; cursor: not-allowed; transform: none !important; }
+    .sugg-item:last-child { border-bottom: none; }
+    .sugg-item:hover,
+    .sugg-item.highlighted { background: var(--blue-bg); }
 
-    .btn-s {
-      background: transparent;
-      color: var(--muted);
-      font-family: 'Heebo', sans-serif;
-      font-weight: 500;
-      font-size: 14px;
-      padding: 11px 20px;
-      border-radius: 12px;
-      border: 1.5px solid var(--border);
-      cursor: pointer;
-      transition: border-color 0.2s, color 0.2s, transform 0.22s cubic-bezier(0.34,1.56,0.64,1);
-    }
-    .btn-s:hover { border-color: var(--border-strong); color: #fff; transform: translateY(-1px); }
-
-    .btn-sm {
-      font-family: 'Heebo', sans-serif;
-      font-size: 13px;
+    .sugg-icon { font-size: 1.1rem; line-height: 1; flex-shrink: 0; }
+    .sugg-info { flex: 1; min-width: 0; }
+    .sugg-name {
+      font-size: 0.93rem;
       font-weight: 600;
-      padding: 10px 16px;
-      border-radius: 8px;
-      min-height: 44px;
-      border: 1.5px solid var(--border);
-      background: transparent;
+    }
+    .sugg-name mark {
+      background: none;
+      color: var(--blue-l);
+      font-weight: 800;
+    }
+    .sugg-cat {
+      font-size: 0.73rem;
       color: var(--muted);
+      margin-top: 1px;
+    }
+
+    .sugg-custom {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 11px 14px;
       cursor: pointer;
-      transition: color 0.2s, border-color 0.2s, background 0.2s;
+      border-top: 1px solid var(--border);
+      transition: background 0.12s;
+      color: var(--muted);
+      font-size: 0.88rem;
     }
-    .btn-sm:hover { color: #fff; border-color: var(--border-strong); }
-    .btn-sm.danger { color: var(--error); border-color: rgba(239,68,68,0.22); }
-    .btn-sm.danger:hover { border-color: var(--error); background: rgba(239,68,68,0.07); }
+    .sugg-custom:hover, .sugg-custom.highlighted { background: var(--pink-bg); color: var(--text); }
 
-    /* ── Loading dots ── */
-    .loading-dots { display: none; align-items: center; gap: 5px; }
-    .loading-dots.show { display: flex; }
-    .dot {
-      width: 8px; height: 8px; border-radius: 50%;
-      background: var(--blue);
-      animation: dotBounce 1.1s infinite cubic-bezier(0.45,0.05,0.55,0.95);
-    }
-    .dot:nth-child(2) { animation-delay: 0.15s; }
-    .dot:nth-child(3) { animation-delay: 0.3s; }
-    @keyframes dotBounce {
-      0%,60%,100% { transform: translateY(0); opacity: 0.25; }
-      30% { transform: translateY(-6px); opacity: 1; }
-    }
-
-    /* ── List Screen ── */
+    /* ── List topbar ── */
     .list-topbar {
       display: flex;
       align-items: center;
@@ -284,82 +192,85 @@
       transition: width 0.4s ease;
     }
 
-    /* ── Category group ── */
-    .cat-group { margin-bottom: 1.5rem; }
-    .cat-header {
-      display: flex;
-      align-items: center;
-      gap: 0.45rem;
-      margin-bottom: 0.5rem;
-      padding: 0 0.2rem;
-    }
-    .cat-icon { font-size: 1rem; line-height: 1; }
-    .cat-name {
-      font-size: 0.75rem;
-      font-weight: 700;
-      color: var(--blue-l);
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-    }
-    .cat-count {
-      font-size: 0.72rem;
-      color: var(--subtle);
-      font-family: 'Inter', sans-serif;
-    }
-
     /* ── Item ── */
     .item {
       display: flex;
       align-items: center;
-      gap: 0.7rem;
+      gap: 0.6rem;
       background: var(--bg-e);
       border: 1.5px solid var(--border);
       border-radius: 12px;
-      padding: 11px 13px;
+      padding: 10px 12px;
       margin-bottom: 0.38rem;
       transition: border-color 0.2s, opacity 0.25s;
+      animation: fadeUp 0.2s ease-out;
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(5px); }
+      to   { opacity: 1; transform: translateY(0); }
     }
     .item.checked { opacity: 0.4; border-color: transparent; }
 
     .item-check {
-      width: 44px;
-      height: 44px;
+      width: 40px; height: 40px;
       border-radius: 50%;
       border: 2.5px solid var(--border-strong);
       background: transparent;
       cursor: pointer;
       flex-shrink: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      display: flex; align-items: center; justify-content: center;
       transition: background 0.2s, border-color 0.2s;
     }
     .item-check:hover { border-color: var(--green); }
-    .item.checked .item-check {
-      background: var(--green);
-      border-color: var(--green);
-    }
-    .item.checked .item-check::after {
-      content: '✓';
-      color: #fff;
-      font-size: 16px;
-      font-weight: 800;
-    }
+    .item.checked .item-check { background: var(--green); border-color: var(--green); }
+    .item.checked .item-check::after { content: '✓'; color: #fff; font-size: 16px; font-weight: 800; }
 
-    .item-info { flex: 1; min-width: 0; }
+    .item-icon { font-size: 1.1rem; flex-shrink: 0; }
+
     .item-name {
-      font-size: 0.93rem;
+      flex: 1;
+      font-size: 0.95rem;
       font-weight: 600;
+      min-width: 0;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
     }
     .item.checked .item-name { text-decoration: line-through; color: var(--muted); }
-    .item-qty {
-      font-size: 0.78rem;
-      color: var(--muted);
+
+    /* ── Qty Controls ── */
+    .qty-controls {
+      display: flex;
+      align-items: center;
+      gap: 2px;
+      flex-shrink: 0;
+      background: var(--bg-f);
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .qty-btn {
+      background: none;
+      border: none;
+      color: var(--blue-l);
+      font-size: 1.15rem;
+      font-weight: 700;
+      width: 36px; height: 36px;
+      cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      transition: background 0.15s, color 0.15s;
       font-family: 'Inter', sans-serif;
-      margin-top: 1px;
+    }
+    .qty-btn:hover { background: var(--blue-bg); color: var(--blue); }
+    .qty-btn.minus:hover { background: var(--pink-bg); color: var(--pink); }
+    .qty-num {
+      min-width: 28px;
+      text-align: center;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--text);
+      user-select: none;
     }
 
     .item-del {
@@ -367,19 +278,89 @@
       border: none;
       color: var(--subtle);
       cursor: pointer;
-      font-size: 1rem;
-      padding: 10px;
+      font-size: 0.9rem;
+      padding: 10px 8px;
       border-radius: 8px;
       flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      min-width: 36px; min-height: 36px;
       transition: color 0.2s, background 0.2s;
-      line-height: 1;
-      min-width: 44px;
-      min-height: 44px;
+    }
+    .item-del:hover { color: var(--error); background: rgba(239,68,68,0.1); }
+
+    /* ── Tabs ── */
+    .tab-bar {
+      display: flex;
+      background: var(--bg-e);
+      border: 1.5px solid var(--border);
+      border-radius: 14px;
+      padding: 4px;
+      margin-bottom: 1.5rem;
+      gap: 4px;
+    }
+    .tab-btn {
+      flex: 1;
       display: flex;
       align-items: center;
       justify-content: center;
+      gap: 6px;
+      background: transparent;
+      border: none;
+      color: var(--muted);
+      font-family: 'Heebo', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 600;
+      padding: 10px 12px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.18s, color 0.18s;
     }
-    .item-del:hover { color: var(--error); background: rgba(239,68,68,0.1); }
+    .tab-btn:hover { color: var(--text); }
+    .tab-btn.active {
+      background: var(--blue);
+      color: #fff;
+      box-shadow: 0 2px 8px rgba(33,150,176,0.25);
+    }
+    .tab-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--pink);
+      color: #fff;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      border-radius: 999px;
+      min-width: 20px;
+      height: 18px;
+      padding: 0 6px;
+      line-height: 1;
+    }
+    .tab-badge.hidden { display: none; }
+    .tab-panel.hidden { display: none; }
+
+    /* ── Buttons ── */
+    .btn-sm {
+      font-family: 'Heebo', sans-serif;
+      font-size: 13px; font-weight: 600;
+      padding: 9px 15px;
+      border-radius: 8px; min-height: 36px;
+      border: 1.5px solid var(--border);
+      background: transparent; color: var(--muted);
+      cursor: pointer;
+      transition: color 0.2s, border-color 0.2s, background 0.2s;
+    }
+    .btn-sm:hover { color: #fff; border-color: var(--border-strong); }
+    .btn-sm.danger { color: var(--error); border-color: rgba(239,68,68,0.22); }
+    .btn-sm.danger:hover { border-color: var(--error); background: rgba(239,68,68,0.07); }
+    .btn-s {
+      background: transparent; color: var(--muted);
+      font-family: 'Heebo', sans-serif; font-weight: 500; font-size: 14px;
+      padding: 11px 20px; border-radius: 12px;
+      border: 1.5px solid var(--border); cursor: pointer;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .btn-s:hover { border-color: var(--border-strong); color: #fff; }
 
     /* ── Empty State ── */
     .empty-state {
@@ -401,9 +382,7 @@
       border: 1.5px solid var(--border-strong);
       border-radius: 12px;
       padding: 11px 22px;
-      font-size: 0.88rem;
-      font-weight: 600;
-      color: var(--text);
+      font-size: 0.88rem; font-weight: 600; color: var(--text);
       z-index: 500;
       opacity: 0;
       transition: opacity 0.22s ease, transform 0.22s ease;
@@ -430,10 +409,8 @@
     .modal-box {
       background: var(--bg-e);
       border: 1.5px solid var(--border-strong);
-      border-radius: 18px;
-      padding: 1.75rem;
-      max-width: 360px;
-      width: 100%;
+      border-radius: 18px; padding: 1.75rem;
+      max-width: 360px; width: 100%;
       transform: scale(0.94) translateY(12px);
       transition: transform 0.25s cubic-bezier(0.34,1.56,0.64,1);
     }
@@ -441,8 +418,6 @@
     .modal-box h3 { font-size: 1.05rem; font-weight: 800; margin-bottom: 0.5rem; }
     .modal-box p  { font-size: 0.875rem; color: var(--muted); line-height: 1.6; margin-bottom: 1.25rem; }
     .modal-actions { display: flex; gap: 0.5rem; justify-content: flex-end; }
-
-    .keyboard-hint { display: none; }
 
     @media (max-width: 480px) {
       .app { padding: 1.25rem 0.75rem max(5rem, calc(3rem + env(safe-area-inset-bottom))); }
@@ -457,43 +432,45 @@
 
   <div class="app">
 
-    <!-- Header -->
     <div class="app-header">
       <h1>🛒 רשימת קניות</h1>
-      <p>הזן מוצרים בחופשיות — ה-AI יסדר לפי קטגוריות</p>
+      <p>חפש מוצר והוסף לסל</p>
     </div>
 
     <!-- Tabs -->
-    <div class="tabs">
-      <button class="tab-btn active" id="tab-add" onclick="switchTab('add')">הוסף מוצרים</button>
-      <button class="tab-btn" id="tab-list" onclick="switchTab('list')">
-        הרשימה שלי
-        <span class="tab-badge" id="tab-badge" style="display:none">0</span>
+    <div class="tab-bar">
+      <button class="tab-btn" id="tab-add" onclick="switchTab('add')">הוסף מוצר ＋</button>
+      <button class="tab-btn active" id="tab-list" onclick="switchTab('list')">
+        רשימת קניות
+        <span class="tab-badge hidden" id="tab-badge"></span>
       </button>
     </div>
 
-    <!-- Add Screen -->
-    <div class="screen active" id="screen-add">
-      <span class="field-label">מה לקנות?</span>
-      <div class="field-hint">לדוגמה: "2 חלב, לחם שאור, עגבניות x3, 500 גרם עוף, שמפו"</div>
-      <textarea class="add-input" id="add-input" placeholder="הקלד מוצרים בחופשיות...&#10;&#10;כמויות: 2 חלב / x3 עגבניות / 500 גרם עוף"></textarea>
-      <div class="error-msg" id="add-error"></div>
-      <div class="add-footer">
-        <button class="btn-p" id="add-btn" onclick="handleAdd()">הוסף לרשימה</button>
-        <div class="loading-dots" id="loading">
-          <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+    <!-- Add panel -->
+    <div class="tab-panel hidden" id="panel-add">
+      <div class="search-wrap" id="search-wrap">
+        <div class="search-row">
+          <input
+            class="add-input"
+            id="add-input"
+            type="text"
+            placeholder="חפש מוצר..."
+            autocomplete="off"
+            inputmode="search"
+          >
         </div>
+        <div class="suggestions hidden" id="suggestions"></div>
       </div>
     </div>
 
-    <!-- List Screen -->
-    <div class="screen" id="screen-list">
+    <!-- List panel -->
+    <div class="tab-panel" id="panel-list">
       <div id="list-container"></div>
     </div>
 
   </div>
 
-  <!-- Confirm Modal -->
+  <!-- Modal -->
   <div class="modal-overlay" id="modal">
     <div class="modal-box">
       <h3 id="modal-title"></h3>
@@ -506,19 +483,204 @@
   </div>
 
   <script>
-    const STORAGE_KEY = 'shopping_list_v1';
-
-    const CATS_ORDER = [
-      'ירקות ופירות',
-      'מוצרי חלב וביצים',
-      'לחם ומאפים',
-      'בשר עוף ודגים',
-      'שימורים ויבשים',
-      'קפואים',
-      'משקאות',
-      'ניקיון ותכשירים',
-      'טיפוח ובריאות',
-      'אחר'
+    // ── Product database ──────────────────────────────────────────────────────
+    const PRODUCTS = [
+      // ירקות ופירות
+      { name: 'עגבנייה',            category: 'ירקות ופירות' },
+      { name: 'מלפפון',             category: 'ירקות ופירות' },
+      { name: 'בצל',                category: 'ירקות ופירות' },
+      { name: 'שום',                category: 'ירקות ופירות' },
+      { name: 'גזר',                category: 'ירקות ופירות' },
+      { name: 'תפוח אדמה',          category: 'ירקות ופירות' },
+      { name: 'בטטה',               category: 'ירקות ופירות' },
+      { name: 'קישוא',              category: 'ירקות ופירות' },
+      { name: 'חציל',               category: 'ירקות ופירות' },
+      { name: 'פלפל אדום',          category: 'ירקות ופירות' },
+      { name: 'פלפל ירוק',          category: 'ירקות ופירות' },
+      { name: 'פלפל צהוב',          category: 'ירקות ופירות' },
+      { name: 'ברוקולי',            category: 'ירקות ופירות' },
+      { name: 'כרוב לבן',           category: 'ירקות ופירות' },
+      { name: 'כרוב סגול',          category: 'ירקות ופירות' },
+      { name: 'חסה',                category: 'ירקות ופירות' },
+      { name: 'עלי תרד',            category: 'ירקות ופירות' },
+      { name: 'פטריות',             category: 'ירקות ופירות' },
+      { name: 'תירס',               category: 'ירקות ופירות' },
+      { name: 'כרובית',             category: 'ירקות ופירות' },
+      { name: 'סלרי',               category: 'ירקות ופירות' },
+      { name: 'בצל ירוק',           category: 'ירקות ופירות' },
+      { name: 'פטרוזיליה',          category: 'ירקות ופירות' },
+      { name: 'כוסברה',             category: 'ירקות ופירות' },
+      { name: 'נענע',               category: 'ירקות ופירות' },
+      { name: 'לימון',              category: 'ירקות ופירות' },
+      { name: 'אבוקדו',             category: 'ירקות ופירות' },
+      { name: 'תפוח',               category: 'ירקות ופירות' },
+      { name: 'אגס',                category: 'ירקות ופירות' },
+      { name: 'בננה',               category: 'ירקות ופירות' },
+      { name: 'ענבים',              category: 'ירקות ופירות' },
+      { name: 'מנגו',               category: 'ירקות ופירות' },
+      { name: 'אבטיח',              category: 'ירקות ופירות' },
+      { name: 'מלון',               category: 'ירקות ופירות' },
+      { name: 'אפרסק',              category: 'ירקות ופירות' },
+      { name: 'שזיף',               category: 'ירקות ופירות' },
+      { name: 'קלמנטינה',           category: 'ירקות ופירות' },
+      { name: 'תפוז',               category: 'ירקות ופירות' },
+      { name: 'אשכולית',            category: 'ירקות ופירות' },
+      { name: 'קיווי',              category: 'ירקות ופירות' },
+      { name: 'רימון',              category: 'ירקות ופירות' },
+      { name: 'תות שדה',            category: 'ירקות ופירות' },
+      { name: 'דובדבן',             category: 'ירקות ופירות' },
+      // מוצרי חלב וביצים
+      { name: 'חלב 3%',             category: 'מוצרי חלב וביצים' },
+      { name: 'חלב 1%',             category: 'מוצרי חלב וביצים' },
+      { name: 'חלב שוקולד',         category: 'מוצרי חלב וביצים' },
+      { name: 'יוגורט טבעי',        category: 'מוצרי חלב וביצים' },
+      { name: 'יוגורט יווני',       category: 'מוצרי חלב וביצים' },
+      { name: 'שמנת חמוצה',         category: 'מוצרי חלב וביצים' },
+      { name: 'שמנת לבישול',        category: 'מוצרי חלב וביצים' },
+      { name: 'גבינה לבנה 5%',      category: 'מוצרי חלב וביצים' },
+      { name: 'גבינה לבנה 9%',      category: 'מוצרי חלב וביצים' },
+      { name: 'גבינה צהובה',        category: 'מוצרי חלב וביצים' },
+      { name: 'גבינה בולגרית',      category: 'מוצרי חלב וביצים' },
+      { name: "גבינת קוטג'",        category: 'מוצרי חלב וביצים' },
+      { name: 'גבינת שמנת',         category: 'מוצרי חלב וביצים' },
+      { name: 'גבינת ריקוטה',       category: 'מוצרי חלב וביצים' },
+      { name: 'חמאה',               category: 'מוצרי חלב וביצים' },
+      { name: 'מרגרינה',            category: 'מוצרי חלב וביצים' },
+      { name: 'ביצים',              category: 'מוצרי חלב וביצים' },
+      // לחם ומאפים
+      { name: 'לחם פרוס',           category: 'לחם ומאפים' },
+      { name: 'לחם שאור',           category: 'לחם ומאפים' },
+      { name: 'לחם מלא',            category: 'לחם ומאפים' },
+      { name: 'לחם שיפון',          category: 'לחם ומאפים' },
+      { name: 'חלה',                category: 'לחם ומאפים' },
+      { name: 'פיתה',               category: 'לחם ומאפים' },
+      { name: 'לחמניות',            category: 'לחם ומאפים' },
+      { name: 'בגט',                category: 'לחם ומאפים' },
+      { name: 'טוסט',               category: 'לחם ומאפים' },
+      { name: 'קרואסון',            category: 'לחם ומאפים' },
+      { name: 'בורקס גבינה',        category: 'לחם ומאפים' },
+      { name: 'בורקס תפוח אדמה',    category: 'לחם ומאפים' },
+      // בשר עוף ודגים
+      { name: 'חזה עוף',            category: 'בשר עוף ודגים' },
+      { name: 'שוקי עוף',           category: 'בשר עוף ודגים' },
+      { name: 'כרעי עוף',           category: 'בשר עוף ודגים' },
+      { name: 'כנפי עוף',           category: 'בשר עוף ודגים' },
+      { name: 'עוף שלם',            category: 'בשר עוף ודגים' },
+      { name: 'קציצות עוף',         category: 'בשר עוף ודגים' },
+      { name: 'שניצל עוף',          category: 'בשר עוף ודגים' },
+      { name: 'בשר טחון',           category: 'בשר עוף ודגים' },
+      { name: 'קבב',                category: 'בשר עוף ודגים' },
+      { name: 'אנטריקוט',           category: 'בשר עוף ודגים' },
+      { name: 'נקניקיות',           category: 'בשר עוף ודגים' },
+      { name: 'סלמי',               category: 'בשר עוף ודגים' },
+      { name: 'פילה סלמון',         category: 'בשר עוף ודגים' },
+      { name: 'פילה בקלה',          category: 'בשר עוף ודגים' },
+      { name: 'טונה קפואה',         category: 'בשר עוף ודגים' },
+      { name: 'שרימפס',             category: 'בשר עוף ודגים' },
+      // שימורים ויבשים
+      { name: 'אורז לבן',           category: 'שימורים ויבשים' },
+      { name: 'אורז מלא',           category: 'שימורים ויבשים' },
+      { name: 'אורז בסמטי',         category: 'שימורים ויבשים' },
+      { name: 'פסטה ספגטי',         category: 'שימורים ויבשים' },
+      { name: 'פסטה פנה',           category: 'שימורים ויבשים' },
+      { name: 'פסטה פוסילי',        category: 'שימורים ויבשים' },
+      { name: 'פסטה פרפריות',       category: 'שימורים ויבשים' },
+      { name: 'קוסקוס',             category: 'שימורים ויבשים' },
+      { name: 'בורגול',             category: 'שימורים ויבשים' },
+      { name: 'עדשים כתומות',       category: 'שימורים ויבשים' },
+      { name: 'עדשים ירוקות',       category: 'שימורים ויבשים' },
+      { name: 'גרגירי חומוס',       category: 'שימורים ויבשים' },
+      { name: 'שעועית לבנה',        category: 'שימורים ויבשים' },
+      { name: 'שעועית אדומה',       category: 'שימורים ויבשים' },
+      { name: 'טונה בשמן',          category: 'שימורים ויבשים' },
+      { name: 'טונה במים',          category: 'שימורים ויבשים' },
+      { name: 'עגבניות קלופות',     category: 'שימורים ויבשים' },
+      { name: 'רסק עגבניות',        category: 'שימורים ויבשים' },
+      { name: 'מחית עגבניות',       category: 'שימורים ויבשים' },
+      { name: 'תירס משומר',         category: 'שימורים ויבשים' },
+      { name: 'אפונה משומרת',       category: 'שימורים ויבשים' },
+      { name: 'זיתים',              category: 'שימורים ויבשים' },
+      { name: 'חמוצים',             category: 'שימורים ויבשים' },
+      { name: 'שמן זית',            category: 'שימורים ויבשים' },
+      { name: 'שמן קנולה',          category: 'שימורים ויבשים' },
+      { name: 'חומץ',               category: 'שימורים ויבשים' },
+      { name: 'רוטב סויה',          category: 'שימורים ויבשים' },
+      { name: 'מיונז',              category: 'שימורים ויבשים' },
+      { name: 'חרדל',               category: 'שימורים ויבשים' },
+      { name: 'קטשופ',              category: 'שימורים ויבשים' },
+      { name: 'טחינה גולמית',       category: 'שימורים ויבשים' },
+      { name: 'חמאת בוטנים',        category: 'שימורים ויבשים' },
+      { name: 'ריבה תות',           category: 'שימורים ויבשים' },
+      { name: 'דבש',                category: 'שימורים ויבשים' },
+      { name: 'סוכר',               category: 'שימורים ויבשים' },
+      { name: 'קמח לבן',            category: 'שימורים ויבשים' },
+      { name: 'קמח מלא',            category: 'שימורים ויבשים' },
+      { name: 'אבקת אפייה',         category: 'שימורים ויבשים' },
+      { name: 'קקאו',               category: 'שימורים ויבשים' },
+      { name: 'שוקולד מריר',        category: 'שימורים ויבשים' },
+      { name: 'שוקולד חלב',         category: 'שימורים ויבשים' },
+      { name: 'וופל',               category: 'שימורים ויבשים' },
+      { name: 'ביסקוויט',           category: 'שימורים ויבשים' },
+      // קפואים
+      { name: 'ירקות מעורבים קפואים', category: 'קפואים' },
+      { name: 'תירס קפוא',          category: 'קפואים' },
+      { name: 'אפונה קפואה',        category: 'קפואים' },
+      { name: 'שעועית ירוקה קפואה', category: 'קפואים' },
+      { name: 'ברוקולי קפוא',       category: 'קפואים' },
+      { name: 'תרד קפוא',           category: 'קפואים' },
+      { name: 'שניצל קפוא',         category: 'קפואים' },
+      { name: 'פיצה קפואה',         category: 'קפואים' },
+      { name: 'לזניה קפואה',        category: 'קפואים' },
+      { name: 'גלידה וניל',         category: 'קפואים' },
+      { name: 'גלידה שוקולד',       category: 'קפואים' },
+      { name: 'ארטיק',              category: 'קפואים' },
+      // משקאות
+      { name: 'מים מינרלים',        category: 'משקאות' },
+      { name: 'מים מוגזים',         category: 'משקאות' },
+      { name: 'קולה',               category: 'משקאות' },
+      { name: 'קולה זירו',          category: 'משקאות' },
+      { name: 'ספרייט',             category: 'משקאות' },
+      { name: 'פנטה',               category: 'משקאות' },
+      { name: 'מיץ תפוזים',         category: 'משקאות' },
+      { name: 'מיץ תפוח',           category: 'משקאות' },
+      { name: 'מיץ ענבים',          category: 'משקאות' },
+      { name: 'קפה נמס',            category: 'משקאות' },
+      { name: 'קפה טחון',           category: 'משקאות' },
+      { name: 'תה שחור',            category: 'משקאות' },
+      { name: 'תה ירוק',            category: 'משקאות' },
+      { name: 'תה צמחים',           category: 'משקאות' },
+      { name: 'שוקו',               category: 'משקאות' },
+      // ניקיון ותכשירים
+      { name: 'אבקת כביסה',         category: 'ניקיון ותכשירים' },
+      { name: 'נוזל כביסה',         category: 'ניקיון ותכשירים' },
+      { name: 'מרכך כביסה',         category: 'ניקיון ותכשירים' },
+      { name: 'אקונומיקה',          category: 'ניקיון ותכשירים' },
+      { name: 'נוזל לכלים',         category: 'ניקיון ותכשירים' },
+      { name: 'ספוגים',             category: 'ניקיון ותכשירים' },
+      { name: 'מגבות נייר',         category: 'ניקיון ותכשירים' },
+      { name: 'נייר טואלט',         category: 'ניקיון ותכשירים' },
+      { name: 'שקיות זבל',          category: 'ניקיון ותכשירים' },
+      { name: 'שקיות ניילון',       category: 'ניקיון ותכשירים' },
+      // טיפוח ובריאות
+      { name: 'שמפו',               category: 'טיפוח ובריאות' },
+      { name: 'מרכך שיער',          category: 'טיפוח ובריאות' },
+      { name: 'סבון גוף',           category: 'טיפוח ובריאות' },
+      { name: 'סבון ידיים',         category: 'טיפוח ובריאות' },
+      { name: 'קרם לחות',           category: 'טיפוח ובריאות' },
+      { name: 'קרם הגנה',           category: 'טיפוח ובריאות' },
+      { name: 'דאודורנט',           category: 'טיפוח ובריאות' },
+      { name: 'משחת שיניים',        category: 'טיפוח ובריאות' },
+      { name: 'מברשת שיניים',       category: 'טיפוח ובריאות' },
+      { name: 'אקמול',              category: 'טיפוח ובריאות' },
+      { name: 'אספירין',            category: 'טיפוח ובריאות' },
+      { name: 'ויטמין C',           category: 'טיפוח ובריאות' },
+      // חטיפים
+      { name: 'ביסלי גריל',         category: 'אחר' },
+      { name: 'במבה',               category: 'אחר' },
+      { name: 'תפוצ\'יפס',          category: 'אחר' },
+      { name: 'פרינגלס',            category: 'אחר' },
+      { name: 'עוגיות',             category: 'אחר' },
+      { name: 'גומי',               category: 'אחר' },
     ];
 
     const CAT_ICONS = {
@@ -531,123 +693,220 @@
       'משקאות':           '🥤',
       'ניקיון ותכשירים':  '🧹',
       'טיפוח ובריאות':    '🧴',
-      'אחר':              '📦'
+      'אחר':              '📦',
     };
 
-    // ── State ──
-    let list    = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
-    let modalCb = null;
+    const CATS_ORDER = [
+      'ירקות ופירות', 'מוצרי חלב וביצים', 'לחם ומאפים',
+      'בשר עוף ודגים', 'שימורים ויבשים', 'קפואים',
+      'משקאות', 'ניקיון ותכשירים', 'טיפוח ובריאות', 'אחר'
+    ];
 
-    // ── Init ──
-    updateTabBadge();
+    // ── State ────────────────────────────────────────────────────────────────
+    const STORAGE_KEY = 'shopping_list_v2';
+    let list          = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+    let modalCb       = null;
+    let highlightIdx  = -1;
+    let activeTab     = 'list';
 
-    // ── Tabs ──
+    renderList();
+
+    // ── Tabs ─────────────────────────────────────────────────────────────────
     function switchTab(tab) {
-      ['add','list'].forEach(t => {
-        document.getElementById('screen-' + t).classList.toggle('active', t === tab);
-        document.getElementById('tab-' + t).classList.toggle('active', t === tab);
-      });
-      if (tab === 'list') renderList();
-    }
-
-    // ── Add ──
-    async function handleAdd() {
-      const ta   = document.getElementById('add-input');
-      const text = ta.value.trim();
-      if (!text) return;
-
-      setLoading(true);
-      hideError();
-
-      try {
-        const items = await parseProducts(text);
-        if (!items.length) throw new Error('לא זוהו מוצרים בטקסט');
-        mergeProducts(items);
-        ta.value = '';
-        updateTabBadge();
-        showToast(`נוספו ${items.length} מוצרים`, 'success');
-        switchTab('list');
-      } catch (err) {
-        showError('שגיאה: ' + err.message);
-      } finally {
-        setLoading(false);
+      activeTab = tab;
+      document.getElementById('panel-add').classList.toggle('hidden', tab !== 'add');
+      document.getElementById('panel-list').classList.toggle('hidden', tab !== 'list');
+      document.getElementById('tab-add').classList.toggle('active', tab === 'add');
+      document.getElementById('tab-list').classList.toggle('active', tab === 'list');
+      if (tab === 'add') {
+        setTimeout(() => document.getElementById('add-input').focus(), 50);
       }
     }
 
-    document.getElementById('add-input').addEventListener('keydown', e => {
-      if (e.key === 'Enter' && e.ctrlKey) { e.preventDefault(); handleAdd(); }
+    // ── Search / Suggestions ─────────────────────────────────────────────────
+    const input = document.getElementById('add-input');
+
+    input.addEventListener('input', onSearch);
+    input.addEventListener('keydown', onKey);
+
+    document.addEventListener('click', e => {
+      if (!e.target.closest('#search-wrap')) hideSuggestions();
     });
 
-    function setLoading(on) {
-      document.getElementById('add-btn').disabled = on;
-      document.getElementById('loading').classList.toggle('show', on);
+    function onSearch() {
+      const q = input.value.trim();
+      highlightIdx = -1;
+      if (!q) { hideSuggestions(); return; }
+      showSuggestions(q);
     }
 
-    function showError(msg) {
-      const el = document.getElementById('add-error');
-      el.textContent = msg;
-      el.classList.add('show');
-    }
+    function showSuggestions(q) {
+      const matches = searchProducts(q);
+      const el      = document.getElementById('suggestions');
 
-    function hideError() {
-      document.getElementById('add-error').classList.remove('show');
-    }
+      let html = '';
 
-    // ── Claude API (via backend) ──
-    async function parseProducts(text) {
-      const res = await fetch('/api/parse', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ text })
-      });
-
-      const data = await res.json();
-      if (!res.ok) throw new Error(data.error || `שגיאת שרת (${res.status})`);
-      return data.items;
-    }
-
-    // ── Merge ──
-    function mergeProducts(newItems) {
-      for (const item of newItems) {
-        const norm = item.name.trim().toLowerCase();
-        const existing = list.find(p => !p.checked && p.name.toLowerCase() === norm);
-        if (existing) {
-          existing.quantity += (item.quantity || 1);
-        } else {
-          list.push({
-            id:       Date.now() + Math.random(),
-            name:     item.name.trim(),
-            quantity: item.quantity || 1,
-            unit:     item.unit || "יח'",
-            category: item.category || 'אחר',
-            checked:  false
-          });
-        }
+      for (const p of matches) {
+        const icon = CAT_ICONS[p.category] || '📦';
+        html += `
+          <div class="sugg-item" data-name="${esc(p.name)}" data-cat="${esc(p.category)}" onclick="selectProduct('${esc(p.name)}','${esc(p.category)}')">
+            <span class="sugg-icon">${icon}</span>
+            <div class="sugg-info">
+              <div class="sugg-name">${highlightMatch(p.name, q)}</div>
+              <div class="sugg-cat">${esc(p.category)}</div>
+            </div>
+          </div>`;
       }
-      saveList();
+
+      // Option to add custom product if not in DB
+      const exactMatch = PRODUCTS.some(p => p.name === q);
+      if (!exactMatch) {
+        html += `
+          <div class="sugg-custom" onclick="selectProduct('${esc(q)}','אחר')">
+            <span>＋</span>
+            <span>הוסף "<strong>${esc(q)}</strong>"</span>
+          </div>`;
+      }
+
+      el.innerHTML = html;
+      el.classList.remove('hidden');
+    }
+
+    function hideSuggestions() {
+      document.getElementById('suggestions').classList.add('hidden');
+      highlightIdx = -1;
+    }
+
+    function searchProducts(q) {
+      const lower = q;
+      const starts   = PRODUCTS.filter(p => p.name.startsWith(lower));
+      const contains = PRODUCTS.filter(p => !p.name.startsWith(lower) && p.name.includes(lower));
+      return [...starts, ...contains].slice(0, 8);
+    }
+
+    function highlightMatch(name, q) {
+      const idx = name.indexOf(q);
+      if (idx === -1) return esc(name);
+      return esc(name.slice(0, idx)) +
+             '<mark>' + esc(name.slice(idx, idx + q.length)) + '</mark>' +
+             esc(name.slice(idx + q.length));
+    }
+
+    // ── Keyboard navigation ──────────────────────────────────────────────────
+    function onKey(e) {
+      const sugg  = document.getElementById('suggestions');
+      const items = [...sugg.querySelectorAll('.sugg-item, .sugg-custom')];
+      const count = items.length;
+
+      if (e.key === 'ArrowDown') {
+        e.preventDefault();
+        highlightIdx = Math.min(highlightIdx + 1, count - 1);
+        updateHighlight(items);
+      } else if (e.key === 'ArrowUp') {
+        e.preventDefault();
+        highlightIdx = Math.max(highlightIdx - 1, -1);
+        updateHighlight(items);
+      } else if (e.key === 'Enter') {
+        e.preventDefault();
+        if (highlightIdx >= 0 && items[highlightIdx]) {
+          items[highlightIdx].click();
+        } else if (count > 0) {
+          items[0].click();
+        } else {
+          const q = input.value.trim();
+          if (q) selectProduct(q, 'אחר');
+        }
+      } else if (e.key === 'Escape') {
+        hideSuggestions();
+        input.blur();
+      }
+    }
+
+    function updateHighlight(items) {
+      items.forEach((el, i) => el.classList.toggle('highlighted', i === highlightIdx));
+      if (highlightIdx >= 0) items[highlightIdx].scrollIntoView({ block: 'nearest' });
+    }
+
+    // ── Add to list ──────────────────────────────────────────────────────────
+    function selectProduct(name, category) {
+      const norm     = name.trim().toLowerCase();
+      const existing = list.find(p => !p.checked && p.name.toLowerCase() === norm);
+
+      if (existing) {
+        existing.quantity += 1;
+        saveList();
+        renderList();
+        showToast(`${existing.name} ×${existing.quantity}`, 'success');
+      } else {
+        list.unshift({
+          id:       Date.now() + Math.random(),
+          name:     name.trim(),
+          quantity: 1,
+          category: category || 'אחר',
+          checked:  false,
+        });
+        saveList();
+        renderList();
+        showToast(`${name} נוסף`, 'success');
+      }
+
+      input.value = '';
+      hideSuggestions();
+      switchTab('list');
+    }
+
+    // ── Qty controls ─────────────────────────────────────────────────────────
+    function incQty(id) {
+      const item = list.find(p => p.id === id);
+      if (!item) return;
+      item.quantity++;
+      saveList(); renderList();
+    }
+
+    function decQty(id) {
+      const item = list.find(p => p.id === id);
+      if (!item) return;
+      if (item.quantity > 1) { item.quantity--; saveList(); renderList(); }
+      else removeItem(id);
+    }
+
+    // ── List item actions ─────────────────────────────────────────────────────
+    function toggleItem(id) {
+      const item = list.find(p => p.id === id);
+      if (!item) return;
+      item.checked = !item.checked;
+      saveList(); renderList();
+    }
+
+    function removeItem(id) {
+      list = list.filter(p => p.id !== id);
+      saveList(); renderList();
     }
 
     function saveList() {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(list));
     }
 
-    // ── Render List ──
+    // ── Render list ───────────────────────────────────────────────────────────
     function renderList() {
-      const el = document.getElementById('list-container');
+      const el    = document.getElementById('list-container');
+      const badge = document.getElementById('tab-badge');
+      badge.textContent = list.length;
+      badge.classList.toggle('hidden', list.length === 0);
 
       if (!list.length) {
         el.innerHTML = `
           <div class="empty-state">
             <div class="empty-icon">🛒</div>
-            <div class="empty-title">הרשימה ריקה</div>
-            <div class="empty-sub">עבור ל"הוסף מוצרים" כדי להתחיל</div>
+            <div class="empty-title">הסל ריק</div>
+            <div class="empty-sub">לחץ על "הוסף מוצר" כדי להתחיל</div>
           </div>`;
         return;
       }
 
       const total   = list.length;
       const checked = list.filter(p => p.checked).length;
-      const pct     = total ? Math.round((checked / total) * 100) : 0;
+      const pct     = Math.round((checked / total) * 100);
 
       // Group by category
       const groups = {};
@@ -657,9 +916,9 @@
         groups[cat].push(item);
       }
 
-      const orderedCats = CATS_ORDER.filter(c => groups[c]);
-      const extraCats   = Object.keys(groups).filter(c => !CATS_ORDER.includes(c));
-      const allCats     = [...orderedCats, ...extraCats];
+      const ordered = CATS_ORDER.filter(c => groups[c]);
+      const extra   = Object.keys(groups).filter(c => !CATS_ORDER.includes(c));
+      const allCats = [...ordered, ...extra];
 
       let html = `
         <div class="list-topbar">
@@ -676,30 +935,26 @@
       for (const cat of allCats) {
         const items = groups[cat];
         const icon  = CAT_ICONS[cat] || '📦';
-        const uncheckedCount = items.filter(i => !i.checked).length;
+        html += `<div style="margin-bottom:1.25rem">
+          <div style="display:flex;align-items:center;gap:6px;margin-bottom:6px;padding:0 2px">
+            <span style="font-size:0.85rem">${icon}</span>
+            <span style="font-size:0.72rem;font-weight:700;color:var(--blue-l);letter-spacing:0.05em;text-transform:uppercase">${esc(cat)}</span>
+          </div>`;
 
-        html += `
-          <div class="cat-group">
-            <div class="cat-header">
-              <span class="cat-icon">${icon}</span>
-              <span class="cat-name">${esc(cat)}</span>
-              <span class="cat-count">${uncheckedCount} / ${items.length}</span>
-            </div>`;
-
-        // Unchecked first, then checked
         const sorted = [...items].sort((a, b) => Number(a.checked) - Number(b.checked));
         for (const item of sorted) {
           html += `
             <div class="item ${item.checked ? 'checked' : ''}" data-id="${item.id}">
               <button class="item-check" onclick="toggleItem(${item.id})" aria-label="סמן כנרכש"></button>
-              <div class="item-info">
-                <div class="item-name">${esc(item.name)}</div>
-                <div class="item-qty">${item.quantity} ${esc(item.unit)}</div>
+              <span class="item-name">${esc(item.name)}</span>
+              <div class="qty-controls">
+                <button class="qty-btn minus" onclick="decQty(${item.id})" aria-label="הפחת">−</button>
+                <span class="qty-num">${item.quantity}</span>
+                <button class="qty-btn plus" onclick="incQty(${item.id})" aria-label="הוסף">+</button>
               </div>
               <button class="item-del" onclick="removeItem(${item.id})" aria-label="מחק">✕</button>
             </div>`;
         }
-
         html += `</div>`;
       }
 
@@ -709,49 +964,28 @@
     function esc(s) {
       return String(s)
         .replace(/&/g,'&amp;').replace(/</g,'&lt;')
-        .replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+        .replace(/>/g,'&gt;').replace(/"/g,'&quot;')
+        .replace(/'/g,'&#39;');
     }
 
-    // ── Item Actions ──
-    function toggleItem(id) {
-      const item = list.find(p => p.id === id);
-      if (!item) return;
-      item.checked = !item.checked;
-      saveList();
-      renderList();
-      updateTabBadge();
-    }
-
-    function removeItem(id) {
-      list = list.filter(p => p.id !== id);
-      saveList();
-      renderList();
-      updateTabBadge();
-    }
-
-    // ── Confirm + Clear ──
+    // ── Confirm + Clear ───────────────────────────────────────────────────────
     function confirmAction(type) {
       if (type === 'all') {
-        openModal('ניקוי הרשימה', 'האם למחוק את כל הרשימה ולהתחיל מחדש?', () => {
-          list = [];
-          saveList();
-          renderList();
-          updateTabBadge();
-          showToast('הרשימה נוקתה', 'success');
+        openModal('ניקוי הסל', 'האם למחוק את כל הרשימה?', () => {
+          list = []; saveList(); renderList();
+          showToast('הסל נוקה', 'success');
         });
       } else {
         const n = list.filter(p => p.checked).length;
-        openModal('מחיקת פריטים מסומנים', `האם למחוק ${n} פריטים שסומנו כנרכשו?`, () => {
+        openModal('מחיקת פריטים מסומנים', `האם למחוק ${n} פריטים שנרכשו?`, () => {
           list = list.filter(p => !p.checked);
-          saveList();
-          renderList();
-          updateTabBadge();
+          saveList(); renderList();
           showToast(`${n} פריטים נמחקו`, 'success');
         });
       }
     }
 
-    // ── Modal ──
+    // ── Modal ─────────────────────────────────────────────────────────────────
     function openModal(title, body, cb) {
       document.getElementById('modal-title').textContent = title;
       document.getElementById('modal-body').textContent  = body;
@@ -771,22 +1005,14 @@
       if (e.target.id === 'modal') closeModal();
     });
 
-    // ── Tab Badge ──
-    function updateTabBadge() {
-      const n  = list.filter(p => !p.checked).length;
-      const el = document.getElementById('tab-badge');
-      el.style.display = n ? 'inline-flex' : 'none';
-      el.textContent   = n;
-    }
-
-    // ── Toast ──
+    // ── Toast ─────────────────────────────────────────────────────────────────
     let _toastTimer;
     function showToast(msg, type = '') {
       const el = document.getElementById('toast');
       el.textContent = msg;
       el.className   = 'toast show' + (type ? ' ' + type : '');
       clearTimeout(_toastTimer);
-      _toastTimer = setTimeout(() => { el.className = 'toast'; }, 2800);
+      _toastTimer = setTimeout(() => { el.className = 'toast'; }, 2500);
     }
   </script>
 </body>
