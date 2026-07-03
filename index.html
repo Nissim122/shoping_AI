@@ -24,6 +24,7 @@
       --green: #28c76f; --error: #ef4444;
     }
 
+    html { overflow-x: hidden; }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
     .hidden { display: none; }
     button { touch-action: manipulation; }
@@ -35,6 +36,7 @@
       min-height: 100vh;
       direction: rtl;
       overscroll-behavior-y: contain;
+      overflow-x: hidden;
     }
 
     .bg-grad {
@@ -367,13 +369,14 @@
     .qty-btn:hover { background: var(--blue-bg); color: var(--blue); }
     .qty-btn.minus:hover { background: var(--pink-bg); color: var(--pink); }
     .qty-num {
-      min-width: 28px;
+      min-width: 36px;
       text-align: center;
       font-family: 'Inter', sans-serif;
       font-size: 0.9rem;
       font-weight: 700;
       color: var(--text);
       user-select: none;
+      white-space: nowrap;
     }
 
     .item-del {
@@ -401,6 +404,7 @@
       padding: 3px 10px;
       flex-shrink: 0;
       user-select: none;
+      white-space: nowrap;
     }
     .item-edit-btn {
       background: none; border: none;
@@ -492,7 +496,33 @@
     .btn-sm:hover { color: #fff; border-color: var(--border-strong); }
     .btn-sm.danger { color: var(--error); border-color: rgba(239,68,68,0.22); }
     .btn-sm.danger:hover { border-color: var(--error); background: rgba(239,68,68,0.07); }
-    .btn-sm.active-edit { color: var(--green); border-color: rgba(40,199,111,0.35); }
+    .btn-edit {
+      font-family: 'Heebo', sans-serif;
+      font-size: 13px; font-weight: 700;
+      padding: 9px 16px;
+      border-radius: 8px; min-height: 36px;
+      border: 1.5px solid var(--border-blue);
+      background: var(--blue-bg);
+      color: var(--blue-l);
+      cursor: pointer;
+      display: inline-flex; align-items: center; gap: 6px;
+      transition: color 0.2s, border-color 0.2s, background 0.2s, box-shadow 0.2s;
+    }
+    .btn-edit:hover {
+      background: rgba(33,150,176,0.16);
+      border-color: var(--blue);
+      box-shadow: 0 0 0 2px rgba(33,150,176,0.18);
+    }
+    .btn-edit.active {
+      border-color: rgba(40,199,111,0.45);
+      background: rgba(40,199,111,0.1);
+      color: var(--green);
+    }
+    .btn-edit.active:hover {
+      background: rgba(40,199,111,0.18);
+      border-color: var(--green);
+      box-shadow: 0 0 0 2px rgba(40,199,111,0.18);
+    }
 
     /* ── Clear-all bottom bar ── */
     #list-bottom-bar {
@@ -579,6 +609,8 @@
       max-width: 360px; width: 100%;
       transform: scale(0.94) translateY(12px);
       transition: transform 0.25s cubic-bezier(0.34,1.56,0.64,1);
+      overflow-y: auto;
+      max-height: 90vh;
     }
     .modal-overlay.show .modal-box { transform: scale(1) translateY(0); }
     .modal-box h3 { font-size: 1.05rem; font-weight: 800; margin-bottom: 0.5rem; }
@@ -588,6 +620,106 @@
     @media (max-width: 480px) {
       .app { padding: 1.25rem 0.75rem max(5rem, calc(3rem + env(safe-area-inset-bottom))); }
       .list-topbar { flex-direction: column; align-items: flex-start; }
+    }
+
+    /* ── Mobile: iPhone 11 / 13 fixes ── */
+    @media (max-width: 480px) {
+
+      /* Suggestions: shorter max-height when keyboard is open */
+      .suggestions {
+        max-height: 210px;
+      }
+
+      /* Modal → bottom sheet */
+      .modal-overlay {
+        align-items: flex-end;
+        padding: 0;
+      }
+      .modal-box {
+        border-radius: 20px 20px 0 0;
+        max-width: 100%;
+        width: 100%;
+        padding: 1.4rem 1.25rem calc(1.4rem + env(safe-area-inset-bottom));
+        max-height: 85vh;
+        transform: translateY(100%);
+        transition: transform 0.32s cubic-bezier(0.32, 0.72, 0, 1);
+      }
+      .modal-overlay.show .modal-box {
+        transform: translateY(0);
+      }
+
+      /* Larger touch targets (Apple HIG: 44×44px) */
+      .item-check {
+        width: 44px;
+        height: 44px;
+      }
+      .qty-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1.25rem;
+      }
+      .item-del {
+        min-width: 44px;
+        min-height: 44px;
+        padding: 10px;
+      }
+      .btn-confirm {
+        padding: 15px;
+        min-height: 50px;
+        font-size: 1rem;
+      }
+      .tab-btn {
+        padding: 11px 6px;
+        font-size: 0.85rem;
+      }
+
+      /* Confirm card: compact padding so buttons stay above keyboard */
+      .confirm-card {
+        padding: 1.1rem;
+      }
+      .confirm-qty-row {
+        margin-bottom: 1rem;
+      }
+      .confirm-product {
+        padding-bottom: 0.9rem;
+        margin-bottom: 0.9rem;
+      }
+
+      /* List actions row: allow wrap on small screens */
+      .list-actions {
+        flex-wrap: wrap;
+        gap: 0.4rem;
+      }
+
+      /* Ensure confirm product text never overflows */
+      .confirm-product > div {
+        min-width: 0;
+        overflow: hidden;
+      }
+      .confirm-product-name {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+    }
+
+    /* ── Very small screens (iPhone SE, 375px) ── */
+    @media (max-width: 390px) {
+      .tab-btn {
+        font-size: 0.8rem;
+        padding: 10px 4px;
+        gap: 4px;
+      }
+      .tab-badge {
+        min-width: 18px;
+        height: 16px;
+        font-size: 0.68rem;
+        padding: 0 4px;
+      }
+      .btn-sm {
+        font-size: 12px;
+        padding: 8px 12px;
+      }
     }
   </style>
 </head>
@@ -605,15 +737,15 @@
 
     <!-- Tabs -->
     <div class="tab-bar">
-      <button class="tab-btn" id="tab-add" onclick="switchTab('add')">הוסף מוצר ＋</button>
-      <button class="tab-btn active" id="tab-list" onclick="switchTab('list')">
+      <button class="tab-btn active" id="tab-add" onclick="switchTab('add')">הוסף מוצר ＋</button>
+      <button class="tab-btn" id="tab-list" onclick="switchTab('list')">
         רשימת קניות
         <span class="tab-badge hidden" id="tab-badge"></span>
       </button>
     </div>
 
     <!-- Add panel -->
-    <div class="tab-panel hidden" id="panel-add">
+    <div class="tab-panel" id="panel-add">
       <!-- Search section -->
       <div id="search-section">
         <div class="search-wrap" id="search-wrap">
@@ -635,7 +767,7 @@
     </div>
 
     <!-- List panel -->
-    <div class="tab-panel" id="panel-list">
+    <div class="tab-panel hidden" id="panel-list">
       <div id="list-container"></div>
     </div>
 
@@ -1179,7 +1311,7 @@
     let list            = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
     let modalCb         = null;
     let highlightIdx    = -1;
-    let activeTab       = 'list';
+    let activeTab       = 'add';
     let selectedProduct = null;
     let isEditMode      = false;
 
@@ -1476,7 +1608,7 @@
       input.value = '';
       document.getElementById('confirm-section').classList.add('hidden');
       document.getElementById('search-section').classList.remove('hidden');
-      switchTab('list');
+      setTimeout(() => input.focus(), 50);
     }
 
     // ── Qty controls ─────────────────────────────────────────────────────────
@@ -1557,7 +1689,7 @@
         <div class="list-topbar">
           <div class="list-actions">
             ${isEditMode && checked > 0 ? `<button class="btn-sm" onclick="confirmAction('checked')">מחק מסומנים (${checked})</button>` : ''}
-            <button class="btn-sm${isEditMode ? ' active-edit' : ''}" onclick="toggleEditMode()">${isEditMode ? 'סיום ✓' : 'עריכה ✏'}</button>
+            <button class="btn-edit${isEditMode ? ' active' : ''}" onclick="toggleEditMode()">${isEditMode ? '✓ סיום' : '✏️ עריכה'}</button>
           </div>
         </div>
         <div class="progress-bar">
@@ -1568,9 +1700,9 @@
         const items = groups[cat];
         const icon  = CAT_ICONS[cat] || '📦';
         html += `<div style="margin-bottom:1.25rem">
-          <div style="display:flex;align-items:center;gap:6px;margin-bottom:6px;padding:0 2px">
-            <span style="font-size:0.85rem">${icon}</span>
-            <span style="font-size:0.72rem;font-weight:700;color:var(--blue-l);letter-spacing:0.05em;text-transform:uppercase">${esc(cat)}</span>
+          <div style="display:flex;align-items:center;justify-content:center;gap:6px;margin-bottom:6px;padding:0 2px">
+            <span style="font-size:1.19rem">${icon}</span>
+            <span style="font-size:1.008rem;font-weight:700;color:var(--blue-l);letter-spacing:0.05em;text-transform:uppercase">${esc(cat)}</span>
           </div>`;
 
         const sorted = [...items].sort((a, b) => Number(a.checked) - Number(b.checked));
@@ -1591,8 +1723,8 @@
           } else {
             html += `
               <div class="item ${item.checked ? 'checked' : ''}" data-id="${item.id}">
-                <span class="item-name">${esc(item.name)}</span>
                 <span class="item-qty-badge">${qtyLabel}</span>
+                <span class="item-name">${esc(item.name)}</span>
               </div>`;
           }
         }
