@@ -26,7 +26,7 @@ async function ensureSession() {
 async function scanOne(name) {
   const res = await searchItem(name);
   const items = res.Results?.Items || [];
-  const best = pickBestMatch(items);
+  const best = pickBestMatch(items, name);
   if (!best) return null;
   return resolvePrice(best);
 }

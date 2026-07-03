@@ -22,8 +22,50 @@ function parseArgs(argv) {
   return argv.map((name) => ({ name }));
 }
 
-function pickBestMatch(items) {
-  return items.find((it) => it.IsInStock) || items[0];
+function tokenize(str) {
+  return str.replace(/["'׳]/g, '').split(/[\s\-,./()]+/).filter(Boolean);
+}
+
+function bestByNameOverlap(pool, phraseTokens) {
+  let best = null;
+  let bestLen = Infinity;
+  for (const it of pool) {
+    const nameTokens = tokenize(it.Name);
+    if (!phraseTokens.every((t) => nameTokens.includes(t))) continue;
+    if (nameTokens.length < bestLen) { best = it; bestLen = nameTokens.length; }
+  }
+  return best;
+}
+
+// Search results are ranked by the site's own relevance score, not by how
+// closely the name matches what was searched — e.g. searching "חלב 1%" can
+// rank a flavored coffee-milk drink (which merely mentions "חלב 1.5%" in its
+// name) above plain milk, and "חלב 3%" can rank a 2-liter bottle above the
+// standard 1-liter carton, and "ביצים" can rank egg noodles or egg salad
+// alongside actual eggs. Two-tier preference:
+//  1) Among in-stock items whose SubCategoryName itself matches the search
+//     phrase (e.g. eggs are literally filed under subcategory "ביצים"),
+//     prefer the shortest name containing every phrase word — this steers
+//     "ביצים" to an egg carton over "סלט ביצים" (egg salad, filed under
+//     "סלטים") or "אטריות ביצים" (egg noodles, filed under pasta).
+//  2) Otherwise, among all in-stock items, same shortest-name-containing-
+//     every-phrase-word rule (catches the milk/cola cases above, where
+//     subcategory alone doesn't disambiguate).
+// Falls back to the old first-in-stock behavior when nothing contains the
+// full phrase at all.
+function pickBestMatch(items, phrase) {
+  const candidates = items.filter((it) => it.IsInStock);
+  const pool = candidates.length ? candidates : items;
+  if (!pool.length) return undefined;
+  if (!phrase) return pool[0];
+
+  const phraseTokens = tokenize(phrase);
+  const bySubcategory = pool.filter((it) => {
+    const subTokens = tokenize(it.SubCategoryName || '');
+    return phraseTokens.every((t) => subTokens.includes(t));
+  });
+
+  return bestByNameOverlap(bySubcategory, phraseTokens) || bestByNameOverlap(pool, phraseTokens) || pool[0];
 }
 
 // Weighed items (IsShakil, sold by ק"ג) are priced per kg via PricePerUnit —
@@ -47,7 +89,7 @@ async function ensureSession() {
 async function checkOnePrice({ name }) {
   const res = await searchItem(name);
   const items = res.Results?.Items || [];
-  const best = pickBestMatch(items);
+  const best = pickBestMatch(items, name);
   if (!best) return { name, ok: false, reason: 'no search results' };
   const { price, priceUnit } = resolvePrice(best);
   return { name, ok: true, matched: best.Name, id: best.Id, price, priceUnit };
