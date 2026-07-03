@@ -1690,6 +1690,7 @@
           <div class="list-actions">
             ${isEditMode && checked > 0 ? `<button class="btn-sm" onclick="confirmAction('checked')">מחק מסומנים (${checked})</button>` : ''}
             <button class="btn-edit${isEditMode ? ' active' : ''}" onclick="toggleEditMode()">${isEditMode ? '✓ סיום' : '✏️ עריכה'}</button>
+            <button class="btn-edit" onclick="sendToOnlineCart()">🛒 שלח לסל אונליין</button>
           </div>
         </div>
         <div class="progress-bar">
@@ -1778,6 +1779,30 @@
     document.getElementById('modal').addEventListener('click', e => {
       if (e.target.id === 'modal') closeModal();
     });
+
+    // ── Send to online cart (Hazi Hinam automation) ─────────────────────────────
+    async function sendToOnlineCart() {
+      const items = list
+        .filter(p => !p.checked)
+        .map(p => ({ name: p.name, quantity: p.quantity || 1 }));
+
+      if (!items.length) {
+        showToast('אין פריטים לשלוח', 'error');
+        return;
+      }
+
+      try {
+        const res = await fetch('/api/send-to-cart', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ items }),
+        });
+        if (!res.ok) throw new Error();
+        showToast('נשלח! נפתח דפדפן לחצי חינם...', 'success');
+      } catch (e) {
+        showToast('שליחה נכשלה — ודא שהשרת רץ', 'error');
+      }
+    }
 
     // ── Toast ─────────────────────────────────────────────────────────────────
     let _toastTimer;

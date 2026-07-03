@@ -20,6 +20,7 @@ async function pickProduct(page, name) {
 // ── Empty state ───────────────────────────────────────────────────────────────
 
 test('shows empty state when list is empty', async ({ page }) => {
+  await page.click('#tab-list');
   await expect(page.locator('.empty-state')).toBeVisible();
   await expect(page.locator('.empty-title')).toHaveText('הסל ריק');
 });
@@ -126,37 +127,45 @@ test('Escape closes suggestions', async ({ page }) => {
 
 test('+ button increments quantity', async ({ page }) => {
   await pickProduct(page, 'ביצים');
-  await page.click('.item-edit-btn');
+  await page.click('#tab-list');
+  await page.click('.btn-edit');
   await page.click('.qty-btn.plus');
-  await expect(page.locator('.qty-num')).toHaveText('2');
+  await expect(page.locator('.qty-num')).toHaveText('×2');
 });
 
 test('- button decrements quantity', async ({ page }) => {
   await pickProduct(page, 'ביצים');
-  await page.click('.item-edit-btn');
+  await page.click('#tab-list');
+  await page.click('.btn-edit');
   await page.click('.qty-btn.plus'); // → 2
   await page.click('.qty-btn.minus'); // → 1
-  await expect(page.locator('.qty-num')).toHaveText('1');
+  await expect(page.locator('.qty-num')).toHaveText('×1');
 });
 
 test('- button at qty=1 removes the item', async ({ page }) => {
   await pickProduct(page, 'ביצים');
-  await page.click('.item-edit-btn');
+  await page.click('#tab-list');
+  await page.click('.btn-edit');
   await page.click('.qty-btn.minus');
   await expect(page.locator('.item')).toHaveCount(0);
   await expect(page.locator('.empty-state')).toBeVisible();
 });
 
 // ── Check / uncheck ───────────────────────────────────────────────────────────
+// Checking items off is only available in edit mode ("✏️ עריכה").
 
 test('checkbox marks item as checked', async ({ page }) => {
   await pickProduct(page, 'ביצים');
+  await page.click('#tab-list');
+  await page.click('.btn-edit');
   await page.click('.item-check');
   await expect(page.locator('.item')).toHaveClass(/checked/);
 });
 
 test('clicking checked item un-checks it', async ({ page }) => {
   await pickProduct(page, 'ביצים');
+  await page.click('#tab-list');
+  await page.click('.btn-edit');
   await page.click('.item-check');
   await page.click('.item-check');
   await expect(page.locator('.item')).not.toHaveClass(/checked/);
@@ -166,7 +175,8 @@ test('clicking checked item un-checks it', async ({ page }) => {
 
 test('delete button removes item', async ({ page }) => {
   await pickProduct(page, 'ביצים');
-  await page.click('.item-edit-btn');
+  await page.click('#tab-list');
+  await page.click('.btn-edit');
   await page.click('.item-del');
   await expect(page.locator('.item')).toHaveCount(0);
   await expect(page.locator('.empty-state')).toBeVisible();
@@ -177,24 +187,31 @@ test('delete button removes item', async ({ page }) => {
 test('progress bar fills as items are checked', async ({ page }) => {
   await pickProduct(page, 'ביצים');
   await pickProduct(page, 'חלב 3%');
+  await page.click('#tab-list');
+  await page.click('.btn-edit');
   await expect(page.locator('.progress-fill')).toHaveAttribute('style', /width:0%/);
   await page.locator('.item-check').first().click();
   await expect(page.locator('.progress-fill')).toHaveAttribute('style', /width:50%/);
 });
 
-test('summary text updates when item is checked', async ({ page }) => {
+test('"clear checked" button count updates when item is checked', async ({ page }) => {
   await pickProduct(page, 'ביצים');
   await pickProduct(page, 'חלב 3%');
+  await page.click('#tab-list');
+  await page.click('.btn-edit');
   await page.locator('.item-check').first().click();
-  await expect(page.locator('.list-summary')).toContainText('1 נרכשו');
+  await expect(page.locator('.btn-sm:not(.danger)')).toContainText('מחק מסומנים (1)');
 });
 
 // ── Clear actions ─────────────────────────────────────────────────────────────
+// Bulk-clear controls live in the bottom bar, shown only in edit mode.
 
 test('clear all removes all items after modal confirmation', async ({ page }) => {
   await pickProduct(page, 'ביצים');
   await pickProduct(page, 'חלב 3%');
-  await page.click('.btn-sm.danger');
+  await page.click('#tab-list');
+  await page.click('.btn-edit');
+  await page.click('.btn-clear-all');
   await page.click('#modal-ok');
   await expect(page.locator('.item')).toHaveCount(0);
   await expect(page.locator('.empty-state')).toBeVisible();
@@ -202,7 +219,9 @@ test('clear all removes all items after modal confirmation', async ({ page }) =>
 
 test('cancel in modal keeps items', async ({ page }) => {
   await pickProduct(page, 'ביצים');
-  await page.click('.btn-sm.danger');
+  await page.click('#tab-list');
+  await page.click('.btn-edit');
+  await page.click('.btn-clear-all');
   await page.click('.btn-s');
   await expect(page.locator('.item')).toHaveCount(1);
 });
@@ -210,6 +229,8 @@ test('cancel in modal keeps items', async ({ page }) => {
 test('clear checked removes only checked items', async ({ page }) => {
   await pickProduct(page, 'ביצים');
   await pickProduct(page, 'חלב 3%');
+  await page.click('#tab-list');
+  await page.click('.btn-edit');
   await page.locator('.item-check').first().click();
   await page.locator('.btn-sm:not(.danger)').click();
   await page.click('#modal-ok');
@@ -228,17 +249,22 @@ test('products from DB appear grouped under correct category', async ({ page }) 
 
 test('items persist across page reload', async ({ page }) => {
   await pickProduct(page, 'ביצים');
-  await page.click('.item-edit-btn');
+  await page.click('#tab-list');
+  await page.click('.btn-edit');
   await page.click('.qty-btn.plus'); // qty → 2
-  await page.click('.item-done-btn');
+  await page.click('.btn-edit'); // exit edit mode
   await page.reload();
+  await page.click('#tab-list');
   await expect(page.locator('.item-name')).toHaveText('ביצים');
   await expect(page.locator('.item-qty-badge')).toHaveText('×2');
 });
 
 test('checked state persists across page reload', async ({ page }) => {
   await pickProduct(page, 'ביצים');
+  await page.click('#tab-list');
+  await page.click('.btn-edit');
   await page.click('.item-check');
   await page.reload();
+  await page.click('#tab-list');
   await expect(page.locator('.item')).toHaveClass(/checked/);
 });
