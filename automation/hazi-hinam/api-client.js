@@ -1,6 +1,6 @@
 // Step 2 of the hybrid approach: reuse the session saved by record-session.js
-// and talk to the site's backend directly (no browser, no clicking) — fast
-// and stable, using the exact endpoints captured from a real "add to cart" click.
+// and talk to the site's backend directly (no browser, no clicking) to search
+// for items — read-only, used for price lookups only.
 
 const fs = require('fs');
 const path = require('path');
@@ -53,32 +53,7 @@ async function searchItem(phrase) {
   return res.json();
 }
 
-async function addItemToCart(itemId, quantity = 1, type = 1) {
-  const res = await fetch(`${BASE}/item/addItemToCart`, {
-    method: 'POST',
-    headers: baseHeaders(),
-    body: JSON.stringify({ Object: { ItemId: itemId, Quantity: quantity, Type: type, IsCalculateCart: false } }),
-  });
-  await checkAuth(res);
-  if (!res.ok) throw new Error(`addItemToCart failed: ${res.status} ${await res.text()}`);
-  return res.json();
-}
-
-async function getCartSummary() {
-  const res = await fetch(`${BASE}/order/cartSummary`, { headers: baseHeaders() });
-  await checkAuth(res);
-  if (!res.ok) throw new Error(`cartSummary failed: ${res.status} ${await res.text()}`);
-  return res.json();
-}
-
-async function getItemsInCart() {
-  const res = await fetch(`${BASE}/item/getItemsInCart?SortBy=2&IsDescending=false`, { headers: baseHeaders() });
-  await checkAuth(res);
-  if (!res.ok) throw new Error(`getItemsInCart failed: ${res.status} ${await res.text()}`);
-  return res.json();
-}
-
-module.exports = { searchItem, addItemToCart, getCartSummary, getItemsInCart, hasSession, AuthExpiredError };
+module.exports = { searchItem, hasSession, AuthExpiredError };
 
 if (require.main === module) {
   (async () => {

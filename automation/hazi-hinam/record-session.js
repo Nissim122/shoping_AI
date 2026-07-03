@@ -1,15 +1,14 @@
-// Step 1 of the hybrid approach: open a real browser, let a human log in
-// (phone + SMS OTP) and click "add to cart" once. Every call to the site's
-// /proxy/api/ backend gets logged to captured-requests.jsonl, and the final
-// cookies/localStorage get saved to storageState.json so future runs can
-// skip the login entirely and talk to the API directly.
+// Step 1 of the hybrid approach: open a real browser and let a human log in
+// (phone + SMS OTP). Every call to the site's /proxy/api/ backend gets
+// logged to captured-requests.jsonl, and the final cookies/localStorage get
+// saved to storageState.json so future price-check runs can skip the login
+// entirely and talk to the search API directly.
 //
 // Usage: node automation/hazi-hinam/record-session.js
 // Then in the browser window that opens:
 //   1. Log in with your phone number + SMS code
 //   2. Pick your branch/store if asked
-//   3. Search for a product (e.g. "ביצים") and click "add to cart" once
-//   4. Close the browser window when done — everything is saved automatically
+//   3. Close the browser window when done — everything is saved automatically
 
 const { chromium } = require('playwright');
 const fs = require('fs');

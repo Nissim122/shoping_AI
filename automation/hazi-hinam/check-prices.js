@@ -26,6 +26,18 @@ function pickBestMatch(items) {
   return items.find((it) => it.IsInStock) || items[0];
 }
 
+// Weighed items (IsShakil, sold by ק"ג) are priced per kg via PricePerUnit —
+// Price_NET on those is some arbitrary display weight, not "one" of anything.
+// Everything else (pieces, or multi-item packs like a 6-pack of water) is
+// priced as the whole matched unit via Price_NET, since the store's own
+// catalog — not a guessed per-item split — defines what "one" is.
+function resolvePrice(best) {
+  if (best.IsShakil && best.MidaKod === 'ק"ג') {
+    return { price: best.PricePerUnit, priceUnit: 'kg' };
+  }
+  return { price: best.Price_NET, priceUnit: 'piece' };
+}
+
 async function ensureSession() {
   if (hasSession()) return;
   console.log('No valid session found — opening browser for login...');
@@ -37,7 +49,8 @@ async function checkOnePrice({ name }) {
   const items = res.Results?.Items || [];
   const best = pickBestMatch(items);
   if (!best) return { name, ok: false, reason: 'no search results' };
-  return { name, ok: true, matched: best.Name, id: best.Id, price: best.Price_NET };
+  const { price, priceUnit } = resolvePrice(best);
+  return { name, ok: true, matched: best.Name, id: best.Id, price, priceUnit };
 }
 
 // Small delay between requests — this is a manual, user-initiated check for
@@ -52,7 +65,7 @@ async function checkPrices(entries) {
       const result = await checkOnePrice(entry);
       results.push(result);
       if (result.ok) {
-        console.log(`[✓] "${result.name}" -> "${result.matched}" (${result.price}₪)`);
+        console.log(`[✓] "${result.name}" -> "${result.matched}" (${result.price}₪${result.priceUnit === 'kg' ? '/ק"ג' : ''})`);
       } else {
         console.log(`[x] "${entry.name}": ${result.reason}`);
       }
@@ -63,7 +76,7 @@ async function checkPrices(entries) {
         try {
           const retry = await checkOnePrice(entry);
           results.push(retry);
-          if (retry.ok) console.log(`[✓] "${retry.name}" -> "${retry.matched}" (${retry.price}₪) (after re-login)`);
+          if (retry.ok) console.log(`[✓] "${retry.name}" -> "${retry.matched}" (${retry.price}₪${retry.priceUnit === 'kg' ? '/ק"ג' : ''}) (after re-login)`);
         } catch (e2) {
           results.push({ name: entry.name, ok: false, reason: e2.message });
           console.log(`[x] "${entry.name}" failed even after re-login: ${e2.message}`);
@@ -93,7 +106,7 @@ async function main() {
   console.log('RESULTS_JSON:' + JSON.stringify({ results }));
 }
 
-module.exports = { checkPrices, ensureSession };
+module.exports = { checkPrices, checkOnePrice, ensureSession, pickBestMatch, resolvePrice };
 
 if (require.main === module) {
   main().catch((e) => {
