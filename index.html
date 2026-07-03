@@ -1463,6 +1463,13 @@
       return quantity + ' ' + unit;
     }
 
+    // item.price holds the per-unit price returned by the price check; the
+    // badge should show the total for the chosen quantity, not the unit price.
+    function formatTotalPrice(item) {
+      const total = Math.round(item.price * item.quantity * 100) / 100;
+      return total;
+    }
+
     function roundQty(val) {
       return Math.round(val * 1000) / 1000;
     }
@@ -1734,7 +1741,7 @@
               <div class="item ${item.checked ? 'checked' : ''}" data-id="${item.id}">
                 <button class="item-check" onclick="toggleItem(${item.id})" aria-label="סמן כנרכש"></button>
                 <span class="item-name">${esc(item.name)}</span>
-                ${item.price != null ? `<span class="item-price-badge">${item.price}₪</span>` : ''}
+                ${item.price != null ? `<span class="item-price-badge">${formatTotalPrice(item)}₪</span>` : ''}
                 <div class="qty-controls">
                   <button class="qty-btn minus" onclick="decQty(${item.id})" aria-label="הפחת">−</button>
                   <span class="qty-num">${qtyLabel}</span>
@@ -1747,7 +1754,7 @@
               <div class="item ${item.checked ? 'checked' : ''}" data-id="${item.id}">
                 <span class="item-qty-badge">${qtyLabel}</span>
                 <span class="item-name">${esc(item.name)}</span>
-                ${item.price != null ? `<span class="item-price-badge">${item.price}₪</span>` : ''}
+                ${item.price != null ? `<span class="item-price-badge">${formatTotalPrice(item)}₪</span>` : ''}
               </div>`;
           }
         }
