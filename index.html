@@ -1758,7 +1758,6 @@
           <div class="list-actions">
             ${isEditMode && checked > 0 ? `<button class="btn-sm" onclick="confirmAction('checked')">מחק מסומנים (${checked})</button>` : ''}
             <button class="btn-edit${isEditMode ? ' active' : ''}" onclick="toggleEditMode()">${isEditMode ? '✓ סיום' : '✏️ עריכה'}</button>
-            <button class="btn-edit" onclick="checkPrices()">💰 בדוק מחירים</button>
           </div>
         </div>
         <div class="progress-bar">
@@ -1865,28 +1864,6 @@
     document.getElementById('modal').addEventListener('click', e => {
       if (e.target.id === 'modal') closeModal();
     });
-
-    // ── Check prices ─────────────────────────────────────────────────────────
-    // Prices come from PRODUCTS, filled in by a separate one-time scan
-    // (automation/hazi-hinam/update-prices.js) — this just applies the
-    // already-known prices to the list, no live lookup and no server needed.
-    function checkPrices() {
-      const items = list.filter(p => !p.checked);
-
-      if (!items.length) {
-        showToast('אין פריטים לבדיקה', 'error');
-        return;
-      }
-
-      const byName = new Map(PRODUCTS.filter(p => p.price != null).map(p => [p.name, p]));
-      let updated = 0;
-      for (const p of items) {
-        const r = byName.get(p.name);
-        if (r) { p.price = r.price; p.priceUnit = r.priceUnit || 'piece'; updated++; }
-      }
-      saveList(); renderList();
-      showToast(updated ? `עודכנו מחירים ל-${updated} מוצרים` : 'לא נמצאו מחירים שמורים', updated ? 'success' : 'error');
-    }
 
     // ── Toast ─────────────────────────────────────────────────────────────────
     let _toastTimer;
