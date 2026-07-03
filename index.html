@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>רשימת קניות חכמה</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0e1628; --bg-e: #141d35; --bg-f: #1a2540;
+      --blue: #2196b0; --blue-l: #2db3cd;
+      --blue-g: rgba(33,150,176,0.28); --blue-bg: rgba(33,150,176,0.08);
+      --pink: #e0176b; --pink-g: rgba(224,23,107,0.28); --pink-bg: rgba(224,23,107,0.08);
+      --text: #ffffff; --muted: rgba(255,255,255,0.5); --subtle: rgba(255,255,255,0.28);
+      --border: rgba(255,255,255,0.09); --border-strong: rgba(255,255,255,0.18);
+      --border-blue: rgba(33,150,176,0.28); --border-pink: rgba(224,23,107,0.28);
+      --green: #28c76f; --error: #ef4444;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Heebo', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      direction: rtl;
+    }
+
+    .bg-grad {
+      position: fixed; inset: 0; z-index: 0; pointer-events: none;
+      background:
+        radial-gradient(ellipse 70% 50% at 10% 10%, rgba(33,150,176,0.07) 0%, transparent 65%),
+        radial-gradient(ellipse 50% 45% at 90% 85%, rgba(224,23,107,0.05) 0%, transparent 65%),
+        var(--bg);
+    }
+
+    .grain {
+      position: fixed; inset: 0; z-index: 1; pointer-events: none; opacity: 0.025;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      background-size: 256px 256px;
+    }
+
+    .app {
+      position: relative;
+      z-index: 2;
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 2rem 1rem 5rem;
+    }
+
+    /* ── Header ── */
+    .app-header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .app-header h1 {
+      font-size: clamp(1.6rem, 5vw, 2rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      margin-bottom: 0.3rem;
+    }
+    .app-header p {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    /* ── API Banner ── */
+    .api-banner {
+      background: var(--bg-e);
+      border: 1.5px solid var(--border-blue);
+      border-radius: 16px;
+      padding: 1.1rem 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+    .api-banner h3 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--blue-l);
+      margin-bottom: 0.4rem;
+    }
+    .api-banner p {
+      font-size: 0.8rem;
+      color: var(--muted);
+      line-height: 1.5;
+      margin-bottom: 0.75rem;
+    }
+    .api-row { display: flex; gap: 0.5rem; }
+    .api-row input {
+      flex: 1;
+      background: var(--bg-f);
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      padding: 10px 13px;
+      font-family: 'Inter', monospace;
+      font-size: 13px;
+      color: var(--text);
+      outline: none;
+      direction: ltr;
+      transition: border-color 0.2s;
+    }
+    .api-row input:focus { border-color: var(--blue); }
+    .api-row button {
+      background: var(--blue);
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      padding: 10px 18px;
+      font-family: 'Heebo', sans-serif;
+      font-weight: 700;
+      font-size: 14px;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: background 0.2s;
+    }
+    .api-row button:hover { background: var(--blue-l); }
+    .api-settings-link {
+      display: inline-block;
+      margin-top: 0.6rem;
+      font-size: 0.75rem;
+      color: var(--subtle);
+      cursor: pointer;
+      text-decoration: underline;
+    }
+    .api-settings-link:hover { color: var(--muted); }
+
+    /* ── Tabs ── */
+    .tabs {
+      display: flex;
+      gap: 0.4rem;
+      background: var(--bg-e);
+      border: 1.5px solid var(--border);
+      border-radius: 14px;
+      padding: 0.3rem;
+      margin-bottom: 1.5rem;
+    }
+    .tab-btn {
+      flex: 1;
+      background: transparent;
+      border: none;
+      border-radius: 10px;
+      padding: 10px 8px;
+      font-family: 'Heebo', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--muted);
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+    .tab-btn.active { background: var(--bg-f); color: var(--text); }
+    .tab-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--pink);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 700;
+      min-width: 18px;
+      height: 18px;
+      border-radius: 999px;
+      padding: 0 4px;
+    }
+
+    /* ── Screens ── */
+    .screen { display: none; }
+    .screen.active { display: block; animation: fadeUp 0.25s ease-out; }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(6px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── Add Screen ── */
+    .field-label {
+      display: block;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--muted);
+      margin-bottom: 0.4rem;
+    }
+    .field-hint {
+      font-size: 0.78rem;
+      color: var(--subtle);
+      margin-bottom: 0.65rem;
+    }
+    .add-input {
+      width: 100%;
+      background: var(--bg-e);
+      border: 1.5px solid var(--border);
+      border-radius: 14px;
+      padding: 14px 16px;
+      font-family: 'Heebo', sans-serif;
+      font-size: 16px;
+      color: var(--text);
+      outline: none;
+      resize: vertical;
+      min-height: 130px;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      direction: rtl;
+      line-height: 1.6;
+    }
+    .add-input:focus {
+      border-color: var(--blue);
+      box-shadow: 0 0 0 3px rgba(33,150,176,0.18);
+    }
+    .add-input::placeholder { color: var(--subtle); }
+
+    .add-footer {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-top: 0.75rem;
+      flex-wrap: wrap;
+    }
+    .keyboard-hint {
+      font-size: 0.75rem;
+      color: var(--subtle);
+    }
+    .keyboard-hint kbd {
+      font-family: 'Inter', monospace;
+      font-size: 11px;
+      background: var(--bg-f);
+      border: 1px solid var(--border-strong);
+      border-radius: 4px;
+      padding: 1px 5px;
+    }
+
+    .error-msg {
+      background: rgba(239,68,68,0.07);
+      border: 1.5px solid rgba(239,68,68,0.28);
+      border-radius: 10px;
+      padding: 10px 14px;
+      font-size: 0.85rem;
+      color: var(--error);
+      margin-top: 0.75rem;
+      display: none;
+    }
+    .error-msg.show { display: block; }
+
+    /* ── Buttons ── */
+    .btn-p {
+      background: var(--pink);
+      color: #fff;
+      font-family: 'Heebo', sans-serif;
+      font-weight: 700;
+      font-size: 15px;
+      padding: 12px 28px;
+      border-radius: 12px;
+      border: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      box-shadow: 0 4px 22px rgba(224,23,107,0.28);
+      transition: transform 0.22s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.22s ease;
+    }
+    .btn-p:hover  { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(224,23,107,0.38); }
+    .btn-p:active { transform: translateY(0); }
+    .btn-p:disabled { opacity: 0.45; cursor: not-allowed; transform: none !important; }
+
+    .btn-s {
+      background: transparent;
+      color: var(--muted);
+      font-family: 'Heebo', sans-serif;
+      font-weight: 500;
+      font-size: 14px;
+      padding: 11px 20px;
+      border-radius: 12px;
+      border: 1.5px solid var(--border);
+      cursor: pointer;
+      transition: border-color 0.2s, color 0.2s, transform 0.22s cubic-bezier(0.34,1.56,0.64,1);
+    }
+    .btn-s:hover { border-color: var(--border-strong); color: #fff; transform: translateY(-1px); }
+
+    .btn-sm {
+      font-family: 'Heebo', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 6px 14px;
+      border-radius: 8px;
+      border: 1.5px solid var(--border);
+      background: transparent;
+      color: var(--muted);
+      cursor: pointer;
+      transition: color 0.2s, border-color 0.2s, background 0.2s;
+    }
+    .btn-sm:hover { color: #fff; border-color: var(--border-strong); }
+    .btn-sm.danger { color: var(--error); border-color: rgba(239,68,68,0.22); }
+    .btn-sm.danger:hover { border-color: var(--error); background: rgba(239,68,68,0.07); }
+
+    /* ── Loading dots ── */
+    .loading-dots { display: none; align-items: center; gap: 5px; }
+    .loading-dots.show { display: flex; }
+    .dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: var(--blue);
+      animation: dotBounce 1.1s infinite cubic-bezier(0.45,0.05,0.55,0.95);
+    }
+    .dot:nth-child(2) { animation-delay: 0.15s; }
+    .dot:nth-child(3) { animation-delay: 0.3s; }
+    @keyframes dotBounce {
+      0%,60%,100% { transform: translateY(0); opacity: 0.25; }
+      30% { transform: translateY(-6px); opacity: 1; }
+    }
+
+    /* ── List Screen ── */
+    .list-topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 0.9rem;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+    .list-summary { font-size: 0.85rem; color: var(--muted); }
+    .list-actions { display: flex; gap: 0.4rem; flex-wrap: wrap; }
+
+    .progress-bar {
+      background: var(--bg-e);
+      border-radius: 999px;
+      height: 4px;
+      margin-bottom: 1.5rem;
+      overflow: hidden;
+    }
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--blue), var(--green));
+      border-radius: 999px;
+      transition: width 0.4s ease;
+    }
+
+    /* ── Category group ── */
+    .cat-group { margin-bottom: 1.5rem; }
+    .cat-header {
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      margin-bottom: 0.5rem;
+      padding: 0 0.2rem;
+    }
+    .cat-icon { font-size: 1rem; line-height: 1; }
+    .cat-name {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--blue-l);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .cat-count {
+      font-size: 0.72rem;
+      color: var(--subtle);
+      font-family: 'Inter', sans-serif;
+    }
+
+    /* ── Item ── */
+    .item {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      background: var(--bg-e);
+      border: 1.5px solid var(--border);
+      border-radius: 12px;
+      padding: 11px 13px;
+      margin-bottom: 0.38rem;
+      transition: border-color 0.2s, opacity 0.25s;
+    }
+    .item.checked { opacity: 0.4; border-color: transparent; }
+
+    .item-check {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      border: 2px solid var(--border-strong);
+      background: transparent;
+      cursor: pointer;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s, border-color 0.2s;
+    }
+    .item-check:hover { border-color: var(--green); }
+    .item.checked .item-check {
+      background: var(--green);
+      border-color: var(--green);
+    }
+    .item.checked .item-check::after {
+      content: '✓';
+      color: #fff;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .item-info { flex: 1; min-width: 0; }
+    .item-name {
+      font-size: 0.93rem;
+      font-weight: 600;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .item.checked .item-name { text-decoration: line-through; color: var(--muted); }
+    .item-qty {
+      font-size: 0.78rem;
+      color: var(--muted);
+      font-family: 'Inter', sans-serif;
+      margin-top: 1px;
+    }
+
+    .item-del {
+      background: none;
+      border: none;
+      color: var(--subtle);
+      cursor: pointer;
+      font-size: 0.85rem;
+      padding: 5px 7px;
+      border-radius: 6px;
+      flex-shrink: 0;
+      transition: color 0.2s, background 0.2s;
+      line-height: 1;
+    }
+    .item-del:hover { color: var(--error); background: rgba(239,68,68,0.1); }
+
+    /* ── Empty State ── */
+    .empty-state {
+      text-align: center;
+      padding: 3.5rem 1rem;
+      color: var(--muted);
+    }
+    .empty-icon { font-size: 3rem; opacity: 0.35; margin-bottom: 0.75rem; }
+    .empty-title { font-size: 1.05rem; font-weight: 700; margin-bottom: 0.3rem; }
+    .empty-sub { font-size: 0.85rem; }
+
+    /* ── Toast ── */
+    .toast {
+      position: fixed;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%) translateY(16px);
+      background: var(--bg-f);
+      border: 1.5px solid var(--border-strong);
+      border-radius: 12px;
+      padding: 11px 22px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--text);
+      z-index: 500;
+      opacity: 0;
+      transition: opacity 0.22s ease, transform 0.22s ease;
+      pointer-events: none;
+      white-space: nowrap;
+    }
+    .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+    .toast.success { border-color: rgba(40,199,111,0.35); color: var(--green); }
+    .toast.error   { border-color: rgba(239,68,68,0.35); color: var(--error); }
+
+    /* ── Modal ── */
+    .modal-overlay {
+      position: fixed; inset: 0;
+      background: rgba(0,0,0,0.55);
+      backdrop-filter: blur(5px);
+      z-index: 300;
+      display: flex; align-items: center; justify-content: center;
+      padding: 1rem;
+      opacity: 0; pointer-events: none;
+      transition: opacity 0.2s;
+    }
+    .modal-overlay.show { opacity: 1; pointer-events: all; }
+    .modal-box {
+      background: var(--bg-e);
+      border: 1.5px solid var(--border-strong);
+      border-radius: 18px;
+      padding: 1.75rem;
+      max-width: 360px;
+      width: 100%;
+      transform: scale(0.94) translateY(12px);
+      transition: transform 0.25s cubic-bezier(0.34,1.56,0.64,1);
+    }
+    .modal-overlay.show .modal-box { transform: scale(1) translateY(0); }
+    .modal-box h3 { font-size: 1.05rem; font-weight: 800; margin-bottom: 0.5rem; }
+    .modal-box p  { font-size: 0.875rem; color: var(--muted); line-height: 1.6; margin-bottom: 1.25rem; }
+    .modal-actions { display: flex; gap: 0.5rem; justify-content: flex-end; }
+
+    @media (max-width: 480px) {
+      .app { padding: 1.25rem 0.75rem 5rem; }
+      .list-topbar { flex-direction: column; align-items: flex-start; }
+      .keyboard-hint { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-grad"></div>
+  <div class="grain"></div>
+  <div class="toast" id="toast"></div>
+
+  <div class="app">
+
+    <!-- Header -->
+    <div class="app-header">
+      <h1>🛒 רשימת קניות</h1>
+      <p>הזן מוצרים בחופשיות — ה-AI יסדר לפי קטגוריות</p>
+    </div>
+
+    <!-- API Key Banner -->
+    <div class="api-banner" id="api-banner">
+      <h3>הגדרת מפתח Claude API</h3>
+      <p>נדרש מפתח API מ-Anthropic להפעלת הניתוח החכם. המפתח נשמר רק בדפדפן שלך ולא נשלח לשום שרת.</p>
+      <div class="api-row">
+        <input type="password" id="api-key-input" placeholder="sk-ant-..." autocomplete="off" />
+        <button onclick="saveApiKey()">שמור</button>
+      </div>
+    </div>
+
+    <!-- Tabs -->
+    <div class="tabs">
+      <button class="tab-btn active" id="tab-add" onclick="switchTab('add')">הוסף מוצרים</button>
+      <button class="tab-btn" id="tab-list" onclick="switchTab('list')">
+        הרשימה שלי
+        <span class="tab-badge" id="tab-badge" style="display:none">0</span>
+      </button>
+    </div>
+
+    <!-- Add Screen -->
+    <div class="screen active" id="screen-add">
+      <span class="field-label">מה לקנות?</span>
+      <div class="field-hint">לדוגמה: "2 חלב, לחם שאור, עגבניות x3, 500 גרם עוף, שמפו"</div>
+      <textarea class="add-input" id="add-input" placeholder="הקלד מוצרים בחופשיות...&#10;&#10;כמויות: 2 חלב / x3 עגבניות / 500 גרם עוף"></textarea>
+      <div class="error-msg" id="add-error"></div>
+      <div class="add-footer">
+        <button class="btn-p" id="add-btn" onclick="handleAdd()">הוסף לרשימה</button>
+        <div class="loading-dots" id="loading">
+          <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+        </div>
+        <span class="keyboard-hint"><kbd>Ctrl</kbd>+<kbd>Enter</kbd> לשליחה</span>
+      </div>
+    </div>
+
+    <!-- List Screen -->
+    <div class="screen" id="screen-list">
+      <div id="list-container"></div>
+    </div>
+
+  </div>
+
+  <!-- Confirm Modal -->
+  <div class="modal-overlay" id="modal">
+    <div class="modal-box">
+      <h3 id="modal-title"></h3>
+      <p id="modal-body"></p>
+      <div class="modal-actions">
+        <button class="btn-s" onclick="closeModal()">ביטול</button>
+        <button class="btn-sm danger" id="modal-ok" style="font-size:14px;padding:10px 20px;">אישור</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const STORAGE_KEY    = 'shopping_list_v1';
+    const API_KEY_STORE  = 'claude_api_key';
+
+    const CATS_ORDER = [
+      'ירקות ופירות',
+      'מוצרי חלב וביצים',
+      'לחם ומאפים',
+      'בשר עוף ודגים',
+      'שימורים ויבשים',
+      'קפואים',
+      'משקאות',
+      'ניקיון ותכשירים',
+      'טיפוח ובריאות',
+      'אחר'
+    ];
+
+    const CAT_ICONS = {
+      'ירקות ופירות':     '🥬',
+      'מוצרי חלב וביצים': '🥛',
+      'לחם ומאפים':       '🍞',
+      'בשר עוף ודגים':    '🥩',
+      'שימורים ויבשים':   '🥫',
+      'קפואים':           '🧊',
+      'משקאות':           '🥤',
+      'ניקיון ותכשירים':  '🧹',
+      'טיפוח ובריאות':    '🧴',
+      'אחר':              '📦'
+    };
+
+    // ── State ──
+    let list    = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+    let apiKey  = localStorage.getItem(API_KEY_STORE) || '';
+    let modalCb = null;
+
+    // ── Init ──
+    updateApiBanner();
+    updateTabBadge();
+
+    // ── API Key ──
+    function updateApiBanner() {
+      document.getElementById('api-banner').style.display = apiKey ? 'none' : 'block';
+    }
+
+    function saveApiKey() {
+      const val = document.getElementById('api-key-input').value.trim();
+      if (!val) return;
+      apiKey = val;
+      localStorage.setItem(API_KEY_STORE, apiKey);
+      updateApiBanner();
+      showToast('מפתח API נשמר בהצלחה', 'success');
+    }
+
+    // ── Tabs ──
+    function switchTab(tab) {
+      ['add','list'].forEach(t => {
+        document.getElementById('screen-' + t).classList.toggle('active', t === tab);
+        document.getElementById('tab-' + t).classList.toggle('active', t === tab);
+      });
+      if (tab === 'list') renderList();
+    }
+
+    // ── Add ──
+    async function handleAdd() {
+      const ta   = document.getElementById('add-input');
+      const text = ta.value.trim();
+      if (!text) return;
+
+      if (!apiKey) {
+        showError('נדרש מפתח Claude API — גלול למעלה והזן אותו.');
+        return;
+      }
+
+      setLoading(true);
+      hideError();
+
+      try {
+        const items = await parseProducts(text);
+        if (!items.length) throw new Error('לא זוהו מוצרים בטקסט');
+        mergeProducts(items);
+        ta.value = '';
+        updateTabBadge();
+        showToast(`נוספו ${items.length} מוצרים`, 'success');
+        switchTab('list');
+      } catch (err) {
+        showError('שגיאה: ' + err.message);
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    document.getElementById('add-input').addEventListener('keydown', e => {
+      if (e.key === 'Enter' && e.ctrlKey) { e.preventDefault(); handleAdd(); }
+    });
+
+    function setLoading(on) {
+      document.getElementById('add-btn').disabled = on;
+      document.getElementById('loading').classList.toggle('show', on);
+    }
+
+    function showError(msg) {
+      const el = document.getElementById('add-error');
+      el.textContent = msg;
+      el.classList.add('show');
+    }
+
+    function hideError() {
+      document.getElementById('add-error').classList.remove('show');
+    }
+
+    // ── Claude API ──
+    async function parseProducts(text) {
+      const prompt = `אתה מנתח רשימות קניות בעברית. נתח את הטקסט הבא וחלץ כל מוצר.
+
+קטגוריות אפשריות (השתמש רק בהן בדיוק):
+ירקות ופירות, מוצרי חלב וביצים, לחם ומאפים, בשר עוף ודגים, שימורים ויבשים, קפואים, משקאות, ניקיון ותכשירים, טיפוח ובריאות, אחר
+
+טקסט: "${text}"
+
+החזר אך ורק מערך JSON בלי שום טקסט נוסף:
+[{"name":"שם המוצר","quantity":1,"unit":"יח'","category":"קטגוריה"}]
+
+כללים:
+- אם אין כמות → quantity=1
+- אם אין יחידה → unit="יח'"
+- שמות מוצרים בעברית בלבד
+- רק JSON, ללא markdown`;
+
+      const res = await fetch('https://api.anthropic.com/v1/messages', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'x-api-key': apiKey,
+          'anthropic-version': '2023-06-01',
+          'anthropic-dangerous-direct-browser-calls': 'true'
+        },
+        body: JSON.stringify({
+          model: 'claude-haiku-4-5-20251001',
+          max_tokens: 1024,
+          messages: [{ role: 'user', content: prompt }]
+        })
+      });
+
+      if (!res.ok) {
+        let msg = `שגיאת שרת (${res.status})`;
+        try { const e = await res.json(); msg = e.error?.message || msg; } catch {}
+        throw new Error(msg);
+      }
+
+      const data = await res.json();
+      const raw  = data.content[0].text.trim();
+
+      // Extract JSON array even if wrapped in markdown
+      const match = raw.match(/\[[\s\S]*\]/);
+      if (!match) throw new Error('תשובה לא תקינה מה-AI');
+      return JSON.parse(match[0]);
+    }
+
+    // ── Merge ──
+    function mergeProducts(newItems) {
+      for (const item of newItems) {
+        const norm = item.name.trim().toLowerCase();
+        const existing = list.find(p => !p.checked && p.name.toLowerCase() === norm);
+        if (existing) {
+          existing.quantity += (item.quantity || 1);
+        } else {
+          list.push({
+            id:       Date.now() + Math.random(),
+            name:     item.name.trim(),
+            quantity: item.quantity || 1,
+            unit:     item.unit || "יח'",
+            category: item.category || 'אחר',
+            checked:  false
+          });
+        }
+      }
+      saveList();
+    }
+
+    function saveList() {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(list));
+    }
+
+    // ── Render List ──
+    function renderList() {
+      const el = document.getElementById('list-container');
+
+      if (!list.length) {
+        el.innerHTML = `
+          <div class="empty-state">
+            <div class="empty-icon">🛒</div>
+            <div class="empty-title">הרשימה ריקה</div>
+            <div class="empty-sub">עבור ל"הוסף מוצרים" כדי להתחיל</div>
+          </div>`;
+        return;
+      }
+
+      const total   = list.length;
+      const checked = list.filter(p => p.checked).length;
+      const pct     = total ? Math.round((checked / total) * 100) : 0;
+
+      // Group by category
+      const groups = {};
+      for (const item of list) {
+        const cat = item.category || 'אחר';
+        if (!groups[cat]) groups[cat] = [];
+        groups[cat].push(item);
+      }
+
+      const orderedCats = CATS_ORDER.filter(c => groups[c]);
+      const extraCats   = Object.keys(groups).filter(c => !CATS_ORDER.includes(c));
+      const allCats     = [...orderedCats, ...extraCats];
+
+      let html = `
+        <div class="list-topbar">
+          <div class="list-summary">${total} פריטים · ${checked} נרכשו (${pct}%)</div>
+          <div class="list-actions">
+            ${checked > 0 ? `<button class="btn-sm" onclick="confirmAction('checked')">מחק מסומנים (${checked})</button>` : ''}
+            <button class="btn-sm danger" onclick="confirmAction('all')">נקה הכל</button>
+          </div>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" style="width:${pct}%"></div>
+        </div>`;
+
+      for (const cat of allCats) {
+        const items = groups[cat];
+        const icon  = CAT_ICONS[cat] || '📦';
+        const uncheckedCount = items.filter(i => !i.checked).length;
+
+        html += `
+          <div class="cat-group">
+            <div class="cat-header">
+              <span class="cat-icon">${icon}</span>
+              <span class="cat-name">${esc(cat)}</span>
+              <span class="cat-count">${uncheckedCount} / ${items.length}</span>
+            </div>`;
+
+        // Unchecked first, then checked
+        const sorted = [...items].sort((a, b) => Number(a.checked) - Number(b.checked));
+        for (const item of sorted) {
+          html += `
+            <div class="item ${item.checked ? 'checked' : ''}" data-id="${item.id}">
+              <button class="item-check" onclick="toggleItem(${item.id})" aria-label="סמן כנרכש"></button>
+              <div class="item-info">
+                <div class="item-name">${esc(item.name)}</div>
+                <div class="item-qty">${item.quantity} ${esc(item.unit)}</div>
+              </div>
+              <button class="item-del" onclick="removeItem(${item.id})" aria-label="מחק">✕</button>
+            </div>`;
+        }
+
+        html += `</div>`;
+      }
+
+      el.innerHTML = html;
+    }
+
+    function esc(s) {
+      return String(s)
+        .replace(/&/g,'&amp;').replace(/</g,'&lt;')
+        .replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+    }
+
+    // ── Item Actions ──
+    function toggleItem(id) {
+      const item = list.find(p => p.id === id);
+      if (!item) return;
+      item.checked = !item.checked;
+      saveList();
+      renderList();
+      updateTabBadge();
+    }
+
+    function removeItem(id) {
+      list = list.filter(p => p.id !== id);
+      saveList();
+      renderList();
+      updateTabBadge();
+    }
+
+    // ── Confirm + Clear ──
+    function confirmAction(type) {
+      if (type === 'all') {
+        openModal('ניקוי הרשימה', 'האם למחוק את כל הרשימה ולהתחיל מחדש?', () => {
+          list = [];
+          saveList();
+          renderList();
+          updateTabBadge();
+          showToast('הרשימה נוקתה', 'success');
+        });
+      } else {
+        const n = list.filter(p => p.checked).length;
+        openModal('מחיקת פריטים מסומנים', `האם למחוק ${n} פריטים שסומנו כנרכשו?`, () => {
+          list = list.filter(p => !p.checked);
+          saveList();
+          renderList();
+          updateTabBadge();
+          showToast(`${n} פריטים נמחקו`, 'success');
+        });
+      }
+    }
+
+    // ── Modal ──
+    function openModal(title, body, cb) {
+      document.getElementById('modal-title').textContent = title;
+      document.getElementById('modal-body').textContent  = body;
+      modalCb = cb;
+      document.getElementById('modal').classList.add('show');
+    }
+
+    function closeModal() {
+      document.getElementById('modal').classList.remove('show');
+      modalCb = null;
+    }
+
+    document.getElementById('modal-ok').addEventListener('click', () => {
+      if (modalCb) { modalCb(); closeModal(); }
+    });
+    document.getElementById('modal').addEventListener('click', e => {
+      if (e.target.id === 'modal') closeModal();
+    });
+
+    // ── Tab Badge ──
+    function updateTabBadge() {
+      const n  = list.filter(p => !p.checked).length;
+      const el = document.getElementById('tab-badge');
+      el.style.display = n ? 'inline-flex' : 'none';
+      el.textContent   = n;
+    }
+
+    // ── Toast ──
+    let _toastTimer;
+    function showToast(msg, type = '') {
+      const el = document.getElementById('toast');
+      el.textContent = msg;
+      el.className   = 'toast show' + (type ? ' ' + type : '');
+      clearTimeout(_toastTimer);
+      _toastTimer = setTimeout(() => { el.className = 'toast'; }, 2800);
+    }
+  </script>
+</body>
+</html>
