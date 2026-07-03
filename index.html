@@ -2,7 +2,12 @@
 <html lang="he" dir="rtl">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#0e1628">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="רשימת קניות">
   <title>רשימת קניות חכמה</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,7 +24,8 @@
       --green: #28c76f; --error: #ef4444;
     }
 
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+    button { touch-action: manipulation; }
 
     body {
       font-family: 'Heebo', sans-serif;
@@ -27,6 +33,7 @@
       color: var(--text);
       min-height: 100vh;
       direction: rtl;
+      overscroll-behavior-y: contain;
     }
 
     .bg-grad {
@@ -48,7 +55,7 @@
       z-index: 2;
       max-width: 640px;
       margin: 0 auto;
-      padding: 2rem 1rem 5rem;
+      padding: 2rem 1rem max(5rem, calc(3rem + env(safe-area-inset-bottom)));
     }
 
     /* ── Header ── */
@@ -66,65 +73,6 @@
       color: var(--muted);
       font-size: 0.9rem;
     }
-
-    /* ── API Banner ── */
-    .api-banner {
-      background: var(--bg-e);
-      border: 1.5px solid var(--border-blue);
-      border-radius: 16px;
-      padding: 1.1rem 1.25rem;
-      margin-bottom: 1.5rem;
-    }
-    .api-banner h3 {
-      font-size: 0.95rem;
-      font-weight: 700;
-      color: var(--blue-l);
-      margin-bottom: 0.4rem;
-    }
-    .api-banner p {
-      font-size: 0.8rem;
-      color: var(--muted);
-      line-height: 1.5;
-      margin-bottom: 0.75rem;
-    }
-    .api-row { display: flex; gap: 0.5rem; }
-    .api-row input {
-      flex: 1;
-      background: var(--bg-f);
-      border: 1.5px solid var(--border);
-      border-radius: 10px;
-      padding: 10px 13px;
-      font-family: 'Inter', monospace;
-      font-size: 13px;
-      color: var(--text);
-      outline: none;
-      direction: ltr;
-      transition: border-color 0.2s;
-    }
-    .api-row input:focus { border-color: var(--blue); }
-    .api-row button {
-      background: var(--blue);
-      color: #fff;
-      border: none;
-      border-radius: 10px;
-      padding: 10px 18px;
-      font-family: 'Heebo', sans-serif;
-      font-weight: 700;
-      font-size: 14px;
-      cursor: pointer;
-      white-space: nowrap;
-      transition: background 0.2s;
-    }
-    .api-row button:hover { background: var(--blue-l); }
-    .api-settings-link {
-      display: inline-block;
-      margin-top: 0.6rem;
-      font-size: 0.75rem;
-      color: var(--subtle);
-      cursor: pointer;
-      text-decoration: underline;
-    }
-    .api-settings-link:hover { color: var(--muted); }
 
     /* ── Tabs ── */
     .tabs {
@@ -280,10 +228,11 @@
 
     .btn-sm {
       font-family: 'Heebo', sans-serif;
-      font-size: 12px;
+      font-size: 13px;
       font-weight: 600;
-      padding: 6px 14px;
+      padding: 10px 16px;
       border-radius: 8px;
+      min-height: 44px;
       border: 1.5px solid var(--border);
       background: transparent;
       color: var(--muted);
@@ -373,10 +322,10 @@
     .item.checked { opacity: 0.4; border-color: transparent; }
 
     .item-check {
-      width: 22px;
-      height: 22px;
+      width: 44px;
+      height: 44px;
       border-radius: 50%;
-      border: 2px solid var(--border-strong);
+      border: 2.5px solid var(--border-strong);
       background: transparent;
       cursor: pointer;
       flex-shrink: 0;
@@ -393,7 +342,7 @@
     .item.checked .item-check::after {
       content: '✓';
       color: #fff;
-      font-size: 12px;
+      font-size: 16px;
       font-weight: 800;
     }
 
@@ -418,12 +367,17 @@
       border: none;
       color: var(--subtle);
       cursor: pointer;
-      font-size: 0.85rem;
-      padding: 5px 7px;
-      border-radius: 6px;
+      font-size: 1rem;
+      padding: 10px;
+      border-radius: 8px;
       flex-shrink: 0;
       transition: color 0.2s, background 0.2s;
       line-height: 1;
+      min-width: 44px;
+      min-height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
     .item-del:hover { color: var(--error); background: rgba(239,68,68,0.1); }
 
@@ -440,7 +394,7 @@
     /* ── Toast ── */
     .toast {
       position: fixed;
-      bottom: 2rem;
+      bottom: max(2rem, calc(1rem + env(safe-area-inset-bottom)));
       left: 50%;
       transform: translateX(-50%) translateY(16px);
       background: var(--bg-f);
@@ -454,7 +408,8 @@
       opacity: 0;
       transition: opacity 0.22s ease, transform 0.22s ease;
       pointer-events: none;
-      white-space: nowrap;
+      max-width: calc(100vw - 2rem);
+      text-align: center;
     }
     .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
     .toast.success { border-color: rgba(40,199,111,0.35); color: var(--green); }
@@ -487,10 +442,11 @@
     .modal-box p  { font-size: 0.875rem; color: var(--muted); line-height: 1.6; margin-bottom: 1.25rem; }
     .modal-actions { display: flex; gap: 0.5rem; justify-content: flex-end; }
 
+    .keyboard-hint { display: none; }
+
     @media (max-width: 480px) {
-      .app { padding: 1.25rem 0.75rem 5rem; }
+      .app { padding: 1.25rem 0.75rem max(5rem, calc(3rem + env(safe-area-inset-bottom))); }
       .list-topbar { flex-direction: column; align-items: flex-start; }
-      .keyboard-hint { display: none; }
     }
   </style>
 </head>
@@ -505,16 +461,6 @@
     <div class="app-header">
       <h1>🛒 רשימת קניות</h1>
       <p>הזן מוצרים בחופשיות — ה-AI יסדר לפי קטגוריות</p>
-    </div>
-
-    <!-- API Key Banner -->
-    <div class="api-banner" id="api-banner">
-      <h3>הגדרת מפתח Claude API</h3>
-      <p>נדרש מפתח API מ-Anthropic להפעלת הניתוח החכם. המפתח נשמר רק בדפדפן שלך ולא נשלח לשום שרת.</p>
-      <div class="api-row">
-        <input type="password" id="api-key-input" placeholder="sk-ant-..." autocomplete="off" />
-        <button onclick="saveApiKey()">שמור</button>
-      </div>
     </div>
 
     <!-- Tabs -->
@@ -537,7 +483,6 @@
         <div class="loading-dots" id="loading">
           <div class="dot"></div><div class="dot"></div><div class="dot"></div>
         </div>
-        <span class="keyboard-hint"><kbd>Ctrl</kbd>+<kbd>Enter</kbd> לשליחה</span>
       </div>
     </div>
 
@@ -561,8 +506,7 @@
   </div>
 
   <script>
-    const STORAGE_KEY    = 'shopping_list_v1';
-    const API_KEY_STORE  = 'claude_api_key';
+    const STORAGE_KEY = 'shopping_list_v1';
 
     const CATS_ORDER = [
       'ירקות ופירות',
@@ -592,26 +536,10 @@
 
     // ── State ──
     let list    = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
-    let apiKey  = localStorage.getItem(API_KEY_STORE) || '';
     let modalCb = null;
 
     // ── Init ──
-    updateApiBanner();
     updateTabBadge();
-
-    // ── API Key ──
-    function updateApiBanner() {
-      document.getElementById('api-banner').style.display = apiKey ? 'none' : 'block';
-    }
-
-    function saveApiKey() {
-      const val = document.getElementById('api-key-input').value.trim();
-      if (!val) return;
-      apiKey = val;
-      localStorage.setItem(API_KEY_STORE, apiKey);
-      updateApiBanner();
-      showToast('מפתח API נשמר בהצלחה', 'success');
-    }
 
     // ── Tabs ──
     function switchTab(tab) {
@@ -627,11 +555,6 @@
       const ta   = document.getElementById('add-input');
       const text = ta.value.trim();
       if (!text) return;
-
-      if (!apiKey) {
-        showError('נדרש מפתח Claude API — גלול למעלה והזן אותו.');
-        return;
-      }
 
       setLoading(true);
       hideError();
@@ -670,52 +593,17 @@
       document.getElementById('add-error').classList.remove('show');
     }
 
-    // ── Claude API ──
+    // ── Claude API (via backend) ──
     async function parseProducts(text) {
-      const prompt = `אתה מנתח רשימות קניות בעברית. נתח את הטקסט הבא וחלץ כל מוצר.
-
-קטגוריות אפשריות (השתמש רק בהן בדיוק):
-ירקות ופירות, מוצרי חלב וביצים, לחם ומאפים, בשר עוף ודגים, שימורים ויבשים, קפואים, משקאות, ניקיון ותכשירים, טיפוח ובריאות, אחר
-
-טקסט: "${text}"
-
-החזר אך ורק מערך JSON בלי שום טקסט נוסף:
-[{"name":"שם המוצר","quantity":1,"unit":"יח'","category":"קטגוריה"}]
-
-כללים:
-- אם אין כמות → quantity=1
-- אם אין יחידה → unit="יח'"
-- שמות מוצרים בעברית בלבד
-- רק JSON, ללא markdown`;
-
-      const res = await fetch('https://api.anthropic.com/v1/messages', {
+      const res = await fetch('/api/parse', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'x-api-key': apiKey,
-          'anthropic-version': '2023-06-01',
-          'anthropic-dangerous-direct-browser-calls': 'true'
-        },
-        body: JSON.stringify({
-          model: 'claude-haiku-4-5-20251001',
-          max_tokens: 1024,
-          messages: [{ role: 'user', content: prompt }]
-        })
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ text })
       });
 
-      if (!res.ok) {
-        let msg = `שגיאת שרת (${res.status})`;
-        try { const e = await res.json(); msg = e.error?.message || msg; } catch {}
-        throw new Error(msg);
-      }
-
       const data = await res.json();
-      const raw  = data.content[0].text.trim();
-
-      // Extract JSON array even if wrapped in markdown
-      const match = raw.match(/\[[\s\S]*\]/);
-      if (!match) throw new Error('תשובה לא תקינה מה-AI');
-      return JSON.parse(match[0]);
+      if (!res.ok) throw new Error(data.error || `שגיאת שרת (${res.status})`);
+      return data.items;
     }
 
     // ── Merge ──
