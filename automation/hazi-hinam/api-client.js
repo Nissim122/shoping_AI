@@ -32,20 +32,20 @@ async function checkAuth(res) {
   if (res.status === 401 || res.status === 403) throw new AuthExpiredError(res.status);
 }
 
-function baseHeaders() {
+function baseHeaders(cookieHeader) {
   const udid = '11111111-1111-1111-1111-111111111111';
   return {
     Accept: 'application/json, text/plain, */*',
     'Content-Type': 'application/json; charset=UTF-8',
     DEVICE_INFO: JSON.stringify({ DEVICE_TYPE: 4, UDID: udid, MANUFACTURER: '', MODEL: '', VERSION: '' }),
-    Cookie: loadCookieHeader(),
+    Cookie: cookieHeader || loadCookieHeader(),
   };
 }
 
-async function searchItem(phrase) {
+async function searchItem(phrase, cookieHeader) {
   const res = await fetch(`${BASE}/item/getItemsBySearch`, {
     method: 'POST',
-    headers: baseHeaders(),
+    headers: baseHeaders(cookieHeader),
     body: JSON.stringify({ Paging: { Page: 1, PageSize: 20 }, Object: { SearchPhrase: phrase, SearchPhrases: null, ItemGroupping: 0 } }),
   });
   await checkAuth(res);
@@ -53,7 +53,31 @@ async function searchItem(phrase) {
   return res.json();
 }
 
-module.exports = { searchItem, hasSession, AuthExpiredError };
+// A plain (logged-out) visit to the site already gets a working session
+// cookie for read-only search — no account/login required. Used so price
+// checks don't need to touch the user's real account at all.
+let cachedGuestCookieHeader = null;
+
+async function ensureGuestSession(forceRefresh) {
+  if (cachedGuestCookieHeader && !forceRefresh) return cachedGuestCookieHeader;
+  const { chromium } = require('playwright');
+  const browser = await chromium.launch({ headless: true });
+  try {
+    const context = await browser.newContext();
+    const page = await context.newPage();
+    await page.goto('https://shop.hazi-hinam.co.il/', { waitUntil: 'networkidle', timeout: 30000 });
+    const cookies = await context.cookies();
+    cachedGuestCookieHeader = cookies
+      .filter((c) => c.domain.includes('hazi-hinam.co.il'))
+      .map((c) => `${c.name}=${c.value}`)
+      .join('; ');
+    return cachedGuestCookieHeader;
+  } finally {
+    await browser.close();
+  }
+}
+
+module.exports = { searchItem, hasSession, AuthExpiredError, ensureGuestSession };
 
 if (require.main === module) {
   (async () => {

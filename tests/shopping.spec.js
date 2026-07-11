@@ -268,3 +268,31 @@ test('checked state persists across page reload', async ({ page }) => {
   await page.click('#tab-list');
   await expect(page.locator('.item')).toHaveClass(/checked/);
 });
+
+// ── Liters (pack size) display ────────────────────────────────────────────────
+// Drink/milk products carry a `liters` field so a price is never shown without
+// its pack size (e.g. distinguishing a 1L carton from a 2L bottle of milk).
+
+test('suggestion shows liters tag for a sized drink product', async ({ page }) => {
+  await page.click('#tab-add');
+  await page.fill('#add-input', 'חלב 3%');
+  const suggestion = page.locator('.sugg-item').filter({ hasText: 'חלב 3%' }).first();
+  await expect(suggestion.locator('.liters-tag')).toContainText('ליטר');
+});
+
+test('confirm card shows liters tag for a sized drink product', async ({ page }) => {
+  await page.click('#tab-add');
+  await page.fill('#add-input', 'חלב 3%');
+  await page.locator('.sugg-item').filter({ hasText: 'חלב 3%' }).first().click();
+  await expect(page.locator('.confirm-product-name .liters-tag')).toContainText('ליטר');
+});
+
+test('added list item shows liters tag for a sized drink product', async ({ page }) => {
+  await pickProduct(page, 'חלב 3%');
+  await expect(page.locator('.item-name .liters-tag')).toContainText('ליטר');
+});
+
+test('non-liquid product shows no liters tag', async ({ page }) => {
+  await pickProduct(page, 'ביצים');
+  await expect(page.locator('.item-name .liters-tag')).toHaveCount(0);
+});
