@@ -1,0 +1,3602 @@
+[
+  {
+    "line": 836,
+    "name": "שום",
+    "status": "low-confidence",
+    "matched": "שום כתוש",
+    "manufacturer": "תבליני ביטון מאיר",
+    "wouldBe": "שום (תבליני ביטון מאיר)",
+    "priceMatch": true
+  },
+  {
+    "line": 847,
+    "name": "כרוב סגול",
+    "status": "low-confidence",
+    "matched": "כרוב סגול במיונז",
+    "manufacturer": "אחלה - שטראוס",
+    "wouldBe": "כרוב סגול (אחלה שטראוס)",
+    "priceMatch": false
+  },
+  {
+    "line": 858,
+    "name": "לימון",
+    "status": "low-confidence",
+    "matched": "מיץ לימון",
+    "manufacturer": "וילי פוד",
+    "wouldBe": "לימון (וילי פוד)",
+    "priceMatch": true
+  },
+  {
+    "line": 863,
+    "name": "ענבים",
+    "status": "low-confidence",
+    "matched": "פריגת ענבים",
+    "manufacturer": "פריגת",
+    "wouldBe": "ענבים (פריגת)",
+    "priceMatch": true
+  },
+  {
+    "line": 869,
+    "name": "קלמנטינה",
+    "status": "low-confidence",
+    "matched": "מיץ קלמנטינות סחוט פריגת",
+    "manufacturer": "פריגת",
+    "wouldBe": "קלמנטינה (פריגת)",
+    "priceMatch": true
+  },
+  {
+    "line": 871,
+    "name": "אשכולית",
+    "status": "low-confidence",
+    "matched": "ג'ל רחצה לפנים אשכולית אדומה",
+    "manufacturer": "קרמה Crema",
+    "wouldBe": "אשכולית (קרמה)",
+    "priceMatch": false
+  },
+  {
+    "line": 872,
+    "name": "קיווי",
+    "status": "low-confidence",
+    "matched": "מיץ תפוח, קיווי ואגס",
+    "manufacturer": "פריניב",
+    "wouldBe": "קיווי (פריניב)",
+    "priceMatch": false
+  },
+  {
+    "line": 873,
+    "name": "רימון",
+    "status": "low-confidence",
+    "matched": "מרכך רימון ושמן ארגן לשיער יבש ופגום",
+    "manufacturer": "כיף",
+    "wouldBe": "רימון (כיף)",
+    "priceMatch": true
+  },
+  {
+    "line": 874,
+    "name": "תות שדה",
+    "status": "low-confidence",
+    "matched": "תות שדה מוקפא",
+    "manufacturer": "סנפרוסט",
+    "wouldBe": "תות שדה (סנפרוסט)",
+    "priceMatch": true
+  },
+  {
+    "line": 875,
+    "name": "דובדבן",
+    "status": "low-confidence",
+    "matched": "קונפיטורת דובדבן",
+    "manufacturer": "בון ממן Bonne Maman",
+    "wouldBe": "דובדבן (בון ממן)",
+    "priceMatch": true
+  },
+  {
+    "line": 884,
+    "name": "שומר",
+    "status": "low-confidence",
+    "matched": "חליטת שומר",
+    "manufacturer": "ויסוצקי",
+    "wouldBe": "שומר (ויסוצקי)",
+    "priceMatch": true
+  },
+  {
+    "line": 886,
+    "name": "אוכמניות",
+    "status": "low-confidence",
+    "matched": "מלית אוכמניות",
+    "manufacturer": "הנמל",
+    "wouldBe": "אוכמניות (הנמל)",
+    "priceMatch": true
+  },
+  {
+    "line": 1048,
+    "name": "חלב 3%",
+    "status": "low-confidence",
+    "matched": "חלב 3% בקרטון",
+    "manufacturer": "טרה",
+    "wouldBe": "חלב 3% (טרה)",
+    "priceMatch": true
+  },
+  {
+    "line": 1049,
+    "name": "חלב 1%",
+    "status": "low-confidence",
+    "matched": "חלב טרי בקרטון 1%",
+    "manufacturer": "תנובה",
+    "wouldBe": "חלב 1% (תנובה)",
+    "priceMatch": true
+  },
+  {
+    "line": 1050,
+    "name": "חלב שוקולד",
+    "status": "low-confidence",
+    "matched": "חלב טרי קרטון 3% מהדרין",
+    "manufacturer": "תנובה",
+    "wouldBe": "חלב שוקולד (תנובה)",
+    "priceMatch": true
+  },
+  {
+    "line": 1051,
+    "name": "יוגורט טבעי",
+    "status": "low-confidence",
+    "matched": "יוגורט עיזים ביו בטעם טבעי חלב הארץ",
+    "manufacturer": "חלב הארץ",
+    "wouldBe": "יוגורט טבעי (חלב הארץ)",
+    "priceMatch": false
+  },
+  {
+    "line": 1053,
+    "name": "שמנת חמוצה",
+    "status": "low-confidence",
+    "matched": "שמנת חמוצה אורגינל 15%",
+    "manufacturer": "תנובה",
+    "wouldBe": "שמנת חמוצה (תנובה)",
+    "priceMatch": true
+  },
+  {
+    "line": 1054,
+    "name": "שמנת לבישול",
+    "status": "low-confidence",
+    "matched": "שמנת לבישול 15%",
+    "manufacturer": "יטבתה",
+    "wouldBe": "שמנת לבישול (יטבתה)",
+    "priceMatch": true
+  },
+  {
+    "line": 1057,
+    "name": "גבינה צהובה",
+    "status": "low-confidence",
+    "matched": "גבינה צהובה נועם 22%",
+    "manufacturer": "טרה",
+    "wouldBe": "גבינה צהובה (טרה)",
+    "priceMatch": true
+  },
+  {
+    "line": 1058,
+    "name": "גבינה בולגרית",
+    "status": "low-confidence",
+    "matched": "גבינה בולגרית 5%",
+    "manufacturer": "משק צוריאל",
+    "wouldBe": "גבינה בולגרית (משק צוריאל)",
+    "priceMatch": true
+  },
+  {
+    "line": 1059,
+    "name": "גבינת קוטג'",
+    "status": "low-confidence",
+    "matched": "גבינה לבנה 5%",
+    "manufacturer": "תנובה",
+    "wouldBe": "גבינת קוטג' (תנובה)",
+    "priceMatch": true
+  },
+  {
+    "line": 1060,
+    "name": "גבינת שמנת",
+    "status": "low-confidence",
+    "matched": "גבינת שמנת 25% שומן",
+    "manufacturer": "פילדלפיה Philadelphia",
+    "wouldBe": "גבינת שמנת (פילדלפיה)",
+    "priceMatch": false
+  },
+  {
+    "line": 1061,
+    "name": "גבינת ריקוטה",
+    "status": "low-confidence",
+    "matched": "גבינת ריקוטה 5%",
+    "manufacturer": "מחלבות גד",
+    "wouldBe": "גבינת ריקוטה (מחלבות גד)",
+    "priceMatch": true
+  },
+  {
+    "line": 1063,
+    "name": "חמאה",
+    "status": "low-confidence",
+    "matched": "חמאה איטלקית",
+    "manufacturer": "מחלבות גד",
+    "wouldBe": "חמאה (מחלבות גד)",
+    "priceMatch": true
+  },
+  {
+    "line": 1064,
+    "name": "מרגרינה",
+    "status": "low-confidence",
+    "matched": "מרגרינה בטעם חמאה",
+    "manufacturer": "מזולה Mazola",
+    "wouldBe": "מרגרינה (מזולה)",
+    "priceMatch": false
+  },
+  {
+    "line": 1065,
+    "name": "ביצים",
+    "status": "low-confidence",
+    "matched": "מארז 12 ביצים L",
+    "manufacturer": "לסר -מהמשק לצלחת",
+    "wouldBe": "ביצים (לסר -מהמשק לצלחת)",
+    "priceMatch": true
+  },
+  {
+    "line": 1066,
+    "name": "גבינה צהובה מגוררת",
+    "status": "low-confidence",
+    "matched": "קוואטרו פורמאג'י 4 גבינות מגוררות",
+    "manufacturer": "מחלבות גד",
+    "wouldBe": "גבינה צהובה מגוררת (מחלבות גד)",
+    "priceMatch": false
+  },
+  {
+    "line": 1067,
+    "name": "גבינת מוצרלה",
+    "status": "low-confidence",
+    "matched": "גבינת מוצרלה 22%",
+    "manufacturer": "מחלבות גד",
+    "wouldBe": "גבינת מוצרלה (מחלבות גד)",
+    "priceMatch": true
+  },
+  {
+    "line": 1068,
+    "name": "פרמזן",
+    "status": "low-confidence",
+    "matched": "גבינת פרמז'ן",
+    "manufacturer": "תנובה",
+    "wouldBe": "פרמזן (תנובה)",
+    "priceMatch": true
+  },
+  {
+    "line": 1069,
+    "name": "גבינת פטה",
+    "status": "low-confidence",
+    "matched": "גבינת פטה כבשים 5%",
+    "manufacturer": "פיראוס",
+    "wouldBe": "גבינת פטה (פיראוס)",
+    "priceMatch": true
+  },
+  {
+    "line": 1070,
+    "name": "שמנת מתוקה 38%",
+    "status": "low-confidence",
+    "matched": "שמנת להקצפה 38%",
+    "manufacturer": "יטבתה",
+    "wouldBe": "שמנת מתוקה 38% (יטבתה)",
+    "priceMatch": false
+  },
+  {
+    "line": 1071,
+    "name": "חלב שיבולת שועל",
+    "status": "low-confidence",
+    "matched": "משקה שיבולת שועל",
+    "manufacturer": "תנובה  Alternative",
+    "wouldBe": "חלב שיבולת שועל (תנובה)",
+    "priceMatch": true
+  },
+  {
+    "line": 1072,
+    "name": "חלב סויה",
+    "status": "low-confidence",
+    "matched": "משקה סויה",
+    "manufacturer": "תנובה  Alternative",
+    "wouldBe": "חלב סויה (תנובה)",
+    "priceMatch": true
+  },
+  {
+    "line": 1073,
+    "name": "חלב שקדים",
+    "status": "low-confidence",
+    "matched": "שוקולד חלב עם שקדים שלמים",
+    "manufacturer": "ריטר ספורט Ritter sport",
+    "wouldBe": "חלב שקדים (ריטר ספורט)",
+    "priceMatch": false
+  },
+  {
+    "line": 1074,
+    "name": "יוגורט פרי",
+    "status": "low-confidence",
+    "matched": "יוגורט יופלה GO במרקם סמיך בטעם בננה קרמל 0%",
+    "manufacturer": "יופלה Yoplait",
+    "wouldBe": "יוגורט פרי (יופלה)",
+    "priceMatch": true
+  },
+  {
+    "line": 1075,
+    "name": "יוגורט חלבון",
+    "status": "low-confidence",
+    "matched": "יוגורט PRO לבן 0% 21 גרם חלבון בגביע",
+    "manufacturer": "דנונה - שטראוס",
+    "wouldBe": "יוגורט חלבון (דנונה שטראוס)",
+    "priceMatch": true
+  },
+  {
+    "line": 1091,
+    "name": "חלב עיזים מלא משק צוריאל",
+    "status": "low-confidence",
+    "matched": "מקציף חלב בריסטה מופעל בסוללות AA (לא כלול באריזה)",
+    "manufacturer": "ארקוסטיל Arcosteel",
+    "wouldBe": "חלב עיזים מלא משק צוריאל (ארקוסטיל)",
+    "priceMatch": false
+  },
+  {
+    "line": 1163,
+    "name": "יוגורט פרילי טבע עם גרנולה ופירות 1.9%",
+    "status": "low-confidence",
+    "matched": "יוגורט עם פצפוצי שוקולד",
+    "manufacturer": "דנונה - שטראוס",
+    "wouldBe": "יוגורט פרילי טבע עם גרנולה ופירות 1.9% (דנונה שטראוס)",
+    "priceMatch": false
+  },
+  {
+    "line": 1168,
+    "name": "יופלה יוגורט דובדבן 3% שומן",
+    "status": "low-confidence",
+    "matched": "יוגורט עם פצפוצי שוקולד",
+    "manufacturer": "דנונה - שטראוס",
+    "wouldBe": "יופלה יוגורט דובדבן 3% שומן (דנונה שטראוס)",
+    "priceMatch": false
+  },
+  {
+    "line": 1233,
+    "name": "משקה יוגורט עם תות ומלון 1.5%",
+    "status": "low-confidence",
+    "matched": "קיצפיות - מרנג בטעם וניל ותות",
+    "manufacturer": "אחוה",
+    "wouldBe": "משקה יוגורט עם תות ומלון 1.5% (אחוה)",
+    "priceMatch": false
+  },
+  {
+    "line": 1306,
+    "name": "מעדן חלב PRO מועשר בחלבון בטעם פסק זמן",
+    "status": "low-confidence",
+    "matched": "מעדן חצילים וגבינה בולגרית למריחה",
+    "manufacturer": "הגבינות של ניצן",
+    "wouldBe": "מעדן חלב PRO מועשר בחלבון בטעם פסק זמן (הגבינות של ניצן)",
+    "priceMatch": false
+  },
+  {
+    "line": 1361,
+    "name": "גבינת עיזים 5% למריחה",
+    "status": "low-confidence",
+    "matched": "גבינת עיזים למריחה 5%",
+    "manufacturer": "מחלבות גד",
+    "wouldBe": "גבינת עיזים 5% למריחה (מחלבות גד)",
+    "priceMatch": false
+  },
+  {
+    "line": 1518,
+    "name": "בייבי מוצרלה - כדורי גבינה 22% שומן",
+    "status": "low-confidence",
+    "matched": "סנדוויץ בוקס גבינה",
+    "manufacturer": "איטלפלסט",
+    "wouldBe": "בייבי מוצרלה - כדורי גבינה 22% שומן (איטלפלסט)",
+    "priceMatch": false
+  },
+  {
+    "line": 1595,
+    "name": "שמנת להקצפה 38% שומן - בד\\\"צ מהדרין",
+    "status": "low-confidence",
+    "matched": "שמנת להקצפה 38% שומן - בד\"צ מהדרין",
+    "manufacturer": "תנובה- השף הלבן",
+    "wouldBe": "שמנת להקצפה 38% שומן - בד\\\"צ מהדרין (תנובה- השף הלבן)",
+    "priceMatch": true
+  },
+  {
+    "line": 1623,
+    "name": "גבינת שמנת עם זיתים",
+    "status": "low-confidence",
+    "matched": "גבינת שמנת 30% עם זיתים",
+    "manufacturer": "מחלבות גד",
+    "wouldBe": "גבינת שמנת עם זיתים (מחלבות גד)",
+    "priceMatch": false
+  },
+  {
+    "line": 1679,
+    "name": "גבינת עיזים",
+    "status": "low-confidence",
+    "matched": "גבינת עיזים למריחה 5%",
+    "manufacturer": "מחלבות גד",
+    "wouldBe": "גבינת עיזים (מחלבות גד)",
+    "priceMatch": false
+  },
+  {
+    "line": 1688,
+    "name": "משקה סויה אורגני",
+    "status": "low-confidence",
+    "matched": "הרדוף משקה סויה אורגני ללא תוספת סוכר ללא גלוטן",
+    "manufacturer": "הרדוף",
+    "wouldBe": "משקה סויה אורגני (הרדוף)",
+    "priceMatch": false
+  },
+  {
+    "line": 1708,
+    "name": "אלפרו משקה בריסטה שיבולת שועל Not Milk",
+    "status": "low-confidence",
+    "matched": "מסחטת מיץ הדרים מקצועית 24x24x21.8 ס\"מ",
+    "manufacturer": "נעמן",
+    "wouldBe": "אלפרו משקה בריסטה שיבולת שועל Not Milk (נעמן)",
+    "priceMatch": false
+  },
+  {
+    "line": 1738,
+    "name": "פתיתים טבעוניים בסגנון פרמז'ן ללא לקטוז",
+    "status": "low-confidence",
+    "matched": "פתיתים אפויים קוסקוס",
+    "manufacturer": "אסם",
+    "wouldBe": "פתיתים טבעוניים בסגנון פרמז'ן ללא לקטוז (אסם)",
+    "priceMatch": false
+  },
+  {
+    "line": 1766,
+    "name": "לחם פרוס",
+    "status": "low-confidence",
+    "matched": "לחם אחיד פרוס",
+    "manufacturer": "מאפיית ודש",
+    "wouldBe": "לחם פרוס (מאפיית ודש)",
+    "priceMatch": true
+  },
+  {
+    "line": 1767,
+    "name": "לחם שאור",
+    "status": "low-confidence",
+    "matched": "ודש לחם שחור פרוס מקמח חיטה מלא",
+    "manufacturer": "מאפיית ודש",
+    "wouldBe": "לחם שאור (מאפיית ודש)",
+    "priceMatch": true
+  },
+  {
+    "line": 1768,
+    "name": "לחם מלא",
+    "status": "low-confidence",
+    "matched": "לחם שיפון מלא",
+    "manufacturer": "מסטמכר Mestemacher",
+    "wouldBe": "לחם מלא (מסטמכר)",
+    "priceMatch": true
+  },
+  {
+    "line": 1769,
+    "name": "לחם שיפון",
+    "status": "low-confidence",
+    "matched": "לחם שיפון 100%",
+    "manufacturer": "לחם הארץ",
+    "wouldBe": "לחם שיפון (לחם הארץ)",
+    "priceMatch": true
+  },
+  {
+    "line": 1771,
+    "name": "פיתה",
+    "status": "low-confidence",
+    "matched": "מארז פיתות פרו - פיתה אקספרס",
+    "manufacturer": "פיתה אקספרס",
+    "wouldBe": "פיתה (פיתה אקספרס)",
+    "priceMatch": true
+  },
+  {
+    "line": 1772,
+    "name": "לחמניות",
+    "status": "low-confidence",
+    "matched": "מארז 6 לחמניות כוסמין",
+    "manufacturer": "לחם הארץ",
+    "wouldBe": "לחמניות (לחם הארץ)",
+    "priceMatch": false
+  },
+  {
+    "line": 1774,
+    "name": "טוסט",
+    "status": "low-confidence",
+    "matched": "טוסטעים צנימים",
+    "manufacturer": "אסם",
+    "wouldBe": "טוסט (אסם)",
+    "priceMatch": true
+  },
+  {
+    "line": 1775,
+    "name": "קרואסון",
+    "status": "low-confidence",
+    "matched": "קרואסון שוקולד",
+    "manufacturer": "בונז'ור",
+    "wouldBe": "קרואסון (בונז'ור)",
+    "priceMatch": true
+  },
+  {
+    "line": 1778,
+    "name": "פיתות כוסמין",
+    "status": "low-confidence",
+    "matched": "אנג'ל מארז 8 פיתות כוסמין",
+    "manufacturer": "מאפיית אנג'ל",
+    "wouldBe": "פיתות כוסמין (מאפיית אנג'ל)",
+    "priceMatch": true
+  },
+  {
+    "line": 1779,
+    "name": "פיתות מקמח מלא",
+    "status": "low-confidence",
+    "matched": "פיתות מקמח מלא כ- 99 קלוריות לפיתה - פיתה אקספרס",
+    "manufacturer": "פיתה אקספרס",
+    "wouldBe": "פיתות מקמח מלא (פיתה אקספרס)",
+    "priceMatch": true
+  },
+  {
+    "line": 1780,
+    "name": "טורטיות",
+    "status": "low-confidence",
+    "matched": "טורטיות בקוטר 20 ס\"מ",
+    "manufacturer": "שקדיה",
+    "wouldBe": "טורטיות (שקדיה)",
+    "priceMatch": true
+  },
+  {
+    "line": 1781,
+    "name": "ג'בטה",
+    "status": "low-confidence",
+    "matched": "ג'בטה - מארז 5 יח'",
+    "manufacturer": "בונז'ור",
+    "wouldBe": "ג'בטה (בונז'ור)",
+    "priceMatch": true
+  },
+  {
+    "line": 1782,
+    "name": "בסיס לפיצה",
+    "status": "low-confidence",
+    "matched": "מאסטר שף עלי טורטיה בסיס לפיצה 27 ס\"מ - 5 יחידות",
+    "manufacturer": "מאסטר שף",
+    "wouldBe": "בסיס לפיצה (מאסטר שף)",
+    "priceMatch": false
+  },
+  {
+    "line": 1783,
+    "name": "רוגלך",
+    "status": "low-confidence",
+    "matched": "רוגעלך",
+    "manufacturer": "בונז'ור",
+    "wouldBe": "רוגלך (בונז'ור)",
+    "priceMatch": true
+  },
+  {
+    "line": 1784,
+    "name": "בבקה",
+    "status": "low-confidence",
+    "matched": "כפפות ניטריל שחורות ללא אבקה - S",
+    "manufacturer": "פרפקט Perfect",
+    "wouldBe": "בבקה (פרפקט)",
+    "priceMatch": true
+  },
+  {
+    "line": 1785,
+    "name": "מאפינס",
+    "status": "low-confidence",
+    "matched": "תבנית מאפינס 12 שקעים 23*37 סמ סיליקון  Patisserie",
+    "manufacturer": "נעמן",
+    "wouldBe": "מאפינס (נעמן)",
+    "priceMatch": false
+  },
+  {
+    "line": 1833,
+    "name": "עלי טורטייה חיטה ודגנים בקוטר 20 ס\\\"מ",
+    "status": "low-confidence",
+    "matched": "עלי טורטייה חיטה ודגנים בקוטר 20 ס\"מ",
+    "manufacturer": "מאסטר שף",
+    "wouldBe": "עלי טורטייה חיטה ודגנים בקוטר 20 ס\\\"מ (מאסטר שף)",
+    "priceMatch": true
+  },
+  {
+    "line": 1838,
+    "name": "בסיסים לפיצה קוטר 26 ס\\\"מ - 4 יח'",
+    "status": "low-confidence",
+    "matched": "בסיסים לפיצה קוטר 26 ס\"מ - 4 יח'",
+    "manufacturer": "וילי פוד - מנת השף",
+    "wouldBe": "בסיסים לפיצה קוטר 26 ס\\\"מ - 4 יח' (וילי פוד מנת השף)",
+    "priceMatch": false
+  },
+  {
+    "line": 1839,
+    "name": "טורטיה חיטה מופחת קלוריות, קוטר 20 ס\\\"מ - 6 יח'",
+    "status": "low-confidence",
+    "matched": "טורטיה חיטה מופחת קלוריות, קוטר 20 ס\"מ - 6 יח'",
+    "manufacturer": "שקדיה",
+    "wouldBe": "טורטיה חיטה מופחת קלוריות, קוטר 20 ס\\\"מ - 6 יח' (שקדיה)",
+    "priceMatch": true
+  },
+  {
+    "line": 1840,
+    "name": "טורטיית קמח חיטה 20 ס\\\"מ - 8 במארז",
+    "status": "low-confidence",
+    "matched": "טורטיית קמח חיטה 20 ס\"מ - 8 במארז",
+    "manufacturer": "מקסיפודס MEXIFOODS",
+    "wouldBe": "טורטיית קמח חיטה 20 ס\\\"מ - 8 במארז (מקסיפודס)",
+    "priceMatch": false
+  },
+  {
+    "line": 1862,
+    "name": "לחם כוסמין וחיטה מלאה ד\\\"ר מרק",
+    "status": "low-confidence",
+    "matched": "לחם כוסמין וחיטה מלאה ד\"ר מרק",
+    "manufacturer": "המאפה של ד\"ר מרק",
+    "wouldBe": "לחם כוסמין וחיטה מלאה ד\\\"ר מרק (המאפה של ד\"ר מרק)",
+    "priceMatch": true
+  },
+  {
+    "line": 1863,
+    "name": "לחם מחמצת כוסמין מלא ד\\\"ר מרק",
+    "status": "low-confidence",
+    "matched": "לחם מחמצת כוסמין מלא ד\"ר מרק",
+    "manufacturer": "המאפה של ד\"ר מרק",
+    "wouldBe": "לחם מחמצת כוסמין מלא ד\\\"ר מרק (המאפה של ד\"ר מרק)",
+    "priceMatch": true
+  },
+  {
+    "line": 1865,
+    "name": "לחם קל מכוסמין מלא ד\\\"ר מרק",
+    "status": "low-confidence",
+    "matched": "לחם קל מכוסמין מלא ד\"ר מרק",
+    "manufacturer": "המאפה של ד\"ר מרק",
+    "wouldBe": "לחם קל מכוסמין מלא ד\\\"ר מרק (המאפה של ד\"ר מרק)",
+    "priceMatch": true
+  },
+  {
+    "line": 1869,
+    "name": "מארז 6 פיתות כוסמין מלא 99 קלוריות ליחידה ד\\\"ר מרק",
+    "status": "low-confidence",
+    "matched": "מארז 6 פיתות כוסמין מלא 99 קלוריות ליחידה ד\"ר מרק",
+    "manufacturer": "המאפה של ד\"ר מרק",
+    "wouldBe": "מארז 6 פיתות כוסמין מלא 99 קלוריות ליחידה ד\\\"ר מרק (המאפה של ד\"ר מרק)",
+    "priceMatch": true
+  },
+  {
+    "line": 1871,
+    "name": "מארז 8 פיתות כוסמין מלא 99 קלוריות ליחידה ד\\\"ר מרק",
+    "status": "low-confidence",
+    "matched": "מארז 8 פיתות כוסמין מלא 99 קלוריות ליחידה ד\"ר מרק",
+    "manufacturer": "המאפה של ד\"ר מרק",
+    "wouldBe": "מארז 8 פיתות כוסמין מלא 99 קלוריות ליחידה ד\\\"ר מרק (המאפה של ד\"ר מרק)",
+    "priceMatch": true
+  },
+  {
+    "line": 1875,
+    "name": "עלי טורטייה חיטה וכוסמין - 6 יחידות בקוטר 20 ס\\\"מ",
+    "status": "low-confidence",
+    "matched": "עלי טורטייה חיטה וכוסמין - 6 יחידות בקוטר 20 ס\"מ",
+    "manufacturer": "מאסטר שף",
+    "wouldBe": "עלי טורטייה חיטה וכוסמין - 6 יחידות בקוטר 20 ס\\\"מ (מאסטר שף)",
+    "priceMatch": true
+  },
+  {
+    "line": 1876,
+    "name": "עלי טורטייה מיני, קמח חיטה - 10 יחידות בקוטר 15 ס\\\"מ",
+    "status": "low-confidence",
+    "matched": "עלי טורטייה מיני, קמח חיטה - 10 יחידות בקוטר 15 ס\"מ",
+    "manufacturer": "מאסטר שף",
+    "wouldBe": "עלי טורטייה מיני, קמח חיטה - 10 יחידות בקוטר 15 ס\\\"מ (מאסטר שף)",
+    "priceMatch": true
+  },
+  {
+    "line": 1946,
+    "name": "עוגיות ביסקוויט ושוקולד",
+    "status": "low-confidence",
+    "matched": "עוגיות עם שוקולד צ'יפס - חלבי",
+    "manufacturer": "מרבה Merba",
+    "wouldBe": "עוגיות ביסקוויט ושוקולד (מרבה)",
+    "priceMatch": false
+  },
+  {
+    "line": 2018,
+    "name": "בפלות ופלים בטעם שוקולד",
+    "status": "low-confidence",
+    "matched": "בפלות ופלים ארוכים בטעם שוקולד",
+    "manufacturer": "עלית",
+    "wouldBe": "בפלות ופלים בטעם שוקולד (עלית)",
+    "priceMatch": false
+  },
+  {
+    "line": 2137,
+    "name": "עוגיות ביסקוטי איטלקיות עם שברי שוקולד קנטוצ'י",
+    "status": "low-confidence",
+    "matched": "עוגיות lovita במילוי קרם אגוזים",
+    "manufacturer": "רושן  Roshen",
+    "wouldBe": "עוגיות ביסקוטי איטלקיות עם שברי שוקולד קנטוצ'י (רושן)",
+    "priceMatch": false
+  },
+  {
+    "line": 2181,
+    "name": "קרם קרקר",
+    "status": "low-confidence",
+    "matched": "קרקר דק רוזמרין ושום פיטנס",
+    "manufacturer": "נסטלה Nestle",
+    "wouldBe": "קרם קרקר (נסטלה)",
+    "priceMatch": false
+  },
+  {
+    "line": 2183,
+    "name": "קרקר בצל",
+    "status": "low-confidence",
+    "matched": "קרקר בטעם בצל טופז",
+    "manufacturer": "הדר",
+    "wouldBe": "קרקר בצל (הדר)",
+    "priceMatch": false
+  },
+  {
+    "line": 2274,
+    "name": "פריכיות כוסמת",
+    "status": "low-confidence",
+    "matched": "פריכיות דקות ונימוחות 3 דגנים פיטנס Fitness",
+    "manufacturer": "נסטלה Nestle",
+    "wouldBe": "פריכיות כוסמת (נסטלה)",
+    "priceMatch": false
+  },
+  {
+    "line": 2297,
+    "name": "מיני פריכיות בזיגוג בטעם וניל עם סוכריות צבעוניות",
+    "status": "low-confidence",
+    "matched": "פיטנס פריכיות דקות מיקס דגנים, אפונה וסלק",
+    "manufacturer": "נסטלה Nestle",
+    "wouldBe": "מיני פריכיות בזיגוג בטעם וניל עם סוכריות צבעוניות (נסטלה)",
+    "priceMatch": false
+  },
+  {
+    "line": 2330,
+    "name": "חזה עוף",
+    "status": "low-confidence",
+    "matched": "פסטרמה חזה עוף מעושן",
+    "manufacturer": "זוגלובק",
+    "wouldBe": "חזה עוף (זוגלובק)",
+    "priceMatch": true
+  },
+  {
+    "line": 2335,
+    "name": "קציצות עוף",
+    "status": "low-confidence",
+    "matched": "קציצות עוף ובקר",
+    "manufacturer": "מאמא עוף",
+    "wouldBe": "קציצות עוף (מאמא עוף)",
+    "priceMatch": true
+  },
+  {
+    "line": 2336,
+    "name": "שניצל עוף",
+    "status": "low-confidence",
+    "matched": "עוף טוב שניצל דק קריספי קלאסי",
+    "manufacturer": "עוף טוב",
+    "wouldBe": "שניצל עוף (עוף טוב)",
+    "priceMatch": true
+  },
+  {
+    "line": 2338,
+    "name": "בשר טחון",
+    "status": "low-confidence",
+    "matched": "בשר בקר טחון קפוא",
+    "manufacturer": "מעדני הגליל",
+    "wouldBe": "בשר טחון (מעדני הגליל)",
+    "priceMatch": true
+  },
+  {
+    "line": 2339,
+    "name": "קבב",
+    "status": "low-confidence",
+    "matched": "קבב כבש קפוא",
+    "manufacturer": "מעדני הגליל",
+    "wouldBe": "קבב (מעדני הגליל)",
+    "priceMatch": true
+  },
+  {
+    "line": 2343,
+    "name": "נקניקיות",
+    "status": "low-confidence",
+    "matched": "נקניקיות ביס",
+    "manufacturer": "יחיעם",
+    "wouldBe": "נקניקיות (יחיעם)",
+    "priceMatch": true
+  },
+  {
+    "line": 2345,
+    "name": "פילה סלמון",
+    "status": "low-confidence",
+    "matched": "פילה סלמון קפוא",
+    "manufacturer": "בסט פיש",
+    "wouldBe": "פילה סלמון (בסט פיש)",
+    "priceMatch": true
+  },
+  {
+    "line": 2347,
+    "name": "טונה קפואה",
+    "status": "low-confidence",
+    "matched": "נתחי טונה בהירה בשמן צמחי - מארז רביעייה",
+    "manufacturer": "פרי הגליל",
+    "wouldBe": "טונה קפואה (פרי הגליל)",
+    "priceMatch": false
+  },
+  {
+    "line": 2348,
+    "name": "שרימפס",
+    "status": "low-confidence",
+    "matched": "פרמיו דליקט טונה ושרימפס לחתול",
+    "manufacturer": "פרמיו Premio",
+    "wouldBe": "שרימפס (פרמיו)",
+    "priceMatch": true
+  },
+  {
+    "line": 2354,
+    "name": "בשר טחון עוף",
+    "status": "low-confidence",
+    "matched": "עוף טחון קפוא",
+    "manufacturer": "מעדני הגליל",
+    "wouldBe": "בשר טחון עוף (מעדני הגליל)",
+    "priceMatch": true
+  },
+  {
+    "line": 2357,
+    "name": "נקניקיות מרגז",
+    "status": "low-confidence",
+    "matched": "נקניקיות מרגז קפוא",
+    "manufacturer": "מעדני הגליל",
+    "wouldBe": "נקניקיות מרגז (מעדני הגליל)",
+    "priceMatch": true
+  },
+  {
+    "line": 2358,
+    "name": "המבורגר",
+    "status": "low-confidence",
+    "matched": "המבורגר זהב קפוא",
+    "manufacturer": "זוגלובק",
+    "wouldBe": "המבורגר (זוגלובק)",
+    "priceMatch": true
+  },
+  {
+    "line": 2359,
+    "name": "פסטרמה",
+    "status": "low-confidence",
+    "matched": "פסטרמה בדבש",
+    "manufacturer": "טירת צבי",
+    "wouldBe": "פסטרמה (טירת צבי)",
+    "priceMatch": true
+  },
+  {
+    "line": 2360,
+    "name": "פילה אמנון",
+    "status": "low-confidence",
+    "matched": "פילה דג אמנון קפוא עם עור",
+    "manufacturer": "מעדני הים",
+    "wouldBe": "פילה אמנון (מעדני הים)",
+    "priceMatch": false
+  },
+  {
+    "line": 2368,
+    "name": "כבד בקר",
+    "status": "low-confidence",
+    "matched": "פרמיו בקר וכבד לחתול",
+    "manufacturer": "פרמיו Premio",
+    "wouldBe": "כבד בקר (פרמיו)",
+    "priceMatch": true
+  },
+  {
+    "line": 2370,
+    "name": "קציצות בקר",
+    "status": "low-confidence",
+    "matched": "קציצות עוף ובקר",
+    "manufacturer": "מאמא עוף",
+    "wouldBe": "קציצות בקר (מאמא עוף)",
+    "priceMatch": true
+  },
+  {
+    "line": 2376,
+    "name": "חזה הודו",
+    "status": "low-confidence",
+    "matched": "פסטרמה חזה הודו תבור",
+    "manufacturer": "זוגלובק",
+    "wouldBe": "חזה הודו (זוגלובק)",
+    "priceMatch": true
+  },
+  {
+    "line": 2378,
+    "name": "הודו שלם",
+    "status": "low-confidence",
+    "matched": "עוף טוב פסטרמה מהמעשנה מנתח שלם",
+    "manufacturer": "עוף טוב",
+    "wouldBe": "הודו שלם (עוף טוב)",
+    "priceMatch": true
+  },
+  {
+    "line": 2458,
+    "name": "עוף טחון קפוא מחפוד",
+    "status": "low-confidence",
+    "matched": "עוף טחון קפוא",
+    "manufacturer": "מעדני הגליל",
+    "wouldBe": "עוף טחון קפוא מחפוד (מעדני הגליל)",
+    "priceMatch": false
+  },
+  {
+    "line": 2496,
+    "name": "פילה אמנון מוקפא בציפוי קרח מכיל 80% דג לפחות",
+    "status": "low-confidence",
+    "matched": "פילה דג אמנון קפוא בלי עור מצופה קרח מכיל 80% דג לפחות",
+    "manufacturer": "מעדני הים",
+    "wouldBe": "פילה אמנון מוקפא בציפוי קרח מכיל 80% דג לפחות (מעדני הים)",
+    "priceMatch": false
+  },
+  {
+    "line": 2658,
+    "name": "נקניקיות עוף ובקר בסגנון צרפתי \\\"הצרפתייה\\\"",
+    "status": "low-confidence",
+    "matched": "נקניקיות עוף ובקר בסגנון צרפתי \"הצרפתייה\"",
+    "manufacturer": "זוגלובק",
+    "wouldBe": "נקניקיות עוף ובקר בסגנון צרפתי \\\"הצרפתייה\\\" (זוגלובק)",
+    "priceMatch": true
+  },
+  {
+    "line": 2664,
+    "name": "מלח",
+    "status": "low-confidence",
+    "matched": "מלח גס",
+    "manufacturer": "מלח הארץ",
+    "wouldBe": "מלח (מלח הארץ)",
+    "priceMatch": true
+  },
+  {
+    "line": 2673,
+    "name": "קינמון",
+    "status": "low-confidence",
+    "matched": "קינמון טחון",
+    "manufacturer": "תבליני טעם וריח",
+    "wouldBe": "קינמון (תבליני טעם וריח)",
+    "priceMatch": true
+  },
+  {
+    "line": 2674,
+    "name": "אגוז מוסקט",
+    "status": "low-confidence",
+    "matched": "אגוז מוסקט טחון",
+    "manufacturer": "תבליני פרג",
+    "wouldBe": "אגוז מוסקט (תבליני פרג)",
+    "priceMatch": true
+  },
+  {
+    "line": 2676,
+    "name": "זנגביל",
+    "status": "low-confidence",
+    "matched": "זנגביל טחון",
+    "manufacturer": "תבליני פרג",
+    "wouldBe": "זנגביל (תבליני פרג)",
+    "priceMatch": true
+  },
+  {
+    "line": 2677,
+    "name": "הל",
+    "status": "low-confidence",
+    "matched": "קפה טורקי עם הל",
+    "manufacturer": "עלית",
+    "wouldBe": "הל (עלית)",
+    "priceMatch": true
+  },
+  {
+    "line": 2678,
+    "name": "ציפורן",
+    "status": "low-confidence",
+    "matched": "ציפורן טחון",
+    "manufacturer": "מיה",
+    "wouldBe": "ציפורן (מיה)",
+    "priceMatch": true
+  },
+  {
+    "line": 2689,
+    "name": "אניס",
+    "status": "low-confidence",
+    "matched": "נביעות+ מים מינרליים בטעם ליים אניס",
+    "manufacturer": "נביעות",
+    "wouldBe": "אניס (נביעות)",
+    "priceMatch": true
+  },
+  {
+    "line": 2767,
+    "name": "אבקת בצל",
+    "status": "low-confidence",
+    "matched": "אבקת אפיה",
+    "manufacturer": "הנמל",
+    "wouldBe": "אבקת בצל (הנמל)",
+    "priceMatch": false
+  },
+  {
+    "line": 2778,
+    "name": "מלח ים במטחנה",
+    "status": "low-confidence",
+    "matched": "מלח שולחן סלית",
+    "manufacturer": "סלית",
+    "wouldBe": "מלח ים במטחנה (סלית)",
+    "priceMatch": false
+  },
+  {
+    "line": 2827,
+    "name": "טוסקנה תערובת לתיבול",
+    "status": "low-confidence",
+    "matched": "תערובת לתיבול טוסקנה",
+    "manufacturer": "נפטון Neptune",
+    "wouldBe": "טוסקנה תערובת לתיבול (נפטון)",
+    "priceMatch": false
+  },
+  {
+    "line": 2833,
+    "name": "אורז לבן",
+    "status": "low-confidence",
+    "matched": "אורז בסמטי לבן אורגני",
+    "manufacturer": "הרדוף",
+    "wouldBe": "אורז לבן (הרדוף)",
+    "priceMatch": true
+  },
+  {
+    "line": 2837,
+    "name": "פסטה פנה",
+    "status": "low-confidence",
+    "matched": "פסטה פנה ריגאטה",
+    "manufacturer": "ברילה Barilla",
+    "wouldBe": "פסטה פנה (ברילה)",
+    "priceMatch": true
+  },
+  {
+    "line": 2838,
+    "name": "פסטה פוסילי",
+    "status": "low-confidence",
+    "matched": "תבואות פוסילי פסטה מקמח כוסמין מלא אורגני",
+    "manufacturer": "תבואות",
+    "wouldBe": "פסטה פוסילי (תבואות)",
+    "priceMatch": true
+  },
+  {
+    "line": 2839,
+    "name": "פסטה פרפריות",
+    "status": "low-confidence",
+    "matched": "טורטליני במילוי פטריות פרווה",
+    "manufacturer": "שטראוס",
+    "wouldBe": "פסטה פרפריות (שטראוס)",
+    "priceMatch": false
+  },
+  {
+    "line": 2840,
+    "name": "קוסקוס",
+    "status": "low-confidence",
+    "matched": "קוסקוס בינוני",
+    "manufacturer": "אסם",
+    "wouldBe": "קוסקוס (אסם)",
+    "priceMatch": false
+  },
+  {
+    "line": 2842,
+    "name": "עדשים כתומות",
+    "status": "low-confidence",
+    "matched": "אובלטים אורגניים מקמח עדשים כתומות ושומשום",
+    "manufacturer": "השדה מוצרים אורגניים",
+    "wouldBe": "עדשים כתומות (השדה מוצרים אורגניים)",
+    "priceMatch": true
+  },
+  {
+    "line": 2844,
+    "name": "גרגירי חומוס",
+    "status": "low-confidence",
+    "matched": "גרגירי חומוס מוקפאים יכין",
+    "manufacturer": "יכין",
+    "wouldBe": "גרגירי חומוס (יכין)",
+    "priceMatch": true
+  },
+  {
+    "line": 2847,
+    "name": "טונה בשמן",
+    "status": "low-confidence",
+    "matched": "נתחי טונה בהירה בשמן- מארז רביעיה",
+    "manufacturer": "סטארקיסט Starkist",
+    "wouldBe": "טונה בשמן (סטארקיסט)",
+    "priceMatch": true
+  },
+  {
+    "line": 2848,
+    "name": "טונה במים",
+    "status": "low-confidence",
+    "matched": "נתחי טונה בהירה במים רביעיה",
+    "manufacturer": "סטארקיסט Starkist",
+    "wouldBe": "טונה במים (סטארקיסט)",
+    "priceMatch": true
+  },
+  {
+    "line": 2850,
+    "name": "רסק עגבניות",
+    "status": "low-confidence",
+    "matched": "רסק עגבניות בתוספת מלח",
+    "manufacturer": "מוטי Mutti",
+    "wouldBe": "רסק עגבניות (מוטי)",
+    "priceMatch": true
+  },
+  {
+    "line": 2851,
+    "name": "מחית עגבניות",
+    "status": "low-confidence",
+    "matched": "מחית עגבניות קלה",
+    "manufacturer": "מוטי Mutti",
+    "wouldBe": "מחית עגבניות (מוטי)",
+    "priceMatch": true
+  },
+  {
+    "line": 2854,
+    "name": "זיתים",
+    "status": "low-confidence",
+    "matched": "זיתים ירוקים טבעות",
+    "manufacturer": "בית השיטה",
+    "wouldBe": "זיתים (בית השיטה)",
+    "priceMatch": true
+  },
+  {
+    "line": 2855,
+    "name": "חמוצים",
+    "status": "low-confidence",
+    "matched": "דוריטוס בטעם חמוץ חריף",
+    "manufacturer": "עלית",
+    "wouldBe": "חמוצים (עלית)",
+    "priceMatch": true
+  },
+  {
+    "line": 2860,
+    "name": "חומץ",
+    "status": "low-confidence",
+    "matched": "חומץ 5%",
+    "manufacturer": "אסם",
+    "wouldBe": "חומץ (אסם)",
+    "priceMatch": true
+  },
+  {
+    "line": 2863,
+    "name": "חרדל",
+    "status": "low-confidence",
+    "matched": "חרדל דיז'ון",
+    "manufacturer": "ריין דיז'ון reine dijon",
+    "wouldBe": "חרדל (ריין דיז'ון)",
+    "priceMatch": true
+  },
+  {
+    "line": 2864,
+    "name": "קטשופ",
+    "status": "low-confidence",
+    "matched": "קטשופ אסם",
+    "manufacturer": "אסם",
+    "wouldBe": "קטשופ (אסם)",
+    "priceMatch": false
+  },
+  {
+    "line": 2865,
+    "name": "טחינה גולמית",
+    "status": "low-confidence",
+    "matched": "טחינה גולמית 100%",
+    "manufacturer": "טורקיז",
+    "wouldBe": "טחינה גולמית (טורקיז)",
+    "priceMatch": true
+  },
+  {
+    "line": 2866,
+    "name": "חמאת בוטנים",
+    "status": "low-confidence",
+    "matched": "חמאת בוטנים טבעית",
+    "manufacturer": "בטר אנד דיפרנט B&D",
+    "wouldBe": "חמאת בוטנים (בטר אנד דיפרנט)",
+    "priceMatch": true
+  },
+  {
+    "line": 2867,
+    "name": "ריבה תות",
+    "status": "low-confidence",
+    "matched": "קונפיטורה תות",
+    "manufacturer": "יד מרדכי",
+    "wouldBe": "ריבה תות (יד מרדכי)",
+    "priceMatch": true
+  },
+  {
+    "line": 2868,
+    "name": "דבש",
+    "status": "low-confidence",
+    "matched": "דבש טהור מפרחי בר",
+    "manufacturer": "יד מרדכי",
+    "wouldBe": "דבש (יד מרדכי)",
+    "priceMatch": true
+  },
+  {
+    "line": 2869,
+    "name": "סוכר",
+    "status": "low-confidence",
+    "matched": "טרוביה תחליף סוכר חום",
+    "manufacturer": "טרוביה Truvia",
+    "wouldBe": "סוכר (טרוביה)",
+    "priceMatch": true
+  },
+  {
+    "line": 2871,
+    "name": "קמח מלא",
+    "status": "low-confidence",
+    "matched": "קמח חיטה מלא שטיבל",
+    "manufacturer": "סוגת",
+    "wouldBe": "קמח מלא (סוגת)",
+    "priceMatch": true
+  },
+  {
+    "line": 2872,
+    "name": "אבקת אפייה",
+    "status": "low-confidence",
+    "matched": "אבקת אפיה",
+    "manufacturer": "הנמל",
+    "wouldBe": "אבקת אפייה (הנמל)",
+    "priceMatch": true
+  },
+  {
+    "line": 2874,
+    "name": "שוקולד מריר",
+    "status": "low-confidence",
+    "matched": "שוקולד אורירי מריר",
+    "manufacturer": "רושן  Roshen",
+    "wouldBe": "שוקולד מריר (רושן)",
+    "priceMatch": true
+  },
+  {
+    "line": 2875,
+    "name": "שוקולד חלב",
+    "status": "low-confidence",
+    "matched": "שוקולד חלב פרה",
+    "manufacturer": "עלית",
+    "wouldBe": "שוקולד חלב (עלית)",
+    "priceMatch": true
+  },
+  {
+    "line": 2877,
+    "name": "ביסקוויט",
+    "status": "low-confidence",
+    "matched": "ביסקוויט פתיבר קלאסי",
+    "manufacturer": "אסם",
+    "wouldBe": "ביסקוויט (אסם)",
+    "priceMatch": true
+  },
+  {
+    "line": 2878,
+    "name": "שיבולת שועל",
+    "status": "low-confidence",
+    "matched": "משקה שיבולת שועל",
+    "manufacturer": "תנובה  Alternative",
+    "wouldBe": "שיבולת שועל (תנובה)",
+    "priceMatch": true
+  },
+  {
+    "line": 2879,
+    "name": "פתיתים",
+    "status": "low-confidence",
+    "matched": "פתיתים אפויים קוסקוס",
+    "manufacturer": "אסם",
+    "wouldBe": "פתיתים (אסם)",
+    "priceMatch": false
+  },
+  {
+    "line": 2882,
+    "name": "סילאן",
+    "status": "low-confidence",
+    "matched": "ממרח שומשום עם סילאן",
+    "manufacturer": "אחוה",
+    "wouldBe": "סילאן (אחוה)",
+    "priceMatch": true
+  },
+  {
+    "line": 2883,
+    "name": "ממרח שוקולד",
+    "status": "low-confidence",
+    "matched": "ממרח בטעם שוקולד - פרווה",
+    "manufacturer": "עלית",
+    "wouldBe": "ממרח שוקולד (עלית)",
+    "priceMatch": true
+  },
+  {
+    "line": 2884,
+    "name": "חלב מרוכז",
+    "status": "low-confidence",
+    "matched": "חלב כחוש מרוכז וממותק",
+    "manufacturer": "וילי פוד",
+    "wouldBe": "חלב מרוכז (וילי פוד)",
+    "priceMatch": true
+  },
+  {
+    "line": 2888,
+    "name": "אבקת מרק",
+    "status": "low-confidence",
+    "matched": "מרק בטעם עוף זך",
+    "manufacturer": "אסם",
+    "wouldBe": "אבקת מרק (אסם)",
+    "priceMatch": true
+  },
+  {
+    "line": 2893,
+    "name": "חומוס",
+    "status": "low-confidence",
+    "matched": "חומוס מסעדה",
+    "manufacturer": "צבר",
+    "wouldBe": "חומוס (צבר)",
+    "priceMatch": false
+  },
+  {
+    "line": 3006,
+    "name": "אורז חצי עגול 5 ק\\\"ג",
+    "status": "low-confidence",
+    "matched": "אורז חצי עגול 5 ק\"ג",
+    "manufacturer": "שוקחה",
+    "wouldBe": "אורז חצי עגול 5 ק\\\"ג (שוקחה)",
+    "priceMatch": true
+  },
+  {
+    "line": 3097,
+    "name": "מלח ים מועשר ביוד 1 ק\\\"ג",
+    "status": "low-confidence",
+    "matched": "מלח ים מועשר ביוד 1 ק\"ג",
+    "manufacturer": "מלח הארץ",
+    "wouldBe": "מלח ים מועשר ביוד 1 ק\\\"ג (מלח הארץ)",
+    "priceMatch": true
+  },
+  {
+    "line": 3140,
+    "name": "אבקת רוטב פטריות כשל\\\"פ",
+    "status": "low-confidence",
+    "matched": "אבקת רוטב פטריות כשל\"פ",
+    "manufacturer": "אסם",
+    "wouldBe": "אבקת רוטב פטריות כשל\\\"פ (אסם)",
+    "priceMatch": true
+  },
+  {
+    "line": 3449,
+    "name": "רוטב בנוסח סצ'ואן",
+    "status": "low-confidence",
+    "matched": "רוטב עגבניות מרוכז",
+    "manufacturer": "יכין",
+    "wouldBe": "רוטב בנוסח סצ'ואן (יכין)",
+    "priceMatch": false
+  },
+  {
+    "line": 3484,
+    "name": "ממרח ארטישוק",
+    "status": "low-confidence",
+    "matched": "נוטלה ממרח אגוזי לוז עם קקאו - 750 גרם",
+    "manufacturer": "נוטלה Nutella",
+    "wouldBe": "ממרח ארטישוק (נוטלה)",
+    "priceMatch": false
+  },
+  {
+    "line": 3492,
+    "name": "רוטב לפסטה עגבניות ובזיליקום",
+    "status": "low-confidence",
+    "matched": "רוטב עגבניות מרוכז",
+    "manufacturer": "יכין",
+    "wouldBe": "רוטב לפסטה עגבניות ובזיליקום (יכין)",
+    "priceMatch": false
+  },
+  {
+    "line": 3493,
+    "name": "רוטב שקשוקה",
+    "status": "low-confidence",
+    "matched": "רוטב עגבניות מרוכז",
+    "manufacturer": "יכין",
+    "wouldBe": "רוטב שקשוקה (יכין)",
+    "priceMatch": false
+  },
+  {
+    "line": 3506,
+    "name": "רוטב חזרת",
+    "status": "low-confidence",
+    "matched": "רוטב עגבניות מרוכז",
+    "manufacturer": "יכין",
+    "wouldBe": "רוטב חזרת (יכין)",
+    "priceMatch": false
+  },
+  {
+    "line": 3507,
+    "name": "רוטב חזרת עם סלק",
+    "status": "low-confidence",
+    "matched": "רוטב עגבניות מרוכז",
+    "manufacturer": "יכין",
+    "wouldBe": "רוטב חזרת עם סלק (יכין)",
+    "priceMatch": false
+  },
+  {
+    "line": 3596,
+    "name": "כלי לאידוי סטימר במבוק \\\"8",
+    "status": "low-confidence",
+    "matched": "כלי לאידוי סטימר במבוק \"8",
+    "manufacturer": "טעמי אסיה Taste of Asia",
+    "wouldBe": "כלי לאידוי סטימר במבוק \\\"8 (טעמי אסיה)",
+    "priceMatch": true
+  },
+  {
+    "line": 3606,
+    "name": "מקלוני אורז 10 מ\\\"מ Rice stick",
+    "status": "low-confidence",
+    "matched": "מקלוני אורז 10 מ\"מ Rice stick",
+    "manufacturer": "טעמי אסיה Taste of Asia",
+    "wouldBe": "מקלוני אורז 10 מ\\\"מ Rice stick (טעמי אסיה)",
+    "priceMatch": true
+  },
+  {
+    "line": 3607,
+    "name": "מקלוני אורז 3 מ\\\"מ Rice stick",
+    "status": "low-confidence",
+    "matched": "מקלוני אורז 3 מ\"מ Rice stick",
+    "manufacturer": "טעמי אסיה Taste of Asia",
+    "wouldBe": "מקלוני אורז 3 מ\\\"מ Rice stick (טעמי אסיה)",
+    "priceMatch": true
+  },
+  {
+    "line": 3608,
+    "name": "מקלוני אורז 5 מ\\\"מ Rice stick",
+    "status": "low-confidence",
+    "matched": "מקלוני אורז 5 מ\"מ Rice stick",
+    "manufacturer": "טעמי אסיה Taste of Asia",
+    "wouldBe": "מקלוני אורז 5 מ\\\"מ Rice stick (טעמי אסיה)",
+    "priceMatch": true
+  },
+  {
+    "line": 3613,
+    "name": "נודלס אטריות אורז רחבות הסדרה האסייתית כשל\\\"פ",
+    "status": "low-confidence",
+    "matched": "נודלס אטריות אורז רחבות הסדרה האסייתית כשל\"פ",
+    "manufacturer": "אסם",
+    "wouldBe": "נודלס אטריות אורז רחבות הסדרה האסייתית כשל\\\"פ (אסם)",
+    "priceMatch": true
+  },
+  {
+    "line": 3623,
+    "name": "דפי אורז 22*22 ס\\\"מ",
+    "status": "low-confidence",
+    "matched": "דפי אורז 22 סמ",
+    "manufacturer": "מאסטר שף",
+    "wouldBe": "דפי אורז 22*22 ס\\\"מ (מאסטר שף)",
+    "priceMatch": false
+  },
+  {
+    "line": 3624,
+    "name": "דפי אורז קוטר 22 ס\\\"מ",
+    "status": "low-confidence",
+    "matched": "דפי אורז קוטר 22 ס\"מ",
+    "manufacturer": "טעמי אסיה Taste of Asia",
+    "wouldBe": "דפי אורז קוטר 22 ס\\\"מ (טעמי אסיה)",
+    "priceMatch": true
+  },
+  {
+    "line": 3626,
+    "name": "דפי אורז בקוטר 16 ס\\\"מ",
+    "status": "low-confidence",
+    "matched": "דפי אורז בקוטר 16 ס\"מ",
+    "manufacturer": "מאסטר שף",
+    "wouldBe": "דפי אורז בקוטר 16 ס\\\"מ (מאסטר שף)",
+    "priceMatch": true
+  },
+  {
+    "line": 3671,
+    "name": "דפי אורז למילוי קוטר 22 ס\\\"מ",
+    "status": "low-confidence",
+    "matched": "דפי אורז למילוי קוטר 22 ס\"מ",
+    "manufacturer": "וילי פוד - מנת השף",
+    "wouldBe": "דפי אורז למילוי קוטר 22 ס\\\"מ (וילי פוד מנת השף)",
+    "priceMatch": true
+  },
+  {
+    "line": 3703,
+    "name": "קוקוס טחון כשל\\\"פ",
+    "status": "low-confidence",
+    "matched": "קוקוס טחון כשל\"פ",
+    "manufacturer": "הנמל",
+    "wouldBe": "קוקוס טחון כשל\\\"פ (הנמל)",
+    "priceMatch": false
+  },
+  {
+    "line": 3775,
+    "name": "מעדן פרי אפרסקים",
+    "status": "low-confidence",
+    "matched": "מעדן פרי תות שדה",
+    "manufacturer": "סנדלפור St.dalfour",
+    "wouldBe": "מעדן פרי אפרסקים (סנדלפור)",
+    "priceMatch": false
+  },
+  {
+    "line": 3779,
+    "name": "מעדן פרי תות שדה",
+    "status": "low-confidence",
+    "matched": "מארז 8 יחידות מעדן מילקי בטעם שוקולד עם קצפת",
+    "manufacturer": "שטראוס",
+    "wouldBe": "מעדן פרי תות שדה (שטראוס)",
+    "priceMatch": false
+  },
+  {
+    "line": 3843,
+    "name": "קרם מובחר למריחה השחר 1 ק\\\"ג",
+    "status": "low-confidence",
+    "matched": "קרם מובחר למריחה השחר 1 ק\"ג",
+    "manufacturer": "השחר העולה",
+    "wouldBe": "קרם מובחר למריחה השחר 1 ק\\\"ג (השחר העולה)",
+    "priceMatch": true
+  },
+  {
+    "line": 3851,
+    "name": "ממרח אגוזי לוז עם קקאו בד\\\"ץ",
+    "status": "low-confidence",
+    "matched": "נוטלה ממרח אגוזי לוז עם קקאו - 750 גרם",
+    "manufacturer": "נוטלה Nutella",
+    "wouldBe": "ממרח אגוזי לוז עם קקאו בד\\\"ץ (נוטלה)",
+    "priceMatch": false
+  },
+  {
+    "line": 3891,
+    "name": "קורנפלקס של אלופים בד\\\"ץ",
+    "status": "low-confidence",
+    "matched": "קורנפלקס של אלופים בד\"ץ",
+    "manufacturer": "תלמה",
+    "wouldBe": "קורנפלקס של אלופים בד\\\"ץ (תלמה)",
+    "priceMatch": true
+  },
+  {
+    "line": 3942,
+    "name": "חטיפי דגנים בטעם טעמי",
+    "status": "low-confidence",
+    "matched": "חטיף דגנים קידס מצופה שוקולד חלב",
+    "manufacturer": "סלים דליס Slim Delis",
+    "wouldBe": "חטיפי דגנים בטעם טעמי (סלים דליס)",
+    "priceMatch": false
+  },
+  {
+    "line": 4141,
+    "name": "טבעות זיתים ירוקים",
+    "status": "low-confidence",
+    "matched": "זיתים ירוקים טבעות",
+    "manufacturer": "בית השיטה",
+    "wouldBe": "טבעות זיתים ירוקים (בית השיטה)",
+    "priceMatch": false
+  },
+  {
+    "line": 4204,
+    "name": "קוביות עגבניות במיץ עגבניות",
+    "status": "low-confidence",
+    "matched": "פריניר קוביות עגבניות במיץ",
+    "manufacturer": "פריניר",
+    "wouldBe": "קוביות עגבניות במיץ עגבניות (פריניר)",
+    "priceMatch": false
+  },
+  {
+    "line": 4321,
+    "name": "חומוס עם טחינה \\\"סמיר הגדול\\\"",
+    "status": "low-confidence",
+    "matched": "חומוס עם טחינה \"סמיר הגדול\"",
+    "manufacturer": "צבר",
+    "wouldBe": "חומוס עם טחינה \\\"סמיר הגדול\\\" (צבר)",
+    "priceMatch": true
+  },
+  {
+    "line": 4324,
+    "name": "חומוס עם טחינה",
+    "status": "low-confidence",
+    "matched": "חומוס עם טחינה אחלה",
+    "manufacturer": "אחלה - שטראוס",
+    "wouldBe": "חומוס עם טחינה (אחלה שטראוס)",
+    "priceMatch": false
+  },
+  {
+    "line": 4335,
+    "name": "חומוס עם רוטב פיקנטי \\\"מהמטבח של אמא\\\"",
+    "status": "low-confidence",
+    "matched": "חומוס עם רוטב פיקנטי \"מהמטבח של אמא\"",
+    "manufacturer": "סלטי שמיר",
+    "wouldBe": "חומוס עם רוטב פיקנטי \\\"מהמטבח של אמא\\\" (סלטי שמיר)",
+    "priceMatch": false
+  },
+  {
+    "line": 4356,
+    "name": "חומוס ביתי \\\"מהמטבח של אמא\\\"",
+    "status": "low-confidence",
+    "matched": "חומוס ביתי \"מהמטבח של אמא\"",
+    "manufacturer": "סלטי שמיר",
+    "wouldBe": "חומוס ביתי \\\"מהמטבח של אמא\\\" (סלטי שמיר)",
+    "priceMatch": true
+  },
+  {
+    "line": 4357,
+    "name": "חומוס גרגירים \\\"מהמטבח של אמא\\\"",
+    "status": "low-confidence",
+    "matched": "חומוס גרגירים \"מהמטבח של אמא\"",
+    "manufacturer": "סלטי שמיר",
+    "wouldBe": "חומוס גרגירים \\\"מהמטבח של אמא\\\" (סלטי שמיר)",
+    "priceMatch": true
+  },
+  {
+    "line": 4360,
+    "name": "חומוס עם חריף \\\"מהמטבח של אמא\\\"",
+    "status": "low-confidence",
+    "matched": "חומוס עם חריף \"מהמטבח של אמא\"",
+    "manufacturer": "סלטי שמיר",
+    "wouldBe": "חומוס עם חריף \\\"מהמטבח של אמא\\\" (סלטי שמיר)",
+    "priceMatch": true
+  },
+  {
+    "line": 4361,
+    "name": "חומוס עם רוטב מסבחה \\\"מהמטבח של אמא\\\"",
+    "status": "low-confidence",
+    "matched": "חומוס עם רוטב מסבחה \"מהמטבח של אמא\"",
+    "manufacturer": "סלטי שמיר",
+    "wouldBe": "חומוס עם רוטב מסבחה \\\"מהמטבח של אמא\\\" (סלטי שמיר)",
+    "priceMatch": false
+  },
+  {
+    "line": 4362,
+    "name": "טחינה ביתית \\\"מהמטבח של אמא\\\"",
+    "status": "low-confidence",
+    "matched": "טחינה ביתית \"מהמטבח של אמא\"",
+    "manufacturer": "סלטי שמיר",
+    "wouldBe": "טחינה ביתית \\\"מהמטבח של אמא\\\" (סלטי שמיר)",
+    "priceMatch": true
+  },
+  {
+    "line": 4424,
+    "name": "חציל במיונז \\\"מהמטבח של אמא\\\"",
+    "status": "low-confidence",
+    "matched": "חציל במיונז \"מהמטבח של אמא\"",
+    "manufacturer": "סלטי שמיר",
+    "wouldBe": "חציל במיונז \\\"מהמטבח של אמא\\\" (סלטי שמיר)",
+    "priceMatch": true
+  },
+  {
+    "line": 4444,
+    "name": "סלט תפו\\\"א",
+    "status": "low-confidence",
+    "matched": "סלט חומוס אמיתי",
+    "manufacturer": "משני",
+    "wouldBe": "סלט תפו\\\"א (משני)",
+    "priceMatch": false
+  },
+  {
+    "line": 4549,
+    "name": "ירקות מעורבים קפואים",
+    "status": "low-confidence",
+    "matched": "ירקות מעורבים מוקפאים חגיגה ירוקה להקפצה",
+    "manufacturer": "סנפרוסט",
+    "wouldBe": "ירקות מעורבים קפואים (סנפרוסט)",
+    "priceMatch": false
+  },
+  {
+    "line": 4550,
+    "name": "תירס קפוא",
+    "status": "low-confidence",
+    "matched": "שניצל תירס",
+    "manufacturer": "טבעול",
+    "wouldBe": "תירס קפוא (טבעול)",
+    "priceMatch": true
+  },
+  {
+    "line": 4551,
+    "name": "אפונה קפואה",
+    "status": "low-confidence",
+    "matched": "אפונה עדינה מוקפאת",
+    "manufacturer": "סנפרוסט",
+    "wouldBe": "אפונה קפואה (סנפרוסט)",
+    "priceMatch": false
+  },
+  {
+    "line": 4552,
+    "name": "שעועית ירוקה קפואה",
+    "status": "low-confidence",
+    "matched": "שעועית ירוקה אורגנית קפואה",
+    "manufacturer": "ליב אורגני",
+    "wouldBe": "שעועית ירוקה קפואה (ליב אורגני)",
+    "priceMatch": true
+  },
+  {
+    "line": 4554,
+    "name": "תרד קפוא",
+    "status": "low-confidence",
+    "matched": "מדליוני תרד",
+    "manufacturer": "סנפרוסט",
+    "wouldBe": "תרד קפוא (סנפרוסט)",
+    "priceMatch": true
+  },
+  {
+    "line": 4555,
+    "name": "שניצל קפוא",
+    "status": "low-confidence",
+    "matched": "שניצל תירס - 98 קלוריות ליחידה",
+    "manufacturer": "זוגלובק טבע",
+    "wouldBe": "שניצל קפוא (זוגלובק טבע)",
+    "priceMatch": true
+  },
+  {
+    "line": 4556,
+    "name": "פיצה קפואה",
+    "status": "low-confidence",
+    "matched": "פיצה משפחתית איטלקית נפוליטנה XL",
+    "manufacturer": "שלושת האופים",
+    "wouldBe": "פיצה קפואה (שלושת האופים)",
+    "priceMatch": true
+  },
+  {
+    "line": 4557,
+    "name": "לזניה קפואה",
+    "status": "low-confidence",
+    "matched": "עלי לזניה Perfecto",
+    "manufacturer": "אסם פרפקטו Perfecto",
+    "wouldBe": "לזניה קפואה (אסם פרפקטו)",
+    "priceMatch": true
+  },
+  {
+    "line": 4558,
+    "name": "גלידה וניל",
+    "status": "low-confidence",
+    "matched": "פתיבר פינוקי וניל - חלבי",
+    "manufacturer": "אסם",
+    "wouldBe": "גלידה וניל (אסם)",
+    "priceMatch": true
+  },
+  {
+    "line": 4559,
+    "name": "גלידה שוקולד",
+    "status": "low-confidence",
+    "matched": "וופלים משובחים בטעם שוקולד",
+    "manufacturer": "מן",
+    "wouldBe": "גלידה שוקולד (מן)",
+    "priceMatch": true
+  },
+  {
+    "line": 4561,
+    "name": "צ'יפס קפוא",
+    "status": "low-confidence",
+    "matched": "צ'יפס בטטה טוגני בטטה מוקפאים",
+    "manufacturer": "אריסטו קראנץ' Aristo Crunch",
+    "wouldBe": "צ'יפס קפוא (אריסטו קראנץ')",
+    "priceMatch": true
+  },
+  {
+    "line": 4564,
+    "name": "בורקסים קפואים",
+    "status": "low-confidence",
+    "matched": "בורקס גבינה קפוא",
+    "manufacturer": "שלושת האופים",
+    "wouldBe": "בורקסים קפואים (שלושת האופים)",
+    "priceMatch": false
+  },
+  {
+    "line": 4566,
+    "name": "תות קפוא",
+    "status": "low-confidence",
+    "matched": "תות שדה קפוא - מתאים להכנת שייקים ולטחינה דקה בלבד",
+    "manufacturer": "שדה בשקית",
+    "wouldBe": "תות קפוא (שדה בשקית)",
+    "priceMatch": false
+  },
+  {
+    "line": 4568,
+    "name": "מנגו קפוא",
+    "status": "low-confidence",
+    "matched": "משקה בטעם מנגו מרוכז קפוא",
+    "manufacturer": "פריגת",
+    "wouldBe": "מנגו קפוא (פריגת)",
+    "priceMatch": true
+  },
+  {
+    "line": 4590,
+    "name": "ארטישוק ירושלמי קלוף וחתוך",
+    "status": "low-confidence",
+    "matched": "שקשוקה ארטישוק - רוטב עגבניות עם קוביות ארטישוק ושמן זית",
+    "manufacturer": "זיתא",
+    "wouldBe": "ארטישוק ירושלמי קלוף וחתוך (זיתא)",
+    "priceMatch": false
+  },
+  {
+    "line": 4665,
+    "name": "כנאפה מאפה בצק \\\"שערות\\\" קדאיף וגבינה",
+    "status": "low-confidence",
+    "matched": "כנאפה מאפה בצק \"שערות\" קדאיף וגבינה",
+    "manufacturer": "פינוקים",
+    "wouldBe": "כנאפה מאפה בצק \\\"שערות\\\" קדאיף וגבינה (פינוקים)",
+    "priceMatch": false
+  },
+  {
+    "line": 4703,
+    "name": "בורקס תפו\\\"א ללא גלוטן פרווה - מוקפא",
+    "status": "low-confidence",
+    "matched": "בורקס תפו\"א ללא גלוטן פרווה - מוקפא",
+    "manufacturer": "מאפיית אריאל",
+    "wouldBe": "בורקס תפו\\\"א ללא גלוטן פרווה - מוקפא (מאפיית אריאל)",
+    "priceMatch": true
+  },
+  {
+    "line": 4708,
+    "name": "בלינצ'ס במילוי תפו\\\"א ופטריות מוקפאים",
+    "status": "low-confidence",
+    "matched": "בלינצ'ס במילוי תפו\"א ופטריות מוקפאים",
+    "manufacturer": "בבושקה אניה Babushka Anya",
+    "wouldBe": "בלינצ'ס במילוי תפו\\\"א ופטריות מוקפאים (בבושקה אניה)",
+    "priceMatch": true
+  },
+  {
+    "line": 4774,
+    "name": "קרפלך במילוי תפו\\\"א",
+    "status": "low-confidence",
+    "matched": "קרפלך במילוי תפו\"א",
+    "manufacturer": "חמים וטעים",
+    "wouldBe": "קרפלך במילוי תפו\\\"א (חמים וטעים)",
+    "priceMatch": true
+  },
+  {
+    "line": 4904,
+    "name": "מים מינרלים",
+    "status": "low-confidence",
+    "matched": "מים מינרלים מוגזים",
+    "manufacturer": "נבגלבי",
+    "wouldBe": "מים מינרלים (נבגלבי)",
+    "priceMatch": true
+  },
+  {
+    "line": 4905,
+    "name": "מים מוגזים",
+    "status": "low-confidence",
+    "matched": "שישיית מים מוגזים",
+    "manufacturer": "סאן בנדטו San Benedetto",
+    "wouldBe": "מים מוגזים (סאן בנדטו)",
+    "priceMatch": true
+  },
+  {
+    "line": 4906,
+    "name": "קולה",
+    "status": "low-confidence",
+    "matched": "קוקה קולה קלאסי",
+    "manufacturer": "קוקה קולה Coca Cola",
+    "wouldBe": "קולה (קוקה קולה)",
+    "priceMatch": true
+  },
+  {
+    "line": 4907,
+    "name": "קולה זירו",
+    "status": "low-confidence",
+    "matched": "קוקה קולה זירו zero",
+    "manufacturer": "קוקה קולה Coca Cola",
+    "wouldBe": "קולה זירו (קוקה קולה)",
+    "priceMatch": true
+  },
+  {
+    "line": 4909,
+    "name": "פנטה",
+    "status": "low-confidence",
+    "matched": "פסטה פנה ריגאטה",
+    "manufacturer": "ברילה Barilla",
+    "wouldBe": "פנטה (ברילה)",
+    "priceMatch": false
+  },
+  {
+    "line": 4910,
+    "name": "מיץ תפוזים",
+    "status": "low-confidence",
+    "matched": "מיץ תפוזים סחוט טבעי",
+    "manufacturer": "פריגת",
+    "wouldBe": "מיץ תפוזים (פריגת)",
+    "priceMatch": true
+  },
+  {
+    "line": 4911,
+    "name": "מיץ תפוח",
+    "status": "low-confidence",
+    "matched": "מיץ תפוח, קיווי ואגס",
+    "manufacturer": "פריניב",
+    "wouldBe": "מיץ תפוח (פריניב)",
+    "priceMatch": true
+  },
+  {
+    "line": 4912,
+    "name": "מיץ ענבים",
+    "status": "low-confidence",
+    "matched": "תירוש כרמל מיץ ענבים",
+    "manufacturer": "יקבי כרמל Carmel Winery",
+    "wouldBe": "מיץ ענבים (יקבי כרמל)",
+    "priceMatch": true
+  },
+  {
+    "line": 4930,
+    "name": "קפה נמס",
+    "status": "low-confidence",
+    "matched": "קפה נמס עלית",
+    "manufacturer": "עלית",
+    "wouldBe": "קפה נמס (עלית)",
+    "priceMatch": true
+  },
+  {
+    "line": 4932,
+    "name": "קפה טחון",
+    "status": "low-confidence",
+    "matched": "קפה פילטר טחון וקלוי מוקה מס' 1",
+    "manufacturer": "עלית",
+    "wouldBe": "קפה טחון (עלית)",
+    "priceMatch": true
+  },
+  {
+    "line": 4933,
+    "name": "תה שחור",
+    "status": "low-confidence",
+    "matched": "תה שחור Golden Ceylon",
+    "manufacturer": "גרינפילד Greenfield",
+    "wouldBe": "תה שחור (גרינפילד)",
+    "priceMatch": true
+  },
+  {
+    "line": 4935,
+    "name": "תה צמחים",
+    "status": "low-confidence",
+    "matched": "ויסוצקי תה שחור קמפינג עם צמחים ותבלינים מהשטח",
+    "manufacturer": "ויסוצקי",
+    "wouldBe": "תה צמחים (ויסוצקי)",
+    "priceMatch": true
+  },
+  {
+    "line": 4936,
+    "name": "שוקו",
+    "status": "low-confidence",
+    "matched": "שוקו עמיד",
+    "manufacturer": "תנובה",
+    "wouldBe": "שוקו (תנובה)",
+    "priceMatch": true
+  },
+  {
+    "line": 4938,
+    "name": "יין אדום",
+    "status": "low-confidence",
+    "matched": "יין אדום ממותק פומפדיתא",
+    "manufacturer": "פומפדיתא",
+    "wouldBe": "יין אדום (פומפדיתא)",
+    "priceMatch": true
+  },
+  {
+    "line": 4939,
+    "name": "יין לבן",
+    "status": "low-confidence",
+    "matched": "יין דלתון כנען לבן",
+    "manufacturer": "דלתון Dalton",
+    "wouldBe": "יין לבן (דלתון)",
+    "priceMatch": true
+  },
+  {
+    "line": 4942,
+    "name": "מיץ אשכוליות",
+    "status": "low-confidence",
+    "matched": "פרימור מיץ אשכוליות אדומות מקורר",
+    "manufacturer": "פרימור",
+    "wouldBe": "מיץ אשכוליות (פרימור)",
+    "priceMatch": true
+  },
+  {
+    "line": 4943,
+    "name": "סודה בטעמים",
+    "status": "low-confidence",
+    "matched": "סודה בטעם פירות יער- רביעיה",
+    "manufacturer": "שוופס Schweppes",
+    "wouldBe": "סודה בטעמים (שוופס)",
+    "priceMatch": true
+  },
+  {
+    "line": 4944,
+    "name": "לימונדה",
+    "status": "low-confidence",
+    "matched": "שוופס מוגז לימונדה ורודה",
+    "manufacturer": "שוופס Schweppes",
+    "wouldBe": "לימונדה (שוופס)",
+    "priceMatch": true
+  },
+  {
+    "line": 5116,
+    "name": "תה ירוק ולימון",
+    "status": "low-confidence",
+    "matched": "תה ירוק לימונית ולואיזה 50 שקיקים",
+    "manufacturer": "ויסוצקי ירוק",
+    "wouldBe": "תה ירוק ולימון (ויסוצקי ירוק)",
+    "priceMatch": true
+  },
+  {
+    "line": 5144,
+    "name": "חליטת שומר",
+    "status": "low-confidence",
+    "matched": "חליטת צמחים שומר",
+    "manufacturer": "פומפדור Pompadour",
+    "wouldBe": "חליטת שומר (פומפדור)",
+    "priceMatch": true
+  },
+  {
+    "line": 5156,
+    "name": "חליטת \\\"חמדת השקד\\\"",
+    "status": "low-confidence",
+    "matched": "חליטת \"חמדת השקד\"",
+    "manufacturer": "ויסוצקי",
+    "wouldBe": "חליטת \\\"חמדת השקד\\\" (ויסוצקי)",
+    "priceMatch": true
+  },
+  {
+    "line": 5200,
+    "name": "מים מינרלים נביעות שישייה פקק נשלף",
+    "status": "low-confidence",
+    "matched": "מנקה בלמים 650 מ\"ל",
+    "manufacturer": "AMERICAN EAGLE",
+    "wouldBe": "מים מינרלים נביעות שישייה פקק נשלף (AMERICAN EAGLE)",
+    "priceMatch": false
+  },
+  {
+    "line": 5229,
+    "name": "מי סודה - מארז 6 בקבוקים 500 מ\\\"ל",
+    "status": "low-confidence",
+    "matched": "מי סודה - מארז 6 בקבוקים 500 מ\"ל",
+    "manufacturer": "שוופס Schweppes",
+    "wouldBe": "מי סודה - מארז 6 בקבוקים 500 מ\\\"ל (שוופס)",
+    "priceMatch": true
+  },
+  {
+    "line": 5230,
+    "name": "סודה בטעם לימון - מארז 6 בקבוקים 500 מ\\\"ל",
+    "status": "low-confidence",
+    "matched": "סודה בטעם לימון - מארז 6 בקבוקים 500 מ\"ל",
+    "manufacturer": "שוופס Schweppes",
+    "wouldBe": "סודה בטעם לימון - מארז 6 בקבוקים 500 מ\\\"ל (שוופס)",
+    "priceMatch": true
+  },
+  {
+    "line": 5241,
+    "name": "נורדיק מיסט סודה בטעם תפוח ונענע",
+    "status": "low-confidence",
+    "matched": "מכשיר סודהסטרים טרה שחור",
+    "manufacturer": "סודהסטרים sodastream",
+    "wouldBe": "נורדיק מיסט סודה בטעם תפוח ונענע (סודהסטרים)",
+    "priceMatch": false
+  },
+  {
+    "line": 5285,
+    "name": "מירנדה בטעם תפוזים",
+    "status": "low-confidence",
+    "matched": "עוגת הבית בטעם תפוז",
+    "manufacturer": "אסם",
+    "wouldBe": "מירנדה בטעם תפוזים (אסם)",
+    "priceMatch": false
+  },
+  {
+    "line": 5346,
+    "name": "משקה קל בטעם אשכוליות",
+    "status": "low-confidence",
+    "matched": "משקה שיבולת שועל",
+    "manufacturer": "תנובה  Alternative",
+    "wouldBe": "משקה קל בטעם אשכוליות (תנובה)",
+    "priceMatch": true
+  },
+  {
+    "line": 5349,
+    "name": "משקה קל בטעם אפרסק",
+    "status": "low-confidence",
+    "matched": "משקה שיבולת שועל",
+    "manufacturer": "תנובה  Alternative",
+    "wouldBe": "משקה קל בטעם אפרסק (תנובה)",
+    "priceMatch": true
+  },
+  {
+    "line": 5439,
+    "name": "פריניב מיץ תפוז בננה ופסיפלורה",
+    "status": "low-confidence",
+    "matched": "מסחטת מיץ הדרים מקצועית 24x24x21.8 ס\"מ",
+    "manufacturer": "נעמן",
+    "wouldBe": "פריניב מיץ תפוז בננה ופסיפלורה (נעמן)",
+    "priceMatch": false
+  },
+  {
+    "line": 5477,
+    "name": "משקה בטעם לימונים",
+    "status": "low-confidence",
+    "matched": "משקה שיבולת שועל",
+    "manufacturer": "תנובה  Alternative",
+    "wouldBe": "משקה בטעם לימונים (תנובה)",
+    "priceMatch": true
+  },
+  {
+    "line": 5484,
+    "name": "משקה קל אשכוליות",
+    "status": "low-confidence",
+    "matched": "משקה שיבולת שועל",
+    "manufacturer": "תנובה  Alternative",
+    "wouldBe": "משקה קל אשכוליות (תנובה)",
+    "priceMatch": true
+  },
+  {
+    "line": 5779,
+    "name": "כוסות שמפניה  147 סמ\\\"ק",
+    "status": "low-confidence",
+    "matched": "כוסות שמפניה  147 סמ\"ק",
+    "manufacturer": "הנמל",
+    "wouldBe": "כוסות שמפניה  147 סמ\\\"ק (הנמל)",
+    "priceMatch": true
+  },
+  {
+    "line": 5849,
+    "name": "אבקת כביסה",
+    "status": "low-confidence",
+    "matched": "אבקת כביסה תינוקלין",
+    "manufacturer": "תינוקלין",
+    "wouldBe": "אבקת כביסה (תינוקלין)",
+    "priceMatch": true
+  },
+  {
+    "line": 5850,
+    "name": "נוזל כביסה",
+    "status": "low-confidence",
+    "matched": "כביסכל נוזל כביסה בניחוח ארומטי",
+    "manufacturer": "כביסכל",
+    "wouldBe": "נוזל כביסה (כביסכל)",
+    "priceMatch": true
+  },
+  {
+    "line": 5851,
+    "name": "מרכך כביסה",
+    "status": "low-confidence",
+    "matched": "מרכך כביסה לבן",
+    "manufacturer": "סוד",
+    "wouldBe": "מרכך כביסה (סוד)",
+    "priceMatch": true
+  },
+  {
+    "line": 5852,
+    "name": "אקונומיקה",
+    "status": "low-confidence",
+    "matched": "אקונומיקה בניחוח לימון",
+    "manufacturer": "פרפקט Perfect",
+    "wouldBe": "אקונומיקה (פרפקט)",
+    "priceMatch": false
+  },
+  {
+    "line": 5853,
+    "name": "נוזל לכלים",
+    "status": "low-confidence",
+    "matched": "נוזל לניקוי כלים בניחוח לימון",
+    "manufacturer": "פרפקט Perfect",
+    "wouldBe": "נוזל לכלים (פרפקט)",
+    "priceMatch": false
+  },
+  {
+    "line": 5854,
+    "name": "ספוגים",
+    "status": "low-confidence",
+    "matched": "ספוג הפלא",
+    "manufacturer": "פרפקט Perfect",
+    "wouldBe": "ספוגים (פרפקט)",
+    "priceMatch": true
+  },
+  {
+    "line": 5855,
+    "name": "מגבות נייר",
+    "status": "low-confidence",
+    "matched": "מגבות נייר - מארז 8 גלילים",
+    "manufacturer": "פרפקט Perfect",
+    "wouldBe": "מגבות נייר (פרפקט)",
+    "priceMatch": true
+  },
+  {
+    "line": 5856,
+    "name": "נייר טואלט",
+    "status": "low-confidence",
+    "matched": "נייר טואלט לילי קלאסיק 30 גלילים",
+    "manufacturer": "לילי Lily",
+    "wouldBe": "נייר טואלט (לילי)",
+    "priceMatch": true
+  },
+  {
+    "line": 5857,
+    "name": "שקיות זבל",
+    "status": "low-confidence",
+    "matched": "שקיות אשפה ענקיות עם ידית 90*75 עבות וחזקות",
+    "manufacturer": "פרפקט Perfect",
+    "wouldBe": "שקיות זבל (פרפקט)",
+    "priceMatch": true
+  },
+  {
+    "line": 5858,
+    "name": "שקיות ניילון",
+    "status": "low-confidence",
+    "matched": "מארז שקיות פס לבן פוליו 50 יח'",
+    "manufacturer": "סירקה  Sirka",
+    "wouldBe": "שקיות ניילון (סירקה)",
+    "priceMatch": true
+  },
+  {
+    "line": 5859,
+    "name": "נוזל לניקוי רצפות",
+    "status": "low-confidence",
+    "matched": "נוזל לניקוי רצפות בניחוח מלון בוטיק",
+    "manufacturer": "פרפקט Perfect",
+    "wouldBe": "נוזל לניקוי רצפות (פרפקט)",
+    "priceMatch": false
+  },
+  {
+    "line": 5860,
+    "name": "נוזל לניקוי חלונות",
+    "status": "low-confidence",
+    "matched": "נוזל לניקוי חלונות - מארז זוג",
+    "manufacturer": "אג'קס Ajax",
+    "wouldBe": "נוזל לניקוי חלונות (אג'קס)",
+    "priceMatch": false
+  },
+  {
+    "line": 5861,
+    "name": "מנקה אסלות",
+    "status": "low-confidence",
+    "matched": "ג'ל לניקוי אסלות בניחוח לימון",
+    "manufacturer": "פרפקט Perfect",
+    "wouldBe": "מנקה אסלות (פרפקט)",
+    "priceMatch": true
+  },
+  {
+    "line": 5862,
+    "name": "טבליות למדיח",
+    "status": "low-confidence",
+    "matched": "טבליות למדיח סנו ספארק Spark",
+    "manufacturer": "סנו",
+    "wouldBe": "טבליות למדיח (סנו)",
+    "priceMatch": true
+  },
+  {
+    "line": 5863,
+    "name": "מטליות לחות",
+    "status": "low-confidence",
+    "matched": "מטליות לחות לניקוי כללי",
+    "manufacturer": "פרפקט Perfect",
+    "wouldBe": "מטליות לחות (פרפקט)",
+    "priceMatch": false
+  },
+  {
+    "line": 5864,
+    "name": "כפפות חד פעמיות",
+    "status": "low-confidence",
+    "matched": "כפיות חד פעמיות",
+    "manufacturer": "פרפקט Perfect",
+    "wouldBe": "כפפות חד פעמיות (פרפקט)",
+    "priceMatch": true
+  },
+  {
+    "line": 6307,
+    "name": "נוזל לניקוי כללי ורצפות היביסקוס",
+    "status": "low-confidence",
+    "matched": "אג'קס נוזל לניקוי כללי ורצפות בניחוח לבנדר",
+    "manufacturer": "אג'קס Ajax",
+    "wouldBe": "נוזל לניקוי כללי ורצפות היביסקוס (אג'קס)",
+    "priceMatch": true
+  },
+  {
+    "line": 6499,
+    "name": "סיליקון סניטרי שקוף בשפופרת 100 מ\\\"ל הקץ לעובש",
+    "status": "low-confidence",
+    "matched": "סיליקון סניטרי שקוף בשפופרת 100 מ\"ל הקץ לעובש",
+    "manufacturer": "פאר נשר מוצרים לצביעה ובניה",
+    "wouldBe": "סיליקון סניטרי שקוף בשפופרת 100 מ\\\"ל הקץ לעובש (פאר נשר מוצרים לצביעה ובניה)",
+    "priceMatch": true
+  },
+  {
+    "line": 6569,
+    "name": "מנקה ומחטא עוצמתי לחדר האמבטיה ללא אקונומיקה",
+    "status": "low-confidence",
+    "matched": "דטול מנקה ומחטא עוצמתי למטבח",
+    "manufacturer": "דטול  Dettol",
+    "wouldBe": "מנקה ומחטא עוצמתי לחדר האמבטיה ללא אקונומיקה (דטול)",
+    "priceMatch": true
+  },
+  {
+    "line": 6570,
+    "name": "מתז לחיטוי וניקוי חדר האמבטיה 99.9% 750 מ\\\"ל",
+    "status": "low-confidence",
+    "matched": "מתז לחיטוי וניקוי חדר האמבטיה 99.9% 750 מ\"ל",
+    "manufacturer": "סנו ג'ט Jet",
+    "wouldBe": "מתז לחיטוי וניקוי חדר האמבטיה 99.9% 750 מ\\\"ל (סנו ג'ט)",
+    "priceMatch": false
+  },
+  {
+    "line": 6733,
+    "name": "כריות קרצוף לניקוי לכלוך קשה במיוחד 9*24 ס\\\"מ - 3 יח'",
+    "status": "low-confidence",
+    "matched": "כריות קרצוף לניקוי לכלוך קשה במיוחד 9*24 ס\"מ - 3 יח'",
+    "manufacturer": "סקוטצ' ברייט Scotch Brite",
+    "wouldBe": "כריות קרצוף לניקוי לכלוך קשה במיוחד 9*24 ס\\\"מ - 3 יח' (סקוטצ' ברייט)",
+    "priceMatch": true
+  },
+  {
+    "line": 6813,
+    "name": "כוסות לשתיה קרה 330 סמ\\\"ק",
+    "status": "low-confidence",
+    "matched": "כוסות לשתיה קרה 330 סמ\"ק",
+    "manufacturer": "הנמל",
+    "wouldBe": "כוסות לשתיה קרה 330 סמ\\\"ק (הנמל)",
+    "priceMatch": true
+  },
+  {
+    "line": 6815,
+    "name": "כוסות משקה חם קרטון 235 מ\\\"ל",
+    "status": "low-confidence",
+    "matched": "כוסות משקה חם קרטון 235 מ\"ל",
+    "manufacturer": "הנמל",
+    "wouldBe": "כוסות משקה חם קרטון 235 מ\\\"ל (הנמל)",
+    "priceMatch": true
+  },
+  {
+    "line": 6817,
+    "name": "כוסות חד פעמי קרטון 295 מ\\\"ל",
+    "status": "low-confidence",
+    "matched": "כוסות חד פעמי קרטון 295 מ\"ל",
+    "manufacturer": "הנמל",
+    "wouldBe": "כוסות חד פעמי קרטון 295 מ\\\"ל (הנמל)",
+    "priceMatch": true
+  },
+  {
+    "line": 6818,
+    "name": "כוסות משקה חם קרטון 355 מ\\\"ל",
+    "status": "low-confidence",
+    "matched": "כוסות משקה חם קרטון 355 מ\"ל",
+    "manufacturer": "הנמל",
+    "wouldBe": "כוסות משקה חם קרטון 355 מ\\\"ל (הנמל)",
+    "priceMatch": true
+  },
+  {
+    "line": 6819,
+    "name": "כוסות משקה חם קרטון 175 מ\\\"ל",
+    "status": "low-confidence",
+    "matched": "כוסות משקה חם קרטון 175 מ\"ל",
+    "manufacturer": "הנמל",
+    "wouldBe": "כוסות משקה חם קרטון 175 מ\\\"ל (הנמל)",
+    "priceMatch": true
+  },
+  {
+    "line": 6820,
+    "name": "מגש שקוף מאורך מחולק לתאים 40*12.5 ס\\\"מ",
+    "status": "low-confidence",
+    "matched": "מגש שקוף מאורך מחולק לתאים 40*12.5 ס\"מ",
+    "manufacturer": "הנמל",
+    "wouldBe": "מגש שקוף מאורך מחולק לתאים 40*12.5 ס\\\"מ (הנמל)",
+    "priceMatch": true
+  },
+  {
+    "line": 6823,
+    "name": "מפיות אירוח 33*33 ס\\\"מ",
+    "status": "low-confidence",
+    "matched": "מפיות אירוח 33*33 סנו סושי",
+    "manufacturer": "סנו סושי",
+    "wouldBe": "מפיות אירוח 33*33 ס\\\"מ (סנו סושי)",
+    "priceMatch": false
+  },
+  {
+    "line": 6831,
+    "name": "צלחות עבות במיוחד 1 ק\\\"ג",
+    "status": "low-confidence",
+    "matched": "צלחות עבות במיוחד 1 ק\"ג",
+    "manufacturer": "הנמל",
+    "wouldBe": "צלחות עבות במיוחד 1 ק\\\"ג (הנמל)",
+    "priceMatch": true
+  },
+  {
+    "line": 6845,
+    "name": "זוג מפות שולחן לבנות 180*120 ס\\\"מ",
+    "status": "low-confidence",
+    "matched": "זוג מפות שולחן לבנות 180*120 ס\"מ",
+    "manufacturer": "סנו סושי",
+    "wouldBe": "זוג מפות שולחן לבנות 180*120 ס\\\"מ (סנו סושי)",
+    "priceMatch": false
+  },
+  {
+    "line": 6846,
+    "name": "מפת שולחן חגיגית 120*270 ס\\\"מ XL",
+    "status": "low-confidence",
+    "matched": "מפת שולחן חגיגית 120*270 ס\"מ XL",
+    "manufacturer": "סנו סושי",
+    "wouldBe": "מפת שולחן חגיגית 120*270 ס\\\"מ XL (סנו סושי)",
+    "priceMatch": true
+  },
+  {
+    "line": 6850,
+    "name": "צלחות מעוטרות מקנה סוכר בקוטר 15 ס\\\"מ",
+    "status": "low-confidence",
+    "matched": "צלחות מעוטרות מקנה סוכר בקוטר 15 ס\"מ",
+    "manufacturer": "סנו סושי",
+    "wouldBe": "צלחות מעוטרות מקנה סוכר בקוטר 15 ס\\\"מ (סנו סושי)",
+    "priceMatch": true
+  },
+  {
+    "line": 6851,
+    "name": "צלחות מעוטרות מקנה סוכר בקוטר 19 ס\\\"מ",
+    "status": "low-confidence",
+    "matched": "צלחות מעוטרות מקנה סוכר בקוטר 19 ס\"מ",
+    "manufacturer": "סנו סושי",
+    "wouldBe": "צלחות מעוטרות מקנה סוכר בקוטר 19 ס\\\"מ (סנו סושי)",
+    "priceMatch": true
+  },
+  {
+    "line": 6852,
+    "name": "קעריות מעוטרות מקנה סוכר בקוטר 15 ס\\\"מ",
+    "status": "low-confidence",
+    "matched": "קעריות מעוטרות מקנה סוכר בקוטר 15 ס\"מ",
+    "manufacturer": "סנו סושי",
+    "wouldBe": "קעריות מעוטרות מקנה סוכר בקוטר 15 ס\\\"מ (סנו סושי)",
+    "priceMatch": false
+  },
+  {
+    "line": 6853,
+    "name": "כוסות נייר 210 סמ\\\"ק",
+    "status": "low-confidence",
+    "matched": "כוסות נייר 210 סמ\"ק",
+    "manufacturer": "הוסטס Hostess",
+    "wouldBe": "כוסות נייר 210 סמ\\\"ק (הוסטס)",
+    "priceMatch": true
+  },
+  {
+    "line": 6854,
+    "name": "כוסות נייר 240 מ\\\"ל",
+    "status": "low-confidence",
+    "matched": "כוסות נייר 240 מ\"ל",
+    "manufacturer": "הוסטס Hostess",
+    "wouldBe": "כוסות נייר 240 מ\\\"ל (הוסטס)",
+    "priceMatch": true
+  },
+  {
+    "line": 6855,
+    "name": "צלחות פלסטיק עבות כ-17 ס\\\"מ בצבע לבן",
+    "status": "low-confidence",
+    "matched": "צלחות פלסטיק עבות כ-17 ס\"מ בצבע לבן",
+    "manufacturer": "הוסטס Hostess",
+    "wouldBe": "צלחות פלסטיק עבות כ-17 ס\\\"מ בצבע לבן (הוסטס)",
+    "priceMatch": true
+  },
+  {
+    "line": 6860,
+    "name": "זוג מפות שולחן 180*120 ס\\\"מ - לא ניתן לבחור צבע",
+    "status": "low-confidence",
+    "matched": "זוג מפות שולחן 180*120 ס\"מ - לא ניתן לבחור צבע",
+    "manufacturer": "סנו סושי",
+    "wouldBe": "זוג מפות שולחן 180*120 ס\\\"מ - לא ניתן לבחור צבע (סנו סושי)",
+    "priceMatch": false
+  },
+  {
+    "line": 6861,
+    "name": "זוג מפות שולחן חד פעמי 180*110 ס\\\"מ",
+    "status": "low-confidence",
+    "matched": "זוג מפות שולחן חד פעמי 180*110 ס\"מ",
+    "manufacturer": "ניקול",
+    "wouldBe": "זוג מפות שולחן חד פעמי 180*110 ס\\\"מ (ניקול)",
+    "priceMatch": true
+  },
+  {
+    "line": 6862,
+    "name": "כוסות אספרסו  120 מ\\\"ל",
+    "status": "low-confidence",
+    "matched": "כוסות אספרסו  120 מ\"ל",
+    "manufacturer": "הנמל",
+    "wouldBe": "כוסות אספרסו  120 מ\\\"ל (הנמל)",
+    "priceMatch": true
+  },
+  {
+    "line": 6863,
+    "name": "כוסות חד פעמיות מקרטון 265 מ\\\"ל",
+    "status": "low-confidence",
+    "matched": "כוסות חד פעמיות מקרטון 265 מ\"ל",
+    "manufacturer": "הנמל",
+    "wouldBe": "כוסות חד פעמיות מקרטון 265 מ\\\"ל (הנמל)",
+    "priceMatch": true
+  },
+  {
+    "line": 6864,
+    "name": "כוסות יין  150 מ\\\"ל",
+    "status": "low-confidence",
+    "matched": "כוסות יין  150 מ\"ל",
+    "manufacturer": "הנמל",
+    "wouldBe": "כוסות יין  150 מ\\\"ל (הנמל)",
+    "priceMatch": true
+  },
+  {
+    "line": 6865,
+    "name": "כוסות יין מרובעות 59 סמ\\\"ק",
+    "status": "low-confidence",
+    "matched": "כוסות יין מרובעות 59 סמ\"ק",
+    "manufacturer": "הנמל",
+    "wouldBe": "כוסות יין מרובעות 59 סמ\\\"ק (הנמל)",
+    "priceMatch": true
+  },
+  {
+    "line": 6869,
+    "name": "כוסות קרטון 210 מ\\\"ל",
+    "status": "low-confidence",
+    "matched": "כוסות קרטון 210 מ\"ל",
+    "manufacturer": "הנמל",
+    "wouldBe": "כוסות קרטון 210 מ\\\"ל (הנמל)",
+    "priceMatch": true
+  },
+  {
+    "line": 6870,
+    "name": "כוסות קרטון לשתיה חמה 450 מ\\\"ל",
+    "status": "low-confidence",
+    "matched": "כוסות קרטון לשתיה חמה 450 מ\"ל",
+    "manufacturer": "הנמל",
+    "wouldBe": "כוסות קרטון לשתיה חמה 450 מ\\\"ל (הנמל)",
+    "priceMatch": true
+  },
+  {
+    "line": 6871,
+    "name": "כוסות קריסטל  236 סמ\\\"ק",
+    "status": "low-confidence",
+    "matched": "כוסות קריסטל  236 סמ\"ק",
+    "manufacturer": "הנמל",
+    "wouldBe": "כוסות קריסטל  236 סמ\\\"ק (הנמל)",
+    "priceMatch": true
+  },
+  {
+    "line": 6874,
+    "name": "מגש אינגליש קייק שקוף ונציה 37*17 ס\\\"מ",
+    "status": "low-confidence",
+    "matched": "מגש אינגליש קייק שקוף ונציה 37*17 ס\"מ",
+    "manufacturer": "הנמל",
+    "wouldBe": "מגש אינגליש קייק שקוף ונציה 37*17 ס\\\"מ (הנמל)",
+    "priceMatch": true
+  },
+  {
+    "line": 6881,
+    "name": "מפה עם גומי לשולחן מתקפל 180x75 ס\\\"מ לשימוש רב פעמי",
+    "status": "low-confidence",
+    "matched": "מפה עם גומי לשולחן מתקפל 180x75 ס\"מ לשימוש רב פעמי",
+    "manufacturer": "סנו סושי",
+    "wouldBe": "מפה עם גומי לשולחן מתקפל 180x75 ס\\\"מ לשימוש רב פעמי (סנו סושי)",
+    "priceMatch": true
+  },
+  {
+    "line": 6884,
+    "name": "מפת ראנר עם גומי לשולחן מתקפל 180x75 ס\\\"מ רב פעמית",
+    "status": "low-confidence",
+    "matched": "מפת ראנר עם גומי לשולחן מתקפל 180x75 ס\"מ רב פעמית",
+    "manufacturer": "סנו סושי",
+    "wouldBe": "מפת ראנר עם גומי לשולחן מתקפל 180x75 ס\\\"מ רב פעמית (סנו סושי)",
+    "priceMatch": true
+  },
+  {
+    "line": 6885,
+    "name": "מפת שולחן חד פעמית מהודרת 270X135 ס\\\"מ",
+    "status": "low-confidence",
+    "matched": "מפת שולחן חד פעמית מהודרת 270X135 ס\"מ",
+    "manufacturer": "ניקול",
+    "wouldBe": "מפת שולחן חד פעמית מהודרת 270X135 ס\\\"מ (ניקול)",
+    "priceMatch": true
+  },
+  {
+    "line": 6888,
+    "name": "צלחות ונציה גדולות \\\"9",
+    "status": "low-confidence",
+    "matched": "צלחות ונציה גדולות \"9",
+    "manufacturer": "הנמל",
+    "wouldBe": "צלחות ונציה גדולות \\\"9 (הנמל)",
+    "priceMatch": true
+  },
+  {
+    "line": 6889,
+    "name": "צלחות ונציה קטנות \\\"7",
+    "status": "low-confidence",
+    "matched": "צלחות מהודרות קטנות \"7.5",
+    "manufacturer": "הנמל",
+    "wouldBe": "צלחות ונציה קטנות \\\"7 (הנמל)",
+    "priceMatch": false
+  },
+  {
+    "line": 6890,
+    "name": "צלחות לב עלי דקל 16 ס\\\"מ",
+    "status": "low-confidence",
+    "matched": "צלחות לב עלי דקל 16 ס\"מ",
+    "manufacturer": "תבניכל",
+    "wouldBe": "צלחות לב עלי דקל 16 ס\\\"מ (תבניכל)",
+    "priceMatch": true
+  },
+  {
+    "line": 6891,
+    "name": "צלחות מהודרות בינוניות \\\"9",
+    "status": "low-confidence",
+    "matched": "צלחות מהודרות בינוניות \"9",
+    "manufacturer": "הנמל",
+    "wouldBe": "צלחות מהודרות בינוניות \\\"9 (הנמל)",
+    "priceMatch": true
+  },
+  {
+    "line": 6892,
+    "name": "צלחות מהודרות גדולות \\\"10",
+    "status": "low-confidence",
+    "matched": "צלחות מהודרות גדולות \"10",
+    "manufacturer": "הנמל",
+    "wouldBe": "צלחות מהודרות גדולות \\\"10 (הנמל)",
+    "priceMatch": true
+  },
+  {
+    "line": 6893,
+    "name": "צלחות מהודרות קטנות \\\"7.5",
+    "status": "low-confidence",
+    "matched": "צלחות מהודרות קטנות \"7.5",
+    "manufacturer": "הנמל",
+    "wouldBe": "צלחות מהודרות קטנות \\\"7.5 (הנמל)",
+    "priceMatch": true
+  },
+  {
+    "line": 6894,
+    "name": "צלחות מלבניות עלי דקל 16*11 ס\\\"מ",
+    "status": "low-confidence",
+    "matched": "צלחות מלבניות עלי דקל 16*11 ס\"מ",
+    "manufacturer": "תבניכל",
+    "wouldBe": "צלחות מלבניות עלי דקל 16*11 ס\\\"מ (תבניכל)",
+    "priceMatch": true
+  },
+  {
+    "line": 6895,
+    "name": "צלחות מלבניות עלי דקל 20.5*12.5 ס\\\"מ",
+    "status": "low-confidence",
+    "matched": "צלחות מלבניות עלי דקל 20.5*12.5 ס\"מ",
+    "manufacturer": "תבניכל",
+    "wouldBe": "צלחות מלבניות עלי דקל 20.5*12.5 ס\\\"מ (תבניכל)",
+    "priceMatch": true
+  },
+  {
+    "line": 6896,
+    "name": "צלחות מלבניות עלי דקל 24*16 ס\\\"מ",
+    "status": "low-confidence",
+    "matched": "צלחות מלבניות עלי דקל 24*16 ס\"מ",
+    "manufacturer": "תבניכל",
+    "wouldBe": "צלחות מלבניות עלי דקל 24*16 ס\\\"מ (תבניכל)",
+    "priceMatch": true
+  },
+  {
+    "line": 6898,
+    "name": "צלחות מרובעות עלי דקל 15*15 ס\\\"מ",
+    "status": "low-confidence",
+    "matched": "צלחות מרובעות עלי דקל 15*15 ס\"מ",
+    "manufacturer": "תבניכל",
+    "wouldBe": "צלחות מרובעות עלי דקל 15*15 ס\\\"מ (תבניכל)",
+    "priceMatch": true
+  },
+  {
+    "line": 6899,
+    "name": "צלחות מרובעות עלי דקל 25*25 ס\\\"מ",
+    "status": "low-confidence",
+    "matched": "צלחות מרובעות עלי דקל 25*25 ס\"מ",
+    "manufacturer": "תבניכל",
+    "wouldBe": "צלחות מרובעות עלי דקל 25*25 ס\\\"מ (תבניכל)",
+    "priceMatch": true
+  },
+  {
+    "line": 6900,
+    "name": "צלחות עגולות עלי דקל קוטר 18.5 ס\\\"מ",
+    "status": "low-confidence",
+    "matched": "צלחות עגולות עלי דקל קוטר 18.5 ס\"מ",
+    "manufacturer": "תבניכל",
+    "wouldBe": "צלחות עגולות עלי דקל קוטר 18.5 ס\\\"מ (תבניכל)",
+    "priceMatch": true
+  },
+  {
+    "line": 6901,
+    "name": "צלחות עגולות עלי דקל קוטר 20 ס\\\"מ",
+    "status": "low-confidence",
+    "matched": "צלחות עגולות עלי דקל קוטר 20 ס\"מ",
+    "manufacturer": "תבניכל",
+    "wouldBe": "צלחות עגולות עלי דקל קוטר 20 ס\\\"מ (תבניכל)",
+    "priceMatch": true
+  },
+  {
+    "line": 6902,
+    "name": "צלחות עגולות עלי דקל קוטר 25 ס\\\"מ",
+    "status": "low-confidence",
+    "matched": "צלחות עגולות עלי דקל קוטר 25 ס\"מ",
+    "manufacturer": "תבניכל",
+    "wouldBe": "צלחות עגולות עלי דקל קוטר 25 ס\\\"מ (תבניכל)",
+    "priceMatch": true
+  },
+  {
+    "line": 6903,
+    "name": "צלחות פלסטיק עבות כ-22 ס\\\"מ בצבע לבן",
+    "status": "low-confidence",
+    "matched": "צלחות פלסטיק עבות כ-22 ס\"מ בצבע לבן",
+    "manufacturer": "הוסטס Hostess",
+    "wouldBe": "צלחות פלסטיק עבות כ-22 ס\\\"מ בצבע לבן (הוסטס)",
+    "priceMatch": true
+  },
+  {
+    "line": 6913,
+    "name": "שיפודי במבוק ג'מבו עבים 5 מ\\\"מ  באורך 30 ס\\\"מ",
+    "status": "low-confidence",
+    "matched": "שיפודי במבוק ג'מבו עבים 5 מ\"מ  באורך 30 ס\"מ",
+    "manufacturer": "הוסטס Hostess",
+    "wouldBe": "שיפודי במבוק ג'מבו עבים 5 מ\\\"מ  באורך 30 ס\\\"מ (הוסטס)",
+    "priceMatch": true
+  },
+  {
+    "line": 6914,
+    "name": "שיפודי במבוק יקיטורי 15 ס\\\"מ אורך",
+    "status": "low-confidence",
+    "matched": "שיפודי במבוק יקיטורי 15 ס\"מ אורך",
+    "manufacturer": "הוסטס Hostess",
+    "wouldBe": "שיפודי במבוק יקיטורי 15 ס\\\"מ אורך (הוסטס)",
+    "priceMatch": true
+  },
+  {
+    "line": 6920,
+    "name": "נייר אפיה 50 יח'  38X42 ס\\\"מ",
+    "status": "low-confidence",
+    "matched": "נייר אפיה 50 יח'  38X42 ס\"מ",
+    "manufacturer": "הנמל",
+    "wouldBe": "נייר אפיה 50 יח'  38X42 ס\\\"מ (הנמל)",
+    "priceMatch": true
+  },
+  {
+    "line": 6922,
+    "name": "נייר אפיה לתבנית עגולה 26 ס\\\"מ - מארז 10 ניירות",
+    "status": "low-confidence",
+    "matched": "נייר אפיה לתבנית עגולה 26 ס\"מ - מארז 10 ניירות",
+    "manufacturer": "הנמל",
+    "wouldBe": "נייר אפיה לתבנית עגולה 26 ס\\\"מ - מארז 10 ניירות (הנמל)",
+    "priceMatch": true
+  },
+  {
+    "line": 6924,
+    "name": "שקיות צליה ג'מבו 50*35 ס\\\"מ",
+    "status": "low-confidence",
+    "matched": "שקיות צליה ג'מבו 50*35 ס\"מ",
+    "manufacturer": "הוסטס Hostess",
+    "wouldBe": "שקיות צליה ג'מבו 50*35 ס\\\"מ (הוסטס)",
+    "priceMatch": true
+  },
+  {
+    "line": 6935,
+    "name": "תבניות אלומיניום לחלה 16*32 ס\\\"מ",
+    "status": "low-confidence",
+    "matched": "תבניות אלומיניום לחלה 16*32 ס\"מ",
+    "manufacturer": "הנמל",
+    "wouldBe": "תבניות אלומיניום לחלה 16*32 ס\\\"מ (הנמל)",
+    "priceMatch": true
+  },
+  {
+    "line": 6940,
+    "name": "תבנית אלומיניום גדולה 32*26 ס\\\"מ - 9 יח'",
+    "status": "low-confidence",
+    "matched": "תבנית אלומיניום גדולה 32*26 ס\"מ - 9 יח'",
+    "manufacturer": "הנמל",
+    "wouldBe": "תבנית אלומיניום גדולה 32*26 ס\\\"מ - 9 יח' (הנמל)",
+    "priceMatch": true
+  },
+  {
+    "line": 6948,
+    "name": "תבניות אלומיניום רב שימושיות 21*27 ס\\\"מ - 4 במארז",
+    "status": "low-confidence",
+    "matched": "תבניות אלומיניום רב שימושיות 21*27 ס\"מ - 4 במארז",
+    "manufacturer": "סנו סושי",
+    "wouldBe": "תבניות אלומיניום רב שימושיות 21*27 ס\\\"מ - 4 במארז (סנו סושי)",
+    "priceMatch": true
+  },
+  {
+    "line": 6953,
+    "name": "תבניות אלומיניום עם ידיות אחיזה 34*29 ס\\\"מ",
+    "status": "low-confidence",
+    "matched": "תבניות אלומיניום עם ידיות אחיזה 34*29 ס\"מ",
+    "manufacturer": "סנו סושי",
+    "wouldBe": "תבניות אלומיניום עם ידיות אחיזה 34*29 ס\\\"מ (סנו סושי)",
+    "priceMatch": true
+  },
+  {
+    "line": 6954,
+    "name": "תבניות אפיה מנייר 28*18.7 ס\\\"מ",
+    "status": "low-confidence",
+    "matched": "תבניות אפיה מנייר 28*18.7 ס\"מ",
+    "manufacturer": "סנו סושי",
+    "wouldBe": "תבניות אפיה מנייר 28*18.7 ס\\\"מ (סנו סושי)",
+    "priceMatch": false
+  },
+  {
+    "line": 6955,
+    "name": "תבניות אפיה עגולות מנייר קוטר 21 ס\\\"מ",
+    "status": "low-confidence",
+    "matched": "תבניות אפיה עגולות מנייר קוטר 21 ס\"מ",
+    "manufacturer": "סנו סושי",
+    "wouldBe": "תבניות אפיה עגולות מנייר קוטר 21 ס\\\"מ (סנו סושי)",
+    "priceMatch": false
+  },
+  {
+    "line": 6958,
+    "name": "תבניות אלומיניום פלוס נייר אפיה 40/34 ס\\\"מ XL",
+    "status": "low-confidence",
+    "matched": "תבניות אלומיניום פלוס נייר אפיה 40/34 ס\"מ XL",
+    "manufacturer": "קוקי",
+    "wouldBe": "תבניות אלומיניום פלוס נייר אפיה 40/34 ס\\\"מ XL (קוקי)",
+    "priceMatch": true
+  },
+  {
+    "line": 6959,
+    "name": "תבניות אלומיניום פלוס נייר אפייה 32/26 ס\\\"מ L",
+    "status": "low-confidence",
+    "matched": "תבניות אלומיניום פלוס נייר אפייה 32/26 ס\"מ L",
+    "manufacturer": "קוקי",
+    "wouldBe": "תבניות אלומיניום פלוס נייר אפייה 32/26 ס\\\"מ L (קוקי)",
+    "priceMatch": true
+  },
+  {
+    "line": 6972,
+    "name": "תבניות אלומיניום + מכסים 3*17.7*22.7 ס\\\"מ - 10 במארז",
+    "status": "low-confidence",
+    "matched": "תבניות אלומיניום + מכסים 3*17.7*22.7 ס\"מ - 10 במארז",
+    "manufacturer": "פרפקט Perfect",
+    "wouldBe": "תבניות אלומיניום + מכסים 3*17.7*22.7 ס\\\"מ - 10 במארז (פרפקט)",
+    "priceMatch": true
+  },
+  {
+    "line": 6973,
+    "name": "תבניות אלומיניום + מכסים 4.7*21*32 ס\\\"מ - 4 במארז",
+    "status": "low-confidence",
+    "matched": "תבניות אלומיניום + מכסים 4.7*21*32 ס\"מ - 4 במארז",
+    "manufacturer": "פרפקט Perfect",
+    "wouldBe": "תבניות אלומיניום + מכסים 4.7*21*32 ס\\\"מ - 4 במארז (פרפקט)",
+    "priceMatch": true
+  },
+  {
+    "line": 6974,
+    "name": "תבניות אלומיניום 5*26*32 ס\\\"מ - 4 במארז",
+    "status": "low-confidence",
+    "matched": "תבניות אלומיניום 5*26*32 ס\"מ - 4 במארז",
+    "manufacturer": "פרפקט Perfect",
+    "wouldBe": "תבניות אלומיניום 5*26*32 ס\\\"מ - 4 במארז (פרפקט)",
+    "priceMatch": true
+  },
+  {
+    "line": 6975,
+    "name": "תבניות אלומיניום 5*32*40 ס\\\"מ - 3 במארז",
+    "status": "low-confidence",
+    "matched": "תבניות אלומיניום 5*26*32 ס\"מ - 4 במארז",
+    "manufacturer": "פרפקט Perfect",
+    "wouldBe": "תבניות אלומיניום 5*32*40 ס\\\"מ - 3 במארז (פרפקט)",
+    "priceMatch": true
+  },
+  {
+    "line": 6976,
+    "name": "תבניות אלומיניום עגולות בקוטר 28 ס\\\"מ - 4 במארז",
+    "status": "low-confidence",
+    "matched": "תבניות אלומיניום עגולות בקוטר 28 ס\"מ - 4 במארז",
+    "manufacturer": "פרפקט Perfect",
+    "wouldBe": "תבניות אלומיניום עגולות בקוטר 28 ס\\\"מ - 4 במארז (פרפקט)",
+    "priceMatch": true
+  },
+  {
+    "line": 6978,
+    "name": "תבנית אלומיניום מלבנית עמוקה 19*31 ס\\\"מ +מכסים",
+    "status": "low-confidence",
+    "matched": "תבנית אלומיניום מלבנית עמוקה 19*31 ס\"מ +מכסים",
+    "manufacturer": "הנמל",
+    "wouldBe": "תבנית אלומיניום מלבנית עמוקה 19*31 ס\\\"מ +מכסים (הנמל)",
+    "priceMatch": true
+  },
+  {
+    "line": 6982,
+    "name": "זוג רדיד אלומיניום עבה ורחב 45 ס\\\"מ* 7.5 מטר",
+    "status": "low-confidence",
+    "matched": "זוג רדיד אלומיניום עבה ורחב 45 ס\"מ* 7.5 מטר",
+    "manufacturer": "סנו סושי",
+    "wouldBe": "זוג רדיד אלומיניום עבה ורחב 45 ס\\\"מ* 7.5 מטר (סנו סושי)",
+    "priceMatch": true
+  },
+  {
+    "line": 6983,
+    "name": "רדיד אלומיניום רוחב 30 ס\\\"מ, 14 מיקרון - מארז זוג",
+    "status": "low-confidence",
+    "matched": "רדיד אלומיניום רוחב 30 ס\"מ, 14 מיקרון - מארז זוג",
+    "manufacturer": "סנו סושי",
+    "wouldBe": "רדיד אלומיניום רוחב 30 ס\\\"מ, 14 מיקרון - מארז זוג (סנו סושי)",
+    "priceMatch": false
+  },
+  {
+    "line": 6984,
+    "name": "רדיד אלומיניום רוחב 30 ס\\\"מ, 18 מיקרון - מארז זוג",
+    "status": "low-confidence",
+    "matched": "רדיד אלומיניום רוחב 30 ס\"מ, 18 מיקרון - מארז זוג",
+    "manufacturer": "סנו סושי",
+    "wouldBe": "רדיד אלומיניום רוחב 30 ס\\\"מ, 18 מיקרון - מארז זוג (סנו סושי)",
+    "priceMatch": true
+  },
+  {
+    "line": 6985,
+    "name": "רדיד אלומיניום רוחב 45 ס\\\"מ - מארז זוג",
+    "status": "low-confidence",
+    "matched": "רדיד אלומיניום רוחב 45 ס\"מ - מארז זוג",
+    "manufacturer": "סנו סושי",
+    "wouldBe": "רדיד אלומיניום רוחב 45 ס\\\"מ - מארז זוג (סנו סושי)",
+    "priceMatch": false
+  },
+  {
+    "line": 6988,
+    "name": "זוג רדיד אלומיניום עבה וחזק במיוחד רוחב 30 ס\\\"מ",
+    "status": "low-confidence",
+    "matched": "זוג רדיד אלומיניום עבה במיוחד רוחב 30 ס\"מ",
+    "manufacturer": "פרפקט Perfect",
+    "wouldBe": "זוג רדיד אלומיניום עבה וחזק במיוחד רוחב 30 ס\\\"מ (פרפקט)",
+    "priceMatch": false
+  },
+  {
+    "line": 6992,
+    "name": "ניילון נצמד רוחב 30 ס\\\"מ - מארז זוג",
+    "status": "low-confidence",
+    "matched": "ניילון נצמד רוחב 30 ס\"מ - מארז זוג",
+    "manufacturer": "סנו סושי",
+    "wouldBe": "ניילון נצמד רוחב 30 ס\\\"מ - מארז זוג (סנו סושי)",
+    "priceMatch": false
+  },
+  {
+    "line": 6999,
+    "name": "שקיות ריצ'רץ' לסגירה חוזרת 19*18 ס\\\"מ",
+    "status": "low-confidence",
+    "matched": "שקיות ריצ'רץ' לסגירה חוזרת 19*18 ס\"מ",
+    "manufacturer": "ניקול",
+    "wouldBe": "שקיות ריצ'רץ' לסגירה חוזרת 19*18 ס\\\"מ (ניקול)",
+    "priceMatch": true
+  },
+  {
+    "line": 7012,
+    "name": "שקיות אשפה S לפחים קטנים 56*45 ס\\\"מ בניחוח עדין",
+    "status": "low-confidence",
+    "matched": "שקיות אשפה S לפחים קטנים 56*45 ס\"מ בניחוח עדין",
+    "manufacturer": "סנו סושי",
+    "wouldBe": "שקיות אשפה S לפחים קטנים 56*45 ס\\\"מ בניחוח עדין (סנו סושי)",
+    "priceMatch": true
+  },
+  {
+    "line": 7015,
+    "name": "שקיות אשפה עם ידיות 90*75 ס\\\"מ XXL",
+    "status": "low-confidence",
+    "matched": "שקיות אשפה פרפקט לפחים ענקיים עם ידיות 90*75 ס\"מ XXL",
+    "manufacturer": "פרפקט Perfect",
+    "wouldBe": "שקיות אשפה עם ידיות 90*75 ס\\\"מ XXL (פרפקט)",
+    "priceMatch": false
+  },
+  {
+    "line": 7016,
+    "name": "שקיות אשפה עם שרוך 90X78 XXL ס\\\"מ",
+    "status": "low-confidence",
+    "matched": "פרפקט שקיות אשפה אטומות 90*75 ס\"מ XXL",
+    "manufacturer": "פרפקט Perfect",
+    "wouldBe": "שקיות אשפה עם שרוך 90X78 XXL ס\\\"מ (פרפקט)",
+    "priceMatch": false
+  },
+  {
+    "line": 7017,
+    "name": "שקיות אשפה נשלפות עם שרוך 65*54 ס\\\"מ L",
+    "status": "low-confidence",
+    "matched": "שקיות אשפה פרפקט תלת שכבתיות עם שרוך 65*54 נשלפות",
+    "manufacturer": "פרפקט Perfect",
+    "wouldBe": "שקיות אשפה נשלפות עם שרוך 65*54 ס\\\"מ L (פרפקט)",
+    "priceMatch": false
+  },
+  {
+    "line": 7018,
+    "name": "שקיות גופיה גדולות 60*50 ס\\\"מ עם ידיות - 50 במארז",
+    "status": "low-confidence",
+    "matched": "שקיות גופיה גדולות 60*50 ס\"מ עם ידיות - 50 במארז",
+    "manufacturer": "פרפקט Perfect",
+    "wouldBe": "שקיות גופיה גדולות 60*50 ס\\\"מ עם ידיות - 50 במארז (פרפקט)",
+    "priceMatch": true
+  },
+  {
+    "line": 7021,
+    "name": "שקיות זיפר 20*19 ס\\\"מ מידה M",
+    "status": "low-confidence",
+    "matched": "מארז שקיות פס לבן פוליו 50 יח'",
+    "manufacturer": "סירקה  Sirka",
+    "wouldBe": "שקיות זיפר 20*19 ס\\\"מ מידה M (סירקה)",
+    "priceMatch": false
+  },
+  {
+    "line": 7022,
+    "name": "שקיות זיפר 27*26 ס\\\"מ מידה L",
+    "status": "low-confidence",
+    "matched": "שקיות זיפר 27*26 ס\"מ מידה L",
+    "manufacturer": "סנו סושי",
+    "wouldBe": "שקיות זיפר 27*26 ס\\\"מ מידה L (סנו סושי)",
+    "priceMatch": false
+  },
+  {
+    "line": 7024,
+    "name": "זוג רדיד אלומיניום עבה במיוחד רוחב 30 ס\\\"מ",
+    "status": "low-confidence",
+    "matched": "זוג רדיד אלומיניום עבה במיוחד רוחב 30 ס\"מ",
+    "manufacturer": "פרפקט Perfect",
+    "wouldBe": "זוג רדיד אלומיניום עבה במיוחד רוחב 30 ס\\\"מ (פרפקט)",
+    "priceMatch": true
+  },
+  {
+    "line": 7025,
+    "name": "זוג רדיד אלומיניום עבה וחזק במיוחד רוחב 45 ס\\\"מ",
+    "status": "low-confidence",
+    "matched": "זוג רדיד אלומיניום עבה וחזק במיוחד רוחב 45 ס\"מ",
+    "manufacturer": "ניקול",
+    "wouldBe": "זוג רדיד אלומיניום עבה וחזק במיוחד רוחב 45 ס\\\"מ (ניקול)",
+    "priceMatch": true
+  },
+  {
+    "line": 7026,
+    "name": "זוג רדיד אלומיניום רוחב 45 ס\\\"מ",
+    "status": "low-confidence",
+    "matched": "זוג רדיד אלומיניום רוחב 45 ס\"מ",
+    "manufacturer": "פרפקט Perfect",
+    "wouldBe": "זוג רדיד אלומיניום רוחב 45 ס\\\"מ (פרפקט)",
+    "priceMatch": true
+  },
+  {
+    "line": 7032,
+    "name": "ניילון נצמד עם מתקן לחיתוך רוחב 28.5 ס\\\"מ אורך 150 מטר",
+    "status": "low-confidence",
+    "matched": "ניילון נצמד עם מתקן לחיתוך רוחב 28.5 ס\"מ אורך 150 מטר",
+    "manufacturer": "פרפקט Perfect",
+    "wouldBe": "ניילון נצמד עם מתקן לחיתוך רוחב 28.5 ס\\\"מ אורך 150 מטר (פרפקט)",
+    "priceMatch": true
+  },
+  {
+    "line": 7039,
+    "name": "רדיד אלומיניום כוכבים עבה במיוחד רוחב 30 ס\\\"מ אורך 61 מטר",
+    "status": "low-confidence",
+    "matched": "רדיד אלומיניום כוכבים עבה במיוחד רוחב 30 ס\"מ אורך 61 מטר",
+    "manufacturer": "פרפקט Perfect",
+    "wouldBe": "רדיד אלומיניום כוכבים עבה במיוחד רוחב 30 ס\\\"מ אורך 61 מטר (פרפקט)",
+    "priceMatch": true
+  },
+  {
+    "line": 7040,
+    "name": "רדיד אלומיניום עבה במיוחד רוחב 45 ס\\\"מ אורך 30 מטר",
+    "status": "low-confidence",
+    "matched": "רדיד אלומיניום עבה במיוחד רוחב 45 ס\"מ אורך 30 מטר",
+    "manufacturer": "פרפקט Perfect",
+    "wouldBe": "רדיד אלומיניום עבה במיוחד רוחב 45 ס\\\"מ אורך 30 מטר (פרפקט)",
+    "priceMatch": true
+  },
+  {
+    "line": 7041,
+    "name": "רדיד אלומיניום רוחב 30 ס\\\"מ - מארז זוג",
+    "status": "low-confidence",
+    "matched": "רדיד אלומיניום רוחב 30 ס\"מ - מארז זוג",
+    "manufacturer": "ניקול",
+    "wouldBe": "רדיד אלומיניום רוחב 30 ס\\\"מ - מארז זוג (ניקול)",
+    "priceMatch": true
+  },
+  {
+    "line": 7042,
+    "name": "שקיות אחסון בינוניות עם סגירה כפולה 18.8*17.7 ס\\\"מ",
+    "status": "low-confidence",
+    "matched": "שקיות אחסון בינוניות עם סגירה כפולה 18.8*17.7 ס\"מ",
+    "manufacturer": "זיפלוק Ziploc",
+    "wouldBe": "שקיות אחסון בינוניות עם סגירה כפולה 18.8*17.7 ס\\\"מ (זיפלוק)",
+    "priceMatch": true
+  },
+  {
+    "line": 7043,
+    "name": "שקיות אשפה חזקות עם שרוך לפחים ענקיים 90*78 ס\\\"מ XXL",
+    "status": "low-confidence",
+    "matched": "שקיות אשפה חזקות עם שרוך לפחים ענקיים 90*78 ס\"מ XXL",
+    "manufacturer": "פרפקט Perfect",
+    "wouldBe": "שקיות אשפה חזקות עם שרוך לפחים ענקיים 90*78 ס\\\"מ XXL (פרפקט)",
+    "priceMatch": true
+  },
+  {
+    "line": 7044,
+    "name": "שקיות אשפה לפחים ענקיים עבות במיוחד 90*78 ס\\\"מ",
+    "status": "low-confidence",
+    "matched": "שקיות אשפה לפחים ענקיים עבות במיוחד 90*78 ס\"מ",
+    "manufacturer": "ניקול",
+    "wouldBe": "שקיות אשפה לפחים ענקיים עבות במיוחד 90*78 ס\\\"מ (ניקול)",
+    "priceMatch": true
+  },
+  {
+    "line": 7050,
+    "name": "שקיות אשפה ריחניות תלת שכבתיות עם שרוך 65*52 ס\\\"מ L",
+    "status": "low-confidence",
+    "matched": "שקיות אשפה ריחניות תלת שכבתיות עם שרוך 65*52 ס\"מ L",
+    "manufacturer": "פרפקט Perfect",
+    "wouldBe": "שקיות אשפה ריחניות תלת שכבתיות עם שרוך 65*52 ס\\\"מ L (פרפקט)",
+    "priceMatch": true
+  },
+  {
+    "line": 7051,
+    "name": "שקיות אשפה ריחניות תלת שכבתיות עם שרוך 75*65 ס\\\"מ XL",
+    "status": "low-confidence",
+    "matched": "שקיות אשפה ריחניות תלת שכבתיות עם שרוך 75*65 ס\"מ XL",
+    "manufacturer": "פרפקט Perfect",
+    "wouldBe": "שקיות אשפה ריחניות תלת שכבתיות עם שרוך 75*65 ס\\\"מ XL (פרפקט)",
+    "priceMatch": true
+  },
+  {
+    "line": 7052,
+    "name": "שקיות אשפה תלת שכבתיות חזקות ועבות עם שרוך 65*52 ס\\\"מ L",
+    "status": "low-confidence",
+    "matched": "שקיות אשפה תלת שכבתיות חזקות ועבות עם שרוך 65*52 ס\"מ L",
+    "manufacturer": "פרפקט Perfect",
+    "wouldBe": "שקיות אשפה תלת שכבתיות חזקות ועבות עם שרוך 65*52 ס\\\"מ L (פרפקט)",
+    "priceMatch": true
+  },
+  {
+    "line": 7055,
+    "name": "שקיות סנדויצ'ון עם ידיות קשירה 26.5x35 ס\\\"מ",
+    "status": "low-confidence",
+    "matched": "שקיות סנדויצ'ון עם ידיות קשירה 26.5x35 ס\"מ",
+    "manufacturer": "פרפקט Perfect",
+    "wouldBe": "שקיות סנדויצ'ון עם ידיות קשירה 26.5x35 ס\\\"מ (פרפקט)",
+    "priceMatch": false
+  },
+  {
+    "line": 7073,
+    "name": "שמפו",
+    "status": "low-confidence",
+    "matched": "שמפו לשיער רגיל",
+    "manufacturer": "פינוק",
+    "wouldBe": "שמפו (פינוק)",
+    "priceMatch": false
+  },
+  {
+    "line": 7074,
+    "name": "מרכך שיער",
+    "status": "low-confidence",
+    "matched": "מרכך שיער נקה 7 שמני הזנה",
+    "manufacturer": "נקה 7",
+    "wouldBe": "מרכך שיער (נקה)",
+    "priceMatch": false
+  },
+  {
+    "line": 7075,
+    "name": "סבון גוף",
+    "status": "low-confidence",
+    "matched": "פלמוליב סבון גוף מרענן לגבר",
+    "manufacturer": "פלמוליב Palmolive",
+    "wouldBe": "סבון גוף (פלמוליב)",
+    "priceMatch": true
+  },
+  {
+    "line": 7076,
+    "name": "סבון ידיים",
+    "status": "low-confidence",
+    "matched": "סבון ידיים אקווריום Aquarium",
+    "manufacturer": "פלמוליב Palmolive",
+    "wouldBe": "סבון ידיים (פלמוליב)",
+    "priceMatch": true
+  },
+  {
+    "line": 7081,
+    "name": "דאודורנט",
+    "status": "low-confidence",
+    "matched": "דאודורנט סטיק אוריגינל",
+    "manufacturer": "דאב Dove",
+    "wouldBe": "דאודורנט (דאב)",
+    "priceMatch": false
+  },
+  {
+    "line": 7082,
+    "name": "משחת שיניים",
+    "status": "low-confidence",
+    "matched": "משחת שיניים פרודונטקס אורגינל",
+    "manufacturer": "פרודונטקס Parodontax",
+    "wouldBe": "משחת שיניים (פרודונטקס)",
+    "priceMatch": true
+  },
+  {
+    "line": 7083,
+    "name": "מברשת שיניים",
+    "status": "low-confidence",
+    "matched": "מברשת שיניים פלקסי פחם",
+    "manufacturer": "קולגייט Colgate",
+    "wouldBe": "מברשת שיניים (קולגייט)",
+    "priceMatch": true
+  },
+  {
+    "line": 7084,
+    "name": "אקמול",
+    "status": "low-confidence",
+    "matched": "מולר פרופ יוגורט עם קציפת תות",
+    "manufacturer": "מולר Muller",
+    "wouldBe": "אקמול (מולר)",
+    "priceMatch": true
+  },
+  {
+    "line": 7086,
+    "name": "ויטמין C",
+    "status": "low-confidence",
+    "matched": "גרנייה מסכת טישו ויטמין C",
+    "manufacturer": "גרנייה Garnier",
+    "wouldBe": "ויטמין C (גרנייה)",
+    "priceMatch": true
+  },
+  {
+    "line": 7087,
+    "name": "תחבושות היגייניות",
+    "status": "low-confidence",
+    "matched": "לילי נטורל תחבושות היגייניות נורמל",
+    "manufacturer": "לילי Lily",
+    "wouldBe": "תחבושות היגייניות (לילי)",
+    "priceMatch": true
+  },
+  {
+    "line": 7088,
+    "name": "טמפונים",
+    "status": "low-confidence",
+    "matched": "טמפונים נורמל",
+    "manufacturer": "קוטקס Kotex",
+    "wouldBe": "טמפונים (קוטקס)",
+    "priceMatch": true
+  },
+  {
+    "line": 7089,
+    "name": "מגבונים לחים",
+    "status": "low-confidence",
+    "matched": "מגבונים לחים מועשרים בקמומיל",
+    "manufacturer": "בייבי בייסיק",
+    "wouldBe": "מגבונים לחים (בייבי בייסיק)",
+    "priceMatch": false
+  },
+  {
+    "line": 7090,
+    "name": "צמרונים",
+    "status": "low-confidence",
+    "matched": "מארז צמרוני אוזניים מפלסטיק",
+    "manufacturer": "קוטון סופט Cotton soft",
+    "wouldBe": "צמרונים (קוטון סופט)",
+    "priceMatch": true
+  },
+  {
+    "line": 7091,
+    "name": "קצף גילוח",
+    "status": "low-confidence",
+    "matched": "קצף גילוח Extra Moisture",
+    "manufacturer": "ניוואה Nivea",
+    "wouldBe": "קצף גילוח (ניוואה)",
+    "priceMatch": true
+  },
+  {
+    "line": 7092,
+    "name": "ג'ל גילוח",
+    "status": "low-confidence",
+    "matched": "ניוואה ג'ל גילוח Sensitive",
+    "manufacturer": "ניוואה Nivea",
+    "wouldBe": "ג'ל גילוח (ניוואה)",
+    "priceMatch": true
+  },
+  {
+    "line": 7093,
+    "name": "סכיני גילוח",
+    "status": "low-confidence",
+    "matched": "סכיני גילוח פיוזן Fusion",
+    "manufacturer": "ג'ילט Gillette",
+    "wouldBe": "סכיני גילוח (ג'ילט)",
+    "priceMatch": true
+  },
+  {
+    "line": 7094,
+    "name": "פלסטרים",
+    "status": "low-confidence",
+    "matched": "פלסטרים נקסקר דואו שלושה גדלים",
+    "manufacturer": "Nexcare נקסקאר",
+    "wouldBe": "פלסטרים (נקסקאר)",
+    "priceMatch": true
+  },
+  {
+    "line": 7095,
+    "name": "אלכוג'ל",
+    "status": "low-confidence",
+    "matched": "אלכוג'ל לשמירה על הייגיינת הידיים 70% אלכוהול",
+    "manufacturer": "ד\"ר פישר Dr fischer",
+    "wouldBe": "אלכוג'ל (ד\"ר פישר)",
+    "priceMatch": true
+  },
+  {
+    "line": 7098,
+    "name": "אקמולי",
+    "status": "low-confidence",
+    "matched": "גוואקמולי",
+    "manufacturer": "אחלה - שטראוס",
+    "wouldBe": "אקמולי (אחלה שטראוס)",
+    "priceMatch": false
+  },
+  {
+    "line": 7191,
+    "name": "שמפו לשיער מתולתל ד\\\"ר פישר",
+    "status": "low-confidence",
+    "matched": "שמפו לשיער מתולתל ד\"ר פישר",
+    "manufacturer": "ד\"ר פישר Dr fischer",
+    "wouldBe": "שמפו לשיער מתולתל ד\\\"ר פישר (ד\"ר פישר)",
+    "priceMatch": false
+  },
+  {
+    "line": 7236,
+    "name": "הוואי מרכך הגן הקסום לכל סוגי השיער",
+    "status": "low-confidence",
+    "matched": "מרכך לכל סוגי השיער JOY",
+    "manufacturer": "JOY ג'וי",
+    "wouldBe": "הוואי מרכך הגן הקסום לכל סוגי השיער (ג'וי)",
+    "priceMatch": false
+  },
+  {
+    "line": 7243,
+    "name": "מרכך לשיער מתולתל ד\\\"ר פישר",
+    "status": "low-confidence",
+    "matched": "מרכך לשיער מתולתל ד\"ר פישר",
+    "manufacturer": "ד\"ר פישר Dr fischer",
+    "wouldBe": "מרכך לשיער מתולתל ד\\\"ר פישר (ד\"ר פישר)",
+    "priceMatch": false
+  },
+  {
+    "line": 7578,
+    "name": "דאודורנט סטיק לגבר אקס בלאק",
+    "status": "low-confidence",
+    "matched": "דאודורנט רול און אינביזיבל פרש",
+    "manufacturer": "גרנייה Garnier",
+    "wouldBe": "דאודורנט סטיק לגבר אקס בלאק (גרנייה)",
+    "priceMatch": false
+  },
+  {
+    "line": 6867,
+    "name": "כוסות מרובעות  295 סמ\\\"ק",
+    "status": "low-confidence",
+    "matched": "כוסות מרובעות  295 סמ\"ק",
+    "manufacturer": "הנמל",
+    "wouldBe": "כוסות מרובעות  295 סמ\\\"ק (הנמל)",
+    "priceMatch": true
+  },
+  {
+    "line": 8212,
+    "name": "פאלטה צבע לשיער נטורלס 5-0 גוון חום בהיר",
+    "status": "low-confidence",
+    "matched": "קערת ערבוב 16 ס\"מ פלסטיק - לא ניתן לבחור צבע",
+    "manufacturer": "איטלפלסט",
+    "wouldBe": "פאלטה צבע לשיער נטורלס 5-0 גוון חום בהיר (איטלפלסט)",
+    "priceMatch": false
+  },
+  {
+    "line": 8353,
+    "name": "מסיר לק ריחני",
+    "status": "low-confidence",
+    "matched": "מסיר איפור עדין לעיניים ולשפתיים",
+    "manufacturer": "לוריאל Loreal",
+    "wouldBe": "מסיר לק ריחני (לוריאל)",
+    "priceMatch": false
+  },
+  {
+    "line": 8355,
+    "name": "בלונס פדים להסרת איפור - מארז רביעייה",
+    "status": "low-confidence",
+    "matched": "טופ פד סופגנית מקסי לונג",
+    "manufacturer": "טופ פד",
+    "wouldBe": "בלונס פדים להסרת איפור - מארז רביעייה (טופ פד)",
+    "priceMatch": false
+  },
+  {
+    "line": 8428,
+    "name": "ד\\\"ר פישר אלכו-ג'ל H - ג'ל לשמירה על היגיינת הידיים",
+    "status": "low-confidence",
+    "matched": "ד\"ר פישר אלכו-ג'ל H - ג'ל לשמירה על היגיינת הידיים",
+    "manufacturer": "ד\"ר פישר Dr fischer",
+    "wouldBe": "ד\\\"ר פישר אלכו-ג'ל H - ג'ל לשמירה על היגיינת הידיים (ד\"ר פישר)",
+    "priceMatch": true
+  },
+  {
+    "line": 8442,
+    "name": "ביסלי גריל",
+    "status": "low-confidence",
+    "matched": "ביסלי בטעם גריל",
+    "manufacturer": "אסם",
+    "wouldBe": "ביסלי גריל (אסם)",
+    "priceMatch": true
+  },
+  {
+    "line": 8444,
+    "name": "תפוצ\\'יפס",
+    "status": "low-confidence",
+    "matched": "תפוצ'יפס בטעם טבעי",
+    "manufacturer": "עלית",
+    "wouldBe": "תפוצ\\'יפס (עלית)",
+    "priceMatch": false
+  },
+  {
+    "line": 8446,
+    "name": "עוגיות",
+    "status": "low-confidence",
+    "matched": "עוגיות אוראו",
+    "manufacturer": "אוראו Oreo",
+    "wouldBe": "עוגיות (אוראו)",
+    "priceMatch": false
+  },
+  {
+    "line": 8447,
+    "name": "גומי",
+    "status": "low-confidence",
+    "matched": "יעה גומי",
+    "manufacturer": "טירולר Tyroler",
+    "wouldBe": "גומי (טירולר)",
+    "priceMatch": true
+  },
+  {
+    "line": 8449,
+    "name": "בייגלה",
+    "status": "low-confidence",
+    "matched": "בייגלה מקלות Stickletti",
+    "manufacturer": "צ'יו Chio",
+    "wouldBe": "בייגלה (צ'יו)",
+    "priceMatch": true
+  },
+  {
+    "line": 8452,
+    "name": "אגוזים",
+    "status": "low-confidence",
+    "matched": "תערובת אגוזים וחמוציות",
+    "manufacturer": "קליית גת",
+    "wouldBe": "אגוזים (קליית גת)",
+    "priceMatch": true
+  },
+  {
+    "line": 8453,
+    "name": "מסטיקים",
+    "status": "low-confidence",
+    "matched": "מסטיק בטעם מנטה ללא סוכר פיור פרש",
+    "manufacturer": "מנטוס Mentos",
+    "wouldBe": "מסטיקים (מנטוס)",
+    "priceMatch": true
+  },
+  {
+    "line": 8454,
+    "name": "סוכריות",
+    "status": "low-confidence",
+    "matched": "סוכריות חמאה",
+    "manufacturer": "וורטרס Werther's",
+    "wouldBe": "סוכריות (וורטרס)",
+    "priceMatch": false
+  },
+  {
+    "line": 8455,
+    "name": "חטיפי גרנולה",
+    "status": "low-confidence",
+    "matched": "חטיפי גרנולה Crunchy שיבולת שועל ושוקולד מריר",
+    "manufacturer": "נייצ'ר ואלי Nature Valley",
+    "wouldBe": "חטיפי גרנולה (נייצ'ר ואלי)",
+    "priceMatch": false
+  },
+  {
+    "line": 8483,
+    "name": "שוקולד חלב עם מרציפן",
+    "status": "low-confidence",
+    "matched": "חלב טרי קרטון 3% מהדרין",
+    "manufacturer": "תנובה",
+    "wouldBe": "שוקולד חלב עם מרציפן (תנובה)",
+    "priceMatch": false
+  },
+  {
+    "line": 8578,
+    "name": "מארז חטיפי באונטי",
+    "status": "low-confidence",
+    "matched": "מארז במבה 10 יחידות",
+    "manufacturer": "אסם",
+    "wouldBe": "מארז חטיפי באונטי (אסם)",
+    "priceMatch": false
+  },
+  {
+    "line": 8622,
+    "name": "מקופלת חטיף שוקולד חלב",
+    "status": "low-confidence",
+    "matched": "חטיף מצופה שוקולד חלב",
+    "manufacturer": "סלים דליס Slim Delis",
+    "wouldBe": "מקופלת חטיף שוקולד חלב (סלים דליס)",
+    "priceMatch": false
+  },
+  {
+    "line": 8670,
+    "name": "בונבוניירה ממתקי שוקולד מריר עם ליקר רום SHOOTERS RUM",
+    "status": "low-confidence",
+    "matched": "מארז שלישייה שוקולד מריר 60%",
+    "manufacturer": "צ'וקטה Chocketa",
+    "wouldBe": "בונבוניירה ממתקי שוקולד מריר עם ליקר רום SHOOTERS RUM (צ'וקטה)",
+    "priceMatch": false
+  },
+  {
+    "line": 8673,
+    "name": "פררו קולקשיין גראנד אסטורטמנט",
+    "status": "low-confidence",
+    "matched": "שבא מרלו יין רוזה יבש בנימינה",
+    "manufacturer": "בנימינה Binyamina",
+    "wouldBe": "פררו קולקשיין גראנד אסטורטמנט (בנימינה)",
+    "priceMatch": false
+  },
+  {
+    "line": 8750,
+    "name": "גוגלס טוי סוכריות סודה בצורת \\\"אבן נייר ומספריים\\\"",
+    "status": "low-confidence",
+    "matched": "גוגלס טוי סוכריות סודה בצורת \"אבן נייר ומספריים\"",
+    "manufacturer": "טעמן",
+    "wouldBe": "גוגלס טוי סוכריות סודה בצורת \\\"אבן נייר ומספריים\\\" (טעמן)",
+    "priceMatch": false
+  },
+  {
+    "line": 8770,
+    "name": "ממתק חמוץ מתוק בטעם תותי פרוטי בצורת מיני שטיח",
+    "status": "low-confidence",
+    "matched": "לוקיטוס ממתק חמוץ מתוק בטעם תות שדה בצורת שטיח",
+    "manufacturer": "צ'וקטה לוקיטוס Locitos",
+    "wouldBe": "ממתק חמוץ מתוק בטעם תותי פרוטי בצורת מיני שטיח (צ'וקטה לוקיטוס)",
+    "priceMatch": false
+  },
+  {
+    "line": 8777,
+    "name": "סוכריות גומי בטעמי פירות בצורת דובונים",
+    "status": "low-confidence",
+    "matched": "לוקיטוס סוכריות גומי בטעמי פירות בצורת דובונים",
+    "manufacturer": "צ'וקטה לוקיטוס Locitos",
+    "wouldBe": "סוכריות גומי בטעמי פירות בצורת דובונים (צ'וקטה לוקיטוס)",
+    "priceMatch": false
+  },
+  {
+    "line": 8811,
+    "name": "מסטיק מאסט Must קוביות בטעם מנטה ללא סוכר",
+    "status": "low-confidence",
+    "matched": "מסטיק מאסט Must קוביות ללא סוכר בטעם מנטה",
+    "manufacturer": "עלית",
+    "wouldBe": "מסטיק מאסט Must קוביות בטעם מנטה ללא סוכר (עלית)",
+    "priceMatch": false
+  },
+  {
+    "line": 8967,
+    "name": "חטיף ביסלי בצל במבה מיקס",
+    "status": "low-confidence",
+    "matched": "מיקס במבה ביסלי בצל",
+    "manufacturer": "אסם",
+    "wouldBe": "חטיף ביסלי בצל במבה מיקס (אסם)",
+    "priceMatch": false
+  },
+  {
+    "line": 9161,
+    "name": "תרכובת מזון A.R על בסיס חלבי בתוספת עמילן תפו\\\"א ותירס",
+    "status": "low-confidence",
+    "matched": "תרכובת מזון A.R על בסיס חלבי בתוספת עמילן תפו\"א ותירס",
+    "manufacturer": "מטרנה",
+    "wouldBe": "תרכובת מזון A.R על בסיס חלבי בתוספת עמילן תפו\\\"א ותירס (מטרנה)",
+    "priceMatch": true
+  },
+  {
+    "line": 9235,
+    "name": "חיתולי אקסטרה קר ניו בורן little babies עד 4 ק\\\"ג",
+    "status": "low-confidence",
+    "matched": "חיתולי אקסטרה קר ניו בורן little babies עד 4 ק\"ג",
+    "manufacturer": "האגיס Huggies",
+    "wouldBe": "חיתולי אקסטרה קר ניו בורן little babies עד 4 ק\\\"ג (האגיס)",
+    "priceMatch": true
+  },
+  {
+    "line": 9253,
+    "name": "בגד ים חד פעמי 3-4 , 7-15 ק\\\"ג",
+    "status": "low-confidence",
+    "matched": "בגד ים חד פעמי 3-4 , 7-15 ק\"ג",
+    "manufacturer": "האגיס Huggies",
+    "wouldBe": "בגד ים חד פעמי 3-4 , 7-15 ק\\\"ג (האגיס)",
+    "priceMatch": true
+  },
+  {
+    "line": 9254,
+    "name": "בגד ים חד פעמי 5-6 ,   12-18 ק\\\"ג",
+    "status": "low-confidence",
+    "matched": "בגד ים חד פעמי 5-6 ,   12-18 ק\"ג",
+    "manufacturer": "האגיס Huggies",
+    "wouldBe": "בגד ים חד פעמי 5-6 ,   12-18 ק\\\"ג (האגיס)",
+    "priceMatch": true
+  },
+  {
+    "line": 9287,
+    "name": "בקבוק לתינוק 260 מ\\\"ל",
+    "status": "low-confidence",
+    "matched": "בקבוק לתינוק 260 מ\"ל",
+    "manufacturer": "מאם Mam",
+    "wouldBe": "בקבוק לתינוק 260 מ\\\"ל (מאם)",
+    "priceMatch": true
+  },
+  {
+    "line": 9353,
+    "name": "טופו במרקם קשה אריזת חיסכון 1.2 ק\\\"ג",
+    "status": "low-confidence",
+    "matched": "טופו במרקם קשה אריזת חיסכון 1.2 ק\"ג",
+    "manufacturer": "יוניקורד Unicurd",
+    "wouldBe": "טופו במרקם קשה אריזת חיסכון 1.2 ק\\\"ג (יוניקורד)",
+    "priceMatch": true
+  }
+]
